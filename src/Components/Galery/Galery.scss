@@ -1,0 +1,44 @@
+@import '../../App.scss';
+
+.Galery{
+  z-index: 123123;
+   @extend %bg;
+  border:none;
+    height:100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+position: relative;
+   
+    .Show{
+        width:80vw;
+        z-index: 2;
+        height:100%;
+    }
+    .SidePanel{
+          width:20vw;
+       
+          min-width: 200px;
+          height:100%;
+          overflow: hidden;
+    }
+    @media only screen and (orientation:portrait)
+    {
+        flex-direction: column;
+        height:70vh;
+        min-height: 400px;
+        justify-content: flex-start;
+        
+        .Show{
+            width:100%;
+            overflow: hidden;
+            height:60vh;
+        }
+        .SidePanel{
+              
+              display:none
+              
+        }
+    }
+}

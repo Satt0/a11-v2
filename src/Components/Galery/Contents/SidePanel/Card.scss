@@ -1,0 +1,81 @@
+@import "../../../../App.scss";
+
+.Card-container {
+  padding: 0;
+  margin: 0;
+}
+
+.Card {
+
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+  position: absolute;
+transform: scale(0.9);
+  cursor: pointer;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center top;
+  box-shadow: 0px 10px 30px -5px rgba(78, 255, 24, 0.3);
+  transition: all 0.2s;
+  will-change: transform;
+  border: 0.8em solid white;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  p {
+    transition: 0.2s ease;
+    color: $mainColor;
+    font-family: $font2;
+    font-size: 1.6rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+  }
+}
+.Card:hover {
+  box-shadow: 0px 30px 100px -10px rgba(7, 170, 219, 0.4);
+  transform: scale(1.07) !important;
+  // animation: breath 10s ease-in-out infinite;
+
+  p {
+    opacity: 0;
+    user-select: none;
+  }
+}
+.Card.zoom {
+  // animation: breath 10s ease-in-out infinite;
+
+  border: 10px solid white;
+  
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+
+  border-image-slice: 1;
+ 
+  
+
+
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 30px 100px -10px rgba(255, 69, 69, 0.6);
+  p {
+    background-color: rgba(0, 0, 0, 0.1);
+
+    user-select: none;
+  }
+}
+.Card.zoom:nth-child(even) {
+  transform: scale(1.1)  !important;
+}
+.Card.zoom:nth-child(odd) {
+  transform: scale(1.1)  !important;
+}
+
+

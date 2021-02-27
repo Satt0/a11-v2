@@ -1,0 +1,85 @@
+@import "../../App.scss";
+.Video-Container {
+  background-image: url("/contact/bg2.png");
+  
+  
+  background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  .blur-wallpaper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    filter: blur(8px);
+    left: 0;
+    z-index: 0;
+    transition: all .3s;
+    &.bg-black{
+      background-color: black;
+    }
+    &.bg-img{
+      background-color: rgba(0, 0, 0, 0.5);
+  
+    }
+  }
+  .portrait{
+    display:none;
+  }
+  .caption {
+    max-width: 400px;
+    overflow: scroll;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.4rem;
+    font-family: $introFont;
+
+    font-size: 1.4rem;
+
+    // font-family: 'Courgette', cursive;
+    // // font-family: 'Great Vibes', cursive;
+    // font-family: 'Homemade Apple', cursive;
+  }
+  color: white;
+
+  @media only screen and(max-width:1250px) {
+    flex-direction: column-reverse;
+    .landscape{
+      display:none;
+    }
+    .portrait{
+      display:block;
+    }
+    padding: 0 !important;
+    div.shared-inner {
+      height: 50%;
+    }
+    .caption {
+      max-width: none;
+      overflow: scroll;
+      height:100%;
+    }
+  }
+  h1 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 12312;
+    text-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.4);
+    font-family: $introFont;
+  }
+  h3 {
+    color: white;
+    font-size: 1.8rem;
+    font-family: $introFont;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 2px;
+    border: 1px solid white;
+    text-align: center;
+  }
+}

@@ -1,0 +1,15 @@
+
+
+.Memory-Container{
+    height:100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .Memory{
+        position: relative;
+        width:30vw;
+        height:20vh;
+        overflow: visible;
+        
+    }
+}

@@ -1,0 +1,80 @@
+@import '../../Galery.scss';
+
+.SidePanel{
+    overflow: visible;
+   z-index: 1231231233123;
+     display:flex;flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+    background-color: white ;
+     .Card-container{
+         position: relative;
+         width:80%;
+         height:22vh;
+         transition:all .5s;
+         &:nth-child(even){
+             transform:rotate(2deg);
+         }
+         &:nth-child(odd){
+            transform:rotate(-2deg);
+        }
+       
+     }
+     .Card-container.selected{
+        &:nth-child(even){
+            animation:swinging1 3s infinite;
+        }
+        &:nth-child(odd){
+            animation:swinging2 3s infinite;
+        }
+     }
+     @media only screen and (orientation:portrait){
+         .Card-container{
+             display:none;
+         }
+         
+     }
+}
+@keyframes swinging1{
+    0%{
+        transform:rotate(2deg);
+
+    }
+    50%{
+        transform:rotate(-2deg);
+
+    }
+    100%{
+        transform:rotate(2deg);
+
+    }
+}
+@keyframes swinging2{
+    0%{
+        transform:rotate(-2deg);
+
+    }
+    50%{
+        transform:rotate(2deg);
+
+    }
+    100%{
+        transform:rotate(-2deg);
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
