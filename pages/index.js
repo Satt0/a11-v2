@@ -8,3 +8,11 @@ export default function Home() {
     </>
   )
 }
+export async function getStaticProps(){
+  const data=await fetch("http://localhost:1337/carousels").then(res=>res.json())
+  return {
+    props:{
+      items:data
+    }
+  }
+}

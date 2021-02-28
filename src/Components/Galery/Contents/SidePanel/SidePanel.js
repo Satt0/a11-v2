@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "./Card";
-
 export default function SidePanel({ onClick, index }) {
   const list = [
     { name: "Teachers", img: "/card/bg-teacher.jpg" },
@@ -15,6 +14,7 @@ export default function SidePanel({ onClick, index }) {
         <div
           key={i}
           onClick={onClick(i)}
+          
           className={index === i ? "Card-container selected" : "Card-container"}
         >
           <Card

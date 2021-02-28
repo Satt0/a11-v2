@@ -5,6 +5,7 @@ export default function Header() {
   const ref = useRef(null);
   const [toggle, setToggle] = useState(false);
   const [mouse, setMouse] = useState(false);
+ 
   useEffect(() => {
     const header = document.getElementById("header");
     let a = null;
@@ -36,7 +37,7 @@ export default function Header() {
 
   return (
     <>
-      <header id="header">
+      <header id="header" >
         <figure
           id="music-player"
           className={!toggle ? "style mr-2 mt-5" : "nostyle"}
@@ -53,7 +54,7 @@ export default function Header() {
             width="100%"
             height="450"
             scrolling="no"
-            frameborder="no"
+            frameBorder="no"
             allow="autoplay"
             title="Sound clound"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/929815216&color=%23444444&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
@@ -75,32 +76,14 @@ export default function Header() {
               setToggle((state) => !state);
             }}
           >
-            {/* <img
-
-              
-              className={!mute ? "img" : "img on"}
-              alt="rope"
-              src={!mute ? svg1 : svg}
-            /> */}
+            
             {toggle ? "Hiện SoundCloud" : "Ẩn SoundCloud"}
           </li>
         </div>
 
-        {/* <div className={toggle?"dropdown-menu on":"dropdown-menu off"}>
-    
-    
-    </div> */}
+       
       </header>
-      {/* <div
-        className={!toggle ? "hamburger on" : "hamburger off"}
-        onClick={() => {
-          setToggle((state) => !state);
-        }}
-      >
-        <span className="span1"></span>
-        <span className="span2"></span>
-        <span className="span3"></span>
-      </div> */}
+     
     </>
   );
 }

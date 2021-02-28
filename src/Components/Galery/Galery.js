@@ -1,21 +1,29 @@
 import React, { useState, useEffect } from "react";
-// import {Link} from 'react-router-dom';
 import SidePanel from "./Contents/SidePanel/SidePanel";
 import Show from "./Contents/Show/Show";
+import {useSelector,useDispatch} from 'react-redux'
 import TopPanel from "./Contents/TopPanel/TopPanel";
 export default function Galery() {
-  const display = [
+    const display = [
     { view: "teacher", length: 1 },
     { view: "girl", length: 4 },
     { view: "boy", length: 4 },
 
-    { view: "leader", length: 1 },
+    { view: "moment", length: 1 },
   ];
+const index = useSelector(state => state.index)
+const dispatch = useDispatch()
 
   const [a, seta] = useState(0);
   const onClick = (num) => {
-    return async () => {
-      await seta(num);
+    return  () => {
+       if(!index){
+        seta(num);
+       }
+       else{
+         dispatch({type:'toggleIndex'})
+         seta(num)
+       }
     };
   };
   useEffect(() => {
@@ -26,16 +34,22 @@ export default function Galery() {
       default: time=60000;break
     }
     const t = setTimeout(() => {
+     if(!index){
       seta((a) => (a + 1) % 4);
+     }
     }, time);
     return () => {
       clearTimeout(t);
     };
-  },[a]);
+  },[a,index]);
+
+ 
   return (
-    <div id="galery" className="Galery">
+    <div id="galery" className="Galery" onClick={()=>{   
+      
+  }}>
       <SidePanel onClick={onClick} index={a} />
-      <Show length={display[a].length} view={display[a].view} />
+      <Show  length={display[a].length} view={display[a].view} />
       <TopPanel onClick={onClick} index={a} />
     </div>
   );
