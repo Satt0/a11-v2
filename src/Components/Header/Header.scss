@@ -59,9 +59,9 @@ transition: 0.10s ease;
     font-weight: bolder;
     margin-right: 15px;
     margin-bottom: 0;
-    font-weight: lighter;
+    font-weight: 300;
     cursor: pointer;
-    font-family: $font2;
+    font-family: $font1;
     color: $mainColor;
     .song-name{
       user-select: none;
