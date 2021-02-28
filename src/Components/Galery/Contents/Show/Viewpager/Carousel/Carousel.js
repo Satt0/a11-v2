@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux'
 import {getImgPath} from 'lib/ulti'
 export default function Carousel({ length, view, img }) {
   const dispatch = useDispatch()
+
   const [on, switchOff] = useState(true);
   const [data, setData] = useState([]);
   const [preload, setPreload] = useState([]);

@@ -11,10 +11,11 @@ export default function infor({ index }) {
   return (
     <div className={`${styles.infor} pt-5 pb-5 pl-2`}>
       <div
+      key={infor.id+'img'}
         className={`overflow-hidden text-center ${styles.imgContainer}`}
-        style={{ backgroundImage: `url("${getImgPath(infor.img[0].url)}")` }}
+        style={{ backgroundImage: `url("${getImgPath(infor.mainImage?.url ?? infor.img[0].url)}")` }}
       ></div>
-      <div className={`${styles.information} w-100 pl-1 pr-1 overflow-auto`}>
+      <div key={infor.id} className={`${styles.information} w-100`}>
         <h2 className="h1">-{infor.name}-</h2>
         <h2 className="h3">
           Role:{" "}
@@ -24,24 +25,27 @@ export default function infor({ index }) {
         </h2>
         <h2 className="h3">quote: "{infor.description}"</h2>
         <div></div>
+        <div className={styles.navContainer}>
         <div
           onClick={() => {
             dispatch({ type: "updateIndex", payload: prev.id });
           }}
-          className={styles.nav}
+          className={styles.nav +" hover"}
         >
-          <h2>prev</h2>
+          <h3>prev</h3>
         </div>
         <div
           onClick={() => {
             dispatch({ type: "updateIndex", payload: next.id });
           }}
-          className={styles.nav}
+          className={styles.nav +" hover"}
         >
-          <h2>next</h2>
+          <h3>next</h3>
+        </div>
         </div>
 
         <button
+        className="hover"
           onClick={() => {
             dispatch({ type: "toggleIndex" });
           }}
