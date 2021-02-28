@@ -9,7 +9,7 @@ export default function Home() {
   )
 }
 export async function getStaticProps(){
-  const data=await fetch("http://localhost:1337/carousels").then(res=>res.json())
+  const data=await fetch("https://desolate-escarpment-45092.herokuapp.com/carousels").then(res=>res.json())
   return {
     props:{
       items:data
