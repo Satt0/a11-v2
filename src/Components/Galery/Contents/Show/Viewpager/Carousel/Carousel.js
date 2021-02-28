@@ -54,8 +54,9 @@ export default function Carousel({ length, view, img }) {
   return (
     <div className="Carousel-Container" id="carousel-id">
       <div style={{ opacity: 0, position: "absolute", zIndex: -50 }}>
-        {preload.map((e) => (
+        {preload.map((e,i) => (
           <div
+          key={i}
             style={{
               backgroundImage: `url("${getImgPath(e.img[0].url)}")`,
             }}
@@ -72,7 +73,7 @@ export default function Carousel({ length, view, img }) {
                 setCount(a=>(a+1)%img.length)
               }
         }}
-          key={i}
+          key={e.id}
           style={{
             boxShadow: `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
               Math.random() * 256
