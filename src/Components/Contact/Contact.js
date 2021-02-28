@@ -20,7 +20,7 @@ export default function Video() {
   const [wish,setWish]=useState(0)
   const [bg, toggleBg] = useState(false);
   return (
-    <div className={`Video-Container p-5 d-flex`} id="video">
+    <div className={`Video-Container d-flex`} id="video">
      <div className={`blur-wallpaper ${bg?"bg-black":"bg-img"}`}></div>
       <div className="Video-Select p-1 shared-inner" style={{minWidth:300,zIndex:2}}>
       <div className="landscape">
@@ -28,14 +28,13 @@ export default function Video() {
        
        <h3 onClick={()=>{setPlay((play+1)%data.length);toggleBg(false)}}>-next: {data[(play+1)%data.length].name}-</h3>
       </div>
-        <div className="caption" onClick={()=>{
+        <div className="caption p-2" onClick={()=>{
           setWish(i=>(i+1)%wishes.length)
         }}>
-          <div className="container-fluid" style={{maxWidth:768}}>
          
          <Wish name={wishes[wish].name} wishes={wishes[wish].wishes} />
 
-          </div>
+         
         </div>
       </div>
      <div className=" shared-inner container-fluid p-3 d-flex h-100 flex-column justify-content-center align-items-center" style={{zIndex:2}}>

@@ -1,52 +1,59 @@
 @import "/src/helpers/variables";
 
-.infor{
-    flex-direction: row;
-    background-color: rgba($color: #000000, $alpha: .9);
-    display:flex;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    height:100%;
-    @media only screen and(min-width:1000px){
-        padding-left: 10% !important;
-    }
+.infor {
+  flex-direction: row;
+  background-color: rgba($color: #000000, $alpha: 0.9);
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  height: 100%;
+  @media only screen and(min-width:1000px) {
+    padding-left: 10% !important;
+  }
 }
-.imgContainer{
-    width:50%;
-    max-width: 400px;
-    border-radius: 3px;
-    opacity:.9;
-    background-position: center;
-    background-size: cover;
+.imgContainer {
+  width: 50%;
+  max-width: 400px;
+  border-radius: 3px;
+  min-width: 150px;
+  opacity: 0.9;
+  background-position: center top;
+  background-size: cover;
 }
-.information{
-    font-family: $introFont;
-    max-width: 680px;
-    position: relative;;
-        color:white;
-    h2{
-        width:100%;
-        
-    }
-    button{
-        position: absolute;
-        top:4px;
-        right:15px;
-        background-color: transparent;
-        border:1px solid white;
-        border-radius: 3px;
-        padding:5px 15px;
-        color:white;
-        font-size: 2rem;
-    }
-    @media only screen and(min-width:1000px){
-        padding-left: 5% !important;
-    }
+.information {
+  font-family: $introFont;
+  max-width: 680px;
+  color: white;
+  @media only screen and(min-width:1000px){
+    
+    position:relative;    
 }
-.nav{
+  h2 {
+    width: 100%;
+    font-size: 2vw;
+    @media only screen and(max-width:1000px) {
+      font-size: 5vw;
+    }
+  }
+  button {
+    position: absolute;
+    top: 4px;
+    right: 15px;
+    background-color: transparent;
     border: 1px solid white;
-    border-radius: 2px;
-    display: inline-block;
-    padding: 0 2rem;
-    cursor: pointer;
+    border-radius: 3px;
+    padding: 5px 15px;
+    color: white;
+    font-size: 1rem;
+  }
+  @media only screen and(min-width:1000px) {
+    padding-left: 5% !important;
+  }
+}
+.nav {
+  border: 1px solid white;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 0 2rem;
+  cursor: pointer;
 }

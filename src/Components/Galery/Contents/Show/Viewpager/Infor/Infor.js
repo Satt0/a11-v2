@@ -18,11 +18,11 @@ export default function infor({ index }) {
         <h2 className="h1">-{infor.name}-</h2>
         <h2 className="h3">
           Role:{" "}
-          <strong className="h2">
+          <strong >
             "{infor.role ?? "Thành viên chủ chốt"}"
           </strong>
         </h2>
-        <h2 className="h2">quote: "{infor.description}"</h2>
+        <h2 className="h3">quote: "{infor.description}"</h2>
         <div></div>
         <div
           onClick={() => {

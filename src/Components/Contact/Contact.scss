@@ -1,8 +1,8 @@
 @import "../../App.scss";
 .Video-Container {
   background-image: url("/contact/bg2.png");
-  
-  
+  padding:2vw;
+  overflow: hidden;
   background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -10,6 +10,7 @@
   width: 100%;
   height: 100vh;
   min-height: 600px;
+  min-width:300px;
   .blur-wallpaper {
     position: absolute;
     width: 100%;
@@ -35,7 +36,7 @@
     overflow: scroll;
     height: 80%;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 0.4rem;
+    
     font-family: $introFont;
 
     font-size: 1.4rem;
