@@ -73,7 +73,7 @@ export default function Carousel({ length, view, img }) {
                 setCount(a=>(a+1)%img.length)
               }
         }}
-          key={e.id}
+          key={i}
           style={{
             boxShadow: `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
               Math.random() * 256
@@ -87,7 +87,7 @@ export default function Carousel({ length, view, img }) {
           <img className="rope" alt="rope" src="/rope.jpg" />
           <img className="rope" alt="rope" src="/rope.jpg" />
           <div
-            key={Math.floor(Math.random() * 234234234)}
+            key={e.id}
             
             
             className="content-carousel"
