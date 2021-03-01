@@ -2,22 +2,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from 'src/App'
 import Head from 'next/head'
 
-export default function Home() {
+export default function Home({items}) {
+  console.log(items);
   return (
     <>
     <Head>
-      <title>A11 galery</title>
+      <title>A11 gallery K52 2016-2019</title>
         <meta property="og:url" content="https://a11galery.tk" />
+        <meta name="description" content="A11 k52 -  Trung học phổ thông Lạng Giang số 1!" />
         <meta property="og:type" content="website" />
         <meta property="fb:app_id" content="your fb app id" />
         <meta
           property="og:title"
           content="A11 Offical website"
         />
+
         <meta name="twitter:card" content="summary" />
         <meta
           property="og:description"
-          content="A11 Offical website"
+          content="A11 k52 -  Trung học phổ thông Lạng Giang số 1!"
         />
         <meta property="og:image" content={"/bg/leader/leader1.JPG"} />
     </Head>
