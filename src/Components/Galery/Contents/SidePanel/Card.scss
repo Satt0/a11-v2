@@ -19,7 +19,7 @@ transform: scale(0.9);
   box-shadow: 0px 10px 30px -5px rgba(78, 255, 24, 0.3);
   transition: all 0.2s;
   will-change: transform;
-  border: 0.8em solid white;
+  border: 7px solid white;
   
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@ transform: scale(0.9);
 .Card.zoom {
   // animation: breath 10s ease-in-out infinite;
 
-  border: 10px solid white;
+  border: 7px solid white;
   
   border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
 

@@ -7,6 +7,7 @@
      justify-content: space-around;
      align-items: center;
     background-color: white ;
+    padding:15px;
      .Card-container{
          position: relative;
          width:80%;
@@ -22,10 +23,10 @@
      }
      .Card-container.selected{
         &:nth-child(even){
-            animation:swinging1 3s infinite;
+            animation:swinging1 10s infinite;
         }
         &:nth-child(odd){
-            animation:swinging2 3s infinite;
+            animation:swinging2 10s infinite;
         }
      }
      @media only screen and (orientation:portrait){
