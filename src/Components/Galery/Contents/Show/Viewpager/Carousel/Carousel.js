@@ -94,7 +94,12 @@ export default function Carousel({ length, view, img }) {
             style={{
               backgroundImage: `url("${getImgPath(e.img[0].url)}")`,
             }}
-          ></div>
+          >
+                               {!e.hasInfor? <p className="text-title">{e.name}</p>:""}
+
+
+          </div>
+
         </div>
       ))}
     </div>
