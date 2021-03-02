@@ -20,14 +20,14 @@ export default function infor({ index }) {
           )}")`,
         }}
       >
-        <button
+        {/* <button
           className="hover"
           onClick={() => {
             dispatch({ type: "toggleIndex" });
           }}
         >
           Close
-        </button>
+        </button> */}
       </div>
       <div key={infor.id} className={`${styles.information} w-100`}>
         <h2 className="h1">-{infor.name}-</h2>
@@ -35,26 +35,37 @@ export default function infor({ index }) {
           -Role: <strong>"{infor.role ?? "Thành viên chủ chốt"}"</strong>
         </h2>
         <h2 className="h3">-Quote: "{infor.description}"</h2>
-        <div></div>
+
         <div className={styles.navContainer}>
-          <div
-            onClick={() => {
-              dispatch({ type: "updateIndex", payload: prev.id });
-            }}
-            className={styles.nav + " hover"}
-          >
-            <h3>prev</h3>
-          </div>
-          <div
-            onClick={() => {
-              dispatch({ type: "updateIndex", payload: next.id });
-            }}
-            className={styles.nav + " hover"}
-          >
-            <h3>next</h3>
-          </div>
+        <div
+          onClick={() => {
+            dispatch({ type: "updateIndex", payload: prev.id });
+          }}
+          className={styles.nav + " hover hover-yellow"}
+        >
+          <h3>prev</h3>
+        </div>
+        <div
+          onClick={() => {
+            dispatch({ type: "toggleIndex" });
+          }}
+          className={styles.nav + " hover hover-red"}
+        >
+          <h3>close</h3>
+        </div>
+        <div
+          onClick={() => {
+            dispatch({ type: "updateIndex", payload: next.id });
+          }}
+          className={styles.nav + " hover hover-yellow"}
+        >
+          <h3>next</h3>
         </div>
       </div>
+        
+        {/* <div></div> */}
+      </div>
+      
     </div>
   );
 }

@@ -3,7 +3,6 @@ import App from "src/App";
 import Head from "next/head";
 
 export default function Home({ items }) {
-  console.log(items);
   return (
     <>
       <Head>

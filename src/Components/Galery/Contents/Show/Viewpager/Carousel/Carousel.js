@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {useDispatch} from 'react-redux'
 import {getImgPath} from 'lib/ulti'
+import Image from 'next/image'
 export default function Carousel({ length, view, img }) {
   const dispatch = useDispatch()
 
@@ -95,6 +96,7 @@ export default function Carousel({ length, view, img }) {
               backgroundImage: `url("${getImgPath(e.img[0].url)}")`,
             }}
           >
+            {/* <Image alt={e.name} src={getImgPath(e.img[0].url)} height={e.img[0].height} width={e.img[0].width} layout="responsive"/> */}
                                {!e.hasInfor? <p className="text-title">{e.name}</p>:""}
 
 

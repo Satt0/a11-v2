@@ -14,11 +14,16 @@ a {
 * {
   box-sizing: border-box;
 }
-.hover{
+.hover,.hover-red{
   transition: all .2s;
-
+  border: 1px solid black;
 }
-.hover:hover{
+.hover-yellow:hover{
+  color:yellow;
+  border:1px solid yellow;
+}
+.hover-red:hover{
   color:red;
+  
   border:1px solid red;
 }
