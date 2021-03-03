@@ -3,9 +3,11 @@ import App from "src/App";
 import Head from "next/head";
 
 export default function Home({ items }) {
+
   return (
     <>
       <Head>
+        <html lang="vi"></html>
         <title>A11 K52 Lạng Giang số 1 </title>
         <meta property="og:url" content="https://a11galery.tk" />
         <meta
