@@ -12,6 +12,7 @@ export default function Galery() {
     { view: "moment", length: 1 },
   ];
 const index = useSelector(state => state.index)
+const image=useSelector(state=>state.img)
 const dispatch = useDispatch()
 
   const [a, seta] = useState(0);
@@ -27,17 +28,14 @@ const dispatch = useDispatch()
     };
   };
   useEffect(() => {
-    let time=0;
-    switch(a){
-      case 0:time=15000;break;
-      case 2:time=15000;break;
-      default: time=60000;break
-    }
+    const data=image.filter(e=>e.view===display[a].view)
+    const timeout=(Math.ceil(data.length / display[a].length) * 6500);
+   
     const t = setTimeout(() => {
      if(!index){
       seta((a) => (a + 1) % 4);
      }
-    }, time);
+    }, timeout);
     return () => {
       clearTimeout(t);
     };

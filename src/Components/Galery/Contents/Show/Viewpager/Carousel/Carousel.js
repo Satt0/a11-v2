@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {useDispatch} from 'react-redux'
 import {getImgPath} from 'lib/ulti'
-import Image from 'next/image'
 export default function Carousel({ length, view, img }) {
   const dispatch = useDispatch()
 
@@ -64,8 +63,8 @@ export default function Carousel({ length, view, img }) {
           ></div>
         ))}
       </div>
-      {data.map((e, i) => (
-        <div
+      {data.map((e, i) =>{
+        return (<div
         onClick={()=>{
               if(e.hasInfor){
                 dispatch({type:'updateIndex',payload:e.id})
@@ -82,7 +81,7 @@ export default function Carousel({ length, view, img }) {
               Math.random() * 256
             )}, 0.6) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px`,
           }}
-          title="Click to toggle animation."
+          title={e.name+' (Click)'}
           className={on ? "script-bf-box animated" : "script-bf-box"}
         >
           <img className="rope" alt="rope" src="/rope.jpg" />
@@ -96,14 +95,16 @@ export default function Carousel({ length, view, img }) {
               backgroundImage: `url("${getImgPath(e.img[0].url)}")`,
             }}
           >
+            <div className="content-carousel-slider left"></div>
+            <div className="content-carousel-slider right"></div>
             {/* <Image alt={e.name} src={getImgPath(e.img[0].url)} height={e.img[0].height} width={e.img[0].width} layout="responsive"/> */}
                                {!e.hasInfor? <p className="text-title">{e.name}</p>:""}
 
 
           </div>
 
-        </div>
-      ))}
+        </div>)
+      })}
     </div>
   );
 }
