@@ -8,6 +8,7 @@ export default function Home({ items }) {
     <>
       <Head>
         <title>A11 K52 Lạng Giang số 1 </title>
+        
         <meta property="og:url" content="https://a11galery.tk" />
         <meta
           name="description"

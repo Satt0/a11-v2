@@ -64,6 +64,11 @@ export default function Carousel({ length, view, img }) {
         ))}
       </div>
       {data.map((e, i) =>{
+        const color=`rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
+          Math.random() * 256
+        )}, ${Math.floor(
+          Math.random() * 256
+        )}`
         return (<div
         onClick={()=>{
               if(e.hasInfor){
@@ -75,11 +80,8 @@ export default function Carousel({ length, view, img }) {
         }}
           key={i}
           style={{
-            boxShadow: `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
-              Math.random() * 256
-            )}, ${Math.floor(
-              Math.random() * 256
-            )}, 0.6) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px`,
+            boxShadow: `${color}, 0.6) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px`,
+            border:`.6vw solid ${color},.4)`
           }}
           title={e.name+' (Click)'}
           className={on ? "script-bf-box animated" : "script-bf-box"}
@@ -93,10 +95,19 @@ export default function Carousel({ length, view, img }) {
             className="content-carousel"
             style={{
               backgroundImage: `url("${getImgPath(e.img[0].url)}")`,
+              margin:0,
+              padding:0
             }}
           >
-            <div className="content-carousel-slider left"></div>
-            <div className="content-carousel-slider right"></div>
+            <div
+            style={{backgroundColor:`${color},.5)`}}
+            className="content-carousel-slider left"></div>
+            <div
+            
+            style={{backgroundColor:`${color},.5)`,
+            
+          }}
+            className="content-carousel-slider right"></div>
             {/* <Image alt={e.name} src={getImgPath(e.img[0].url)} height={e.img[0].height} width={e.img[0].width} layout="responsive"/> */}
                                {!e.hasInfor? <p className="text-title">{e.name}</p>:""}
 
