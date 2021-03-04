@@ -2,17 +2,18 @@
 
 .Galery{
   z-index: 123123;
+  overflow: hidden;
    @extend %bg;
   border:none;
     height:100vh;
-    min-height: 600px;
+    // min-height: 600px;
     display: flex;
     flex-direction: row;
     justify-content:center;
 position: relative;
    
     .Show{
-        width:80vw;
+        width:80%;
         z-index: 2;
         height:100%;
     }
@@ -27,7 +28,7 @@ position: relative;
     {
         flex-direction: column;
         height:60vh;
-        min-height: 480px;
+        // min-height: 480px;
         justify-content: flex-start;
         
         .Show{
