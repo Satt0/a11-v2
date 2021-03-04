@@ -52,12 +52,12 @@
 
   @media only screen and(max-width:1250px) {
     flex-direction: column-reverse;
+    
     .landscape {
       display: none;
     }
     .portrait {
       display: block;
-      overflow: hidden;
       h1{
         font-size: 8vw;
 
@@ -68,7 +68,7 @@
     }
     padding: 0 !important;
     div.shared-inner {
-      height: 50%;
+      height:0100%;
     }
     .caption {
       max-width: none;

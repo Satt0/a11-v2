@@ -22,7 +22,7 @@ export default function Video() {
   return (
     <div className={`Video-Container`} id="video">
      <div className={`blur-wallpaper ${bg?"bg-black":"bg-img"}`}></div>
-      <div className="Video-Select p-1 shared-inner" style={{minWidth:300,zIndex:2}}>
+      <div className="Video-Select p-1" style={{minWidth:300,zIndex:2}}>
       <div className="landscape">
       <h1 className="title">Playing: {data[play].name}</h1>
        
@@ -37,11 +37,12 @@ export default function Video() {
          
         </div>
       </div>
-     <div className=" shared-inner overflow-hidden container-fluid p-3 d-flex h-100 flex-column justify-content-center align-items-center" style={{zIndex:2}}>
+     <div className=" shared-inner overflow-hidden container-fluid p-2 d-flex  flex-column justify-content-center align-items-center" style={{zIndex:2,height:"100%"}}>
      <div className="portrait p-0 m-0" style={{height:"30%"}}>
       <h1 className="title">Playing: {data[play].name}</h1>
        <h3 onClick={()=>{setPlay((play+1)%data.length)}}>next: {data[(play+1)%data.length].name}</h3>
       </div>
+     <div className="h-50 w-100">
      <ReactPlayer
         url={data[play].url}
         autoPlay
@@ -52,6 +53,7 @@ export default function Video() {
         onPlay={()=>{toggleBg(true)}}
         onEnded={()=>{setPlay(a=>(a+1)%data.length);toggleBg(false)}}
       />
+     </div>
      </div>
     </div>
   );
