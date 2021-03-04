@@ -20,7 +20,7 @@ export default function Video() {
   const [wish,setWish]=useState(0)
   const [bg, toggleBg] = useState(false);
   return (
-    <div className={`Video-Container d-flex`} id="video">
+    <div className={`Video-Container`} id="video">
      <div className={`blur-wallpaper ${bg?"bg-black":"bg-img"}`}></div>
       <div className="Video-Select p-1 shared-inner" style={{minWidth:300,zIndex:2}}>
       <div className="landscape">
@@ -37,8 +37,8 @@ export default function Video() {
          
         </div>
       </div>
-     <div className=" shared-inner container-fluid p-3 d-flex h-100 flex-column justify-content-center align-items-center" style={{zIndex:2}}>
-     <div className="portrait p-0 m-0">
+     <div className=" shared-inner overflow-hidden container-fluid p-3 d-flex h-100 flex-column justify-content-center align-items-center" style={{zIndex:2}}>
+     <div className="portrait p-0 m-0" style={{height:"30%"}}>
       <h1 className="title">Playing: {data[play].name}</h1>
        <h3 onClick={()=>{setPlay((play+1)%data.length)}}>next: {data[(play+1)%data.length].name}</h3>
       </div>

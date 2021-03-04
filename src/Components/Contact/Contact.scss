@@ -1,16 +1,17 @@
 @import "../../App.scss";
 .Video-Container {
   background-image: url("/contact/bg2.png");
-  padding:2vw;
+  padding: 2vw;
   overflow: hidden;
   background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+  background-position: center;
+  display:flex;
+  background-size: cover;
   position: relative;
   width: 100%;
   height: 100vh;
-min-height: 600px;
-  min-width:300px;
+  min-height: 650px;
+  min-width: 300px;
   .blur-wallpaper {
     position: absolute;
     width: 100%;
@@ -19,30 +20,29 @@ min-height: 600px;
     filter: blur(8px);
     left: 0;
     z-index: 0;
-    transition: all .3s;
-    &.bg-black{
+    transition: all 0.3s;
+    &.bg-black {
       background-color: black;
     }
-    &.bg-img{
+    &.bg-img {
       background-color: rgba(0, 0, 0, 0.5);
-  
     }
   }
-  .portrait{
-    display:none;
+  .portrait {
+    display: none;
   }
   .caption {
     max-width: 400px;
     overflow: scroll;
     height: 80%;
     background-color: rgba(0, 0, 0, 0.5);
-    
+
     font-family: $introFont;
 
     font-size: 1.4rem;
-    p{
+    p {
       max-width: 768px;
-      margin:0 auto;
+      margin: 0 auto;
     }
     // font-family: 'Courgette', cursive;
     // // font-family: 'Great Vibes', cursive;
@@ -52,11 +52,19 @@ min-height: 600px;
 
   @media only screen and(max-width:1250px) {
     flex-direction: column-reverse;
-    .landscape{
-      display:none;
+    .landscape {
+      display: none;
     }
-    .portrait{
-      display:block;
+    .portrait {
+      display: block;
+      overflow: hidden;
+      h1{
+        font-size: 8vw;
+
+      }
+      h3{
+        font-size: 6vw;
+      }
     }
     padding: 0 !important;
     div.shared-inner {
@@ -65,7 +73,7 @@ min-height: 600px;
     .caption {
       max-width: none;
       overflow: scroll;
-      height:100%;
+      height: 100%;
     }
   }
   h1 {
