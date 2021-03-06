@@ -60,8 +60,7 @@
       animation: test 1s forwards ease-out;
       will-change: transform;
       &-slider {
-        // width: 50%;
-        height: 100%;
+        width: 100%;
         margin:0;
         padding:0;
         position: absolute;
@@ -69,14 +68,8 @@
         background-color: aliceblue;
         animation: sliderLeft .8s cubic-bezier(1,-0.17,.38,1.23) forwards;
         background-color: rgb(248, 247, 229);
-        // background-image: url("/public/card/bg-leader.JPG");
-        &:nth-child(1) {
-          left: 0;
-        }
-        &:nth-child(2) {
-          right: 0;
-        }
       }
+      
       .text-title {
         position: absolute;
         bottom: 0;
@@ -92,11 +85,17 @@
     }
 
     &:nth-child(even) {
+      .content-carousel-slider{
+        bottom:0;
+      }
       &.animated {
         animation: moveup 20s ease-in-out infinite;
       }
     }
     &:nth-child(odd) {
+      .content-carousel-slider{
+        top:0;
+      }
       &.animated {
         animation: movedown 20s ease-in-out infinite;
       }
@@ -134,11 +133,13 @@
 }
 @keyframes sliderLeft {
   from {
-    width: 49.77%;
+    opacity:.7;
+    height: 100%;
 
   }
   to {
-    width: 0%;
+    opacity:.2;
+    height: 0%;
 
   }
 }

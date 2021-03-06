@@ -6,29 +6,29 @@
      display:flex;flex-direction: column;
      justify-content: space-around;
      align-items: center;
-    background-color: white ;
-    padding:15px;
+     background: linear-gradient(190deg,#ebf4fd,hsla(0,0%,100%,0) 45%);
+     padding:15px;
      .Card-container{
          position: relative;
          width:80%;
          height:22vh;
          transition:all .5s;
-         &:nth-child(even){
-             transform:rotate(2deg);
-         }
-         &:nth-child(odd){
-            transform:rotate(-2deg);
-        }
+        //  &:nth-child(even){
+        //      transform:rotate(2deg);
+        //  }
+        //  &:nth-child(odd){
+        //     transform:rotate(-2deg);
+        
        
      }
-     .Card-container.selected{
-        &:nth-child(even){
-            animation:swinging1 10s infinite;
-        }
-        &:nth-child(odd){
-            animation:swinging2 10s infinite;
-        }
-     }
+    //  .Card-container.selected{
+    //     &:nth-child(even){
+    //         animation:swinging1 10s infinite;
+    //     }
+    //     &:nth-child(odd){
+    //         animation:swinging2 10s infinite;
+    //     }
+    //  }
      @media only screen and (orientation:portrait){
          .Card-container{
              display:none;

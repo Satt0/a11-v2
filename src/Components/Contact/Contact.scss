@@ -29,7 +29,7 @@
       background-color: black;
     }
     &.bg-img {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.8);
     }
   }
   .portrait {
@@ -39,11 +39,10 @@
     max-width: 400px;
     overflow: scroll;
     height: 85%;
-    background-color: rgba(0, 0, 0, 0.5);
 
     font-family: $introFont;
 
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     p {
       max-width: 768px;
       margin: 0 auto;

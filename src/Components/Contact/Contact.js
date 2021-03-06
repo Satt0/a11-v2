@@ -24,7 +24,7 @@ export default function Video() {
       <div className={`blur-wallpaper ${bg ? "bg-black" : "bg-img"}`}></div>
 
       <div
-        className="Video-Select p-1 chared-inner"
+        className="Video-Select p-1 shared-inner"
         style={{ minWidth: 300, zIndex: 2 }}
       >
         <div className="landscape">

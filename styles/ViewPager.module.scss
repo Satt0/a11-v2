@@ -3,7 +3,7 @@
 .infor {
   font-family: $introFont;
   flex-direction: row;
-  background-color: rgba($color: #ffffff, $alpha: 1);
+  background: linear-gradient(190deg,#ebf4fd,hsla(0,0%,100%,0) 45%);
   display: flex;
   justify-content: flex-start;
   flex-wrap: nowrap;
@@ -43,8 +43,8 @@
 .imgContainer {
   height:80%;
 
-  -webkit-animation: test 0.5s ;
-	        animation: test 0.5s ;
+  -webkit-animation: test 0.5s cubic-bezier(0,.7,.38,1.23);
+	        animation: test 0.5s cubic-bezier(0,.7,.38,1.23);
   width: 50%;
   position: relative;
   // max-width: 400px;
@@ -78,8 +78,8 @@
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     width: 100%;
     font-size: 2vw;
-    animation: slideRight 0.3s forwards ease;
-  -webkit-animation: slideRight 0.3s forwards ease;
+    animation: slideRight 0.3s forwards cubic-bezier(0,.7,.38,1.23);
+  -webkit-animation: slideRight 0.3s forwards cubic-bezier(0,.7,.38,1.23);
     @media only screen and(max-width:1000px) {
       font-size: 5vw;
     }

@@ -16,10 +16,10 @@ transform: scale(0.9);
   border-radius: 5px;
   background-size: cover;
   background-position: center top;
-  box-shadow: 0px 10px 30px -5px rgba(78, 255, 24, 0.3);
-  transition: all 0.2s;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; 
+   transition: all 0.3s cubic-bezier(0,.7,.38,1.23);
   will-change: transform;
-  border: 7px solid white;
+  // border: 7px solid white;
   
   display: flex;
   flex-direction: column;
@@ -41,33 +41,34 @@ transform: scale(0.9);
     opacity: 1;
   }
 }
-.Card:hover {
-  box-shadow: 0px 30px 100px -10px rgba(7, 170, 219, 0.4);
-  transform: scale(1.07) !important;
+// .Card:hover {
+//   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+//   // box-shadow: 0px 30px 100px -10px rgba(7, 170, 219, 0.4);
+//   transform: scale(1.07) !important;
 
-  p {
-    opacity: 0;
-    user-select: none;
-  }
-}
+//   p {
+//     opacity: 0;
+//     user-select: none;
+//   }
+// }
 .Card.zoom {
-
-  border: 7px solid white;
+  box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;
+  // border: 7px solid white;
   
-  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  // border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
 
-  border-image-slice: 1;
+  // border-image-slice: 1;
  
   
 
 
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0px 30px 100px -10px rgba(255, 69, 69, 0.6);
-  p {
-    background-color: rgba(0, 0, 0, 0.1);
+  // transition: all 0.2s ease-in-out;
+  // box-shadow: 0px 30px 100px -10px rgba(255, 69, 69, 0.6);
+  // p {
+  //   background-color: rgba(0, 0, 0, 0.1);
 
-    user-select: none;
-  }
+  //   user-select: none;
+  // }
 }
 .Card.zoom:nth-child(even) {
   transform: scale(1.1)  !important;
