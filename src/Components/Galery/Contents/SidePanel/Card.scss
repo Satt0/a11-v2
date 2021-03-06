@@ -28,13 +28,16 @@ transform: scale(0.9);
   align-items: center;
   p {
     transition: 0.2s ease;
-    color: $mainColor;
-    font-family: $font2;
-    font-size: 1.4rem;
+    color: white;
+    font-family: $introFont;
+    font-size: 1.6rem;
     
-    background-color: rgba(0, 0, 0, 0.3);
+    // background-color: rgba(100, 100, 91, 0.6);
+    background-image: linear-gradient(to right,  rgba(100, 100, 91, 0.7) , transparent);
+
     width: 100%;
-    text-align: center;
+    text-align: left;
+    padding-left: 15px;
     position: absolute;
     bottom: 0;
     margin: 0;

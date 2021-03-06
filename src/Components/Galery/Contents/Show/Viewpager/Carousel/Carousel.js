@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {useDispatch} from 'react-redux'
-import {getImgPath} from 'lib/ulti'
+import { useDispatch } from "react-redux";
+import { getImgPath } from "lib/ulti";
 export default function Carousel({ length, view, img }) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const [on, switchOff] = useState(true);
   const [data, setData] = useState([]);
@@ -54,67 +54,57 @@ export default function Carousel({ length, view, img }) {
   return (
     <div className="Carousel-Container" id="carousel-id">
       <div style={{ opacity: 0, position: "absolute", zIndex: -50 }}>
-        {preload.map((e,i) => (
+        {preload.map((e, i) => (
           <div
-          key={i}
+            key={i + "sss"}
             style={{
               backgroundImage: `url("${getImgPath(e.img[0].url)}")`,
             }}
           ></div>
         ))}
       </div>
-      {data.map((e, i) =>{
-        const color=`rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
+      {data.map((e, i) => {
+        const color = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
           Math.random() * 256
-        )}, ${Math.floor(
-          Math.random() * 256
-        )}`
-        return (<div
-        onClick={()=>{
-              if(e.hasInfor){
-                dispatch({type:'updateIndex',payload:e.id})
-              }
-              else{
-                setCount(a=>(a+1)%img.length)
-              }
-        }}
-          key={i}
-          style={{
-            boxShadow: `${color}, 0.6) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px`,
-            border:`.6vw solid ${color},.4)`
-          }}
-          title={e.name+' (Click)'}
-          className={on ? "script-bf-box animated" : "script-bf-box"}
-        >
-          <img className="rope" alt="rope" src="/rope.jpg" />
-          <img className="rope" alt="rope" src="/rope.jpg" />
+        )}, ${Math.floor(Math.random() * 256)}`;
+        return (
           <div
-            key={e.id}
-            
-            
-            className="content-carousel"
-            style={{
-              backgroundImage: `url("${getImgPath(e.img[0].url)}")`,
-              margin:0,
-              padding:0
+            onClick={() => {
+              if (e.hasInfor) {
+                dispatch({ type: "updateIndex", payload: e.id });
+              } else {
+                setCount((a) => (a + 1) % img.length);
+              }
             }}
+            key={i + "ok"}
+           
+            title={e.name + " (Click)"}
+            className={on ? "script-bf-box animated" : "script-bf-box"}
           >
-            {/* <div
+            <div
+              key={e.id}
+              className="content-carousel"
+              style={{
+                backgroundImage: `url("${getImgPath(e.img[0].url)}")`,
+                boxShadow: `${color}, 0.35) 0px 15px 25px`,
+                margin: 0,
+                padding: 0,
+              }}
+            >
+              {/* <div
             style={{backgroundColor:`${color},.5)`}}
             className="content-carousel-slider left"></div> */}
-            <div
+              {/* <div
             
             style={{backgroundColor:`${color},.5)`,
             
           }}
-            className="content-carousel-slider"></div>
-            {/* <Image alt={e.name} src={getImgPath(e.img[0].url)} height={e.img[0].height} width={e.img[0].width} layout="responsive"/> */}
-                               {!e.hasInfor? <p className="text-title">{e.name}</p>:""}
-
-
+            className="content-carousel-slider"></div> */}
+              {/* <Image alt={e.name} src={getImgPath(e.img[0].url)} height={e.img[0].height} width={e.img[0].width} layout="responsive"/> */}
+              {!e.hasInfor ? <p className="text-title">{e.name}</p> : ""}
+            </div>
           </div>
-
-        </div>)
+        );
       })}
     </div>
   );
