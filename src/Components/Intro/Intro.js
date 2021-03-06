@@ -21,16 +21,16 @@ return ()=>{
   window.removeEventListener('scroll',action)
 }
 })
-useEffect(()=>{
-  console.log(state);
-  const vd=document.getElementById('myVideo')
-  if(state){
-    vd.play()
-  }
-  else{
-      vd.pause()
-  }
-},[state])
+// useEffect(()=>{
+//   console.log(state);
+//   const vd=document.getElementById('myVideo')
+//   if(state){
+//     vd.play()
+//   }
+//   else{
+//       // vd.pause()
+//   }
+// },[state])
   return (
     <div className="Intro-Container" id="intro">
       <figure className="video-container">
