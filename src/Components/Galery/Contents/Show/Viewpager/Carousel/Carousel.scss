@@ -12,12 +12,16 @@
   .script-bf-box {
     transition: all .3s cubic-bezier(0,.7,.38,1.23);
     &:nth-child(odd){
+     &.animated{
       animation: moveup 20s ease-in-out infinite;
+     }
 
     }
     &:nth-child(even){
+    &.animated{
       animation: movedown 20s ease-in-out infinite;
-      
+
+    }      
     }   
     
    

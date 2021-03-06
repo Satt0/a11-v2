@@ -91,16 +91,7 @@ export default function Carousel({ length, view, img }) {
                 padding: 0,
               }}
             >
-              {/* <div
-            style={{backgroundColor:`${color},.5)`}}
-            className="content-carousel-slider left"></div> */}
-              {/* <div
-            
-            style={{backgroundColor:`${color},.5)`,
-            
-          }}
-            className="content-carousel-slider"></div> */}
-              {/* <Image alt={e.name} src={getImgPath(e.img[0].url)} height={e.img[0].height} width={e.img[0].width} layout="responsive"/> */}
+              
               {!e.hasInfor ? <p className="text-title">{e.name}</p> : ""}
             </div>
           </div>
