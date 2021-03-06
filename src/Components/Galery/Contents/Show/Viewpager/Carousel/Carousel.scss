@@ -68,8 +68,8 @@
       border-radius: 5px;
 
       opacity: 0;
-      -webkit-animation: slide-top 1300ms ease forwards ;
-      animation: slide-top 1300ms ease forwards;
+      -webkit-animation: slide-top 1000ms ease forwards ;
+      animation: slide-top 1000ms ease forwards;
       width: 100%;
       height: 100%;
       padding: 0;
@@ -130,9 +130,9 @@
 
 @keyframes slide-top {
   0% { 
-    opacity: .2;
+    opacity: .6;
     
-    transform: translateY(-50px)  scale3d(0.96,0.96,1); }
+    transform: translateY(0)  scale3d(0.96,0.96,1); }
   
   40% { transform:  scale3d(1.01,1.01,1); }
   100% {
