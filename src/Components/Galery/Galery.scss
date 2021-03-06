@@ -6,7 +6,7 @@
    @extend %bg;
   border:none;
     height:100vh;
-    // min-height: 500px;
+    min-height: 500px;
     display: flex;
     flex-direction: row;
     justify-content:center;
@@ -27,7 +27,7 @@ background-color: whitesmoke;
     }
     @media only screen and (orientation:portrait)
     {
-        min-height: none;
+        min-height: unset;
         flex-direction: column;
         height:60vh;
         justify-content: flex-start;
