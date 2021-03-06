@@ -2,12 +2,10 @@
 
 .SidePanel{
     overflow: visible;
-   z-index: 1231231233123;
+   z-index: 10;
      display:flex;flex-direction: column;
      justify-content: space-around;
      align-items: center;
-     background: linear-gradient(190deg,#ebf4fd,hsla(0,0%,100%,0) 45%);
-     padding:15px;
      .Card-container{
          position: relative;
          width:80%;

@@ -1,52 +1,37 @@
+@import "../../../../App.scss";
+.TopPanel-Container {
+  overflow: hidden;
 
-@import '../../../../App.scss';
-.TopPanel-Container{
- overflow: hidden;
-    @media only screen and (orientation:landscape){
-        display:none
- }
-   display:block;
-   ul{
-    display:flex;
-    width:100%;
-    height:10vh;
-    min-height: 90px;
-    margin:0;
-    padding:0;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    li{
-        height:100%;
-        width:25vw;
-       font-weight: bold;
-        display: inline-block;
-        border-top: 8px solid $card2;
-        border-bottom: none ;
-        text-align: center;
-        background-color: $card1;
-        color:$card2;
-        transition: .2s ease-in-out;
-        font-size: 1rem;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        user-select: none;
-    
-        
-        p{
-            font-family:$font2 ;
-            
+  display:block;
+  height:80px;
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  @media only screen and (orientation: landscape) {
+    display: none;
+  }
+  &-bg{
+      width:30%;
+      height:100%;
+      background-position: center top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 3px;
+      box-shadow: rgba(0, 0, 0, 0.54) 0px 3px 8px;
+  }
+  &-text{
+      .text-upper{
+          font-family: $font2;
+      }
+      .text-lower{
+        font-family: $introFont;
+        font-size: 5vw;
+        white-space: nowrap;
+        span{
+            font-size: 4vw;
         }
         
-    }
-    li.lighten{
-        border-top: 8px solid $card1 ;
-        border-bottom: none ;
-        background-color: $card2;
-        color:$card1;
-    }
-    
-   }
- 
+      }
+  }
+  
 }
