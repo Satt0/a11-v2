@@ -1,5 +1,7 @@
 @import "../../App.scss";
 .Video-Container {
+  
+  
   &.black {
     color: white;
   }
@@ -35,7 +37,7 @@
     }
     &.bg-img {
       background-color: white;
-      background: linear-gradient(190deg,#a3c8ee,hsla(0,0%,100%,.8) 65%);
+      background: linear-gradient(to left,#a3c8ee,hsla(0,0%,100%,.8) 65%);
     }
   }
   .portrait {

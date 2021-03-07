@@ -3,8 +3,9 @@
 
 .Intro-Container {
   display: flex;
+  position: relative;
   transition: all .5s ease;
-
+overflow: hidden;
   height: 96vh;
   .overlay {
     position: absolute;
@@ -51,12 +52,15 @@
       transparent
     );   
      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.226);
-    font-family: $introFont;
+    font-family: $font3;
     border: none;
     h1 {
       opacity: 0;
       font-size: 5vw;
       animation: appear 0.9s 300ms forwards $time-func;
+      span{
+        font-family: $introFont;
+      }
       @media screen and(max-width:950px){
         font-size: 2rem;
       }
@@ -66,6 +70,7 @@
       padding:2px 5rem;
       border:none;
       height:5rem;
+      font-family: $introFont;
       background-image: linear-gradient(
       to right,
       rgba(176, 216, 243, 0.7),

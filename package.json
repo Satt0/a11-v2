@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "bootstrap": "^4.6.0",
     "lodash-es": "^4.17.11",
     "next": "10.0.7",

@@ -42,16 +42,16 @@ useEffect(()=>{
   return (
     <div className="Intro-Container" id="intro">
       <div className={state?'Intro-Container-inner text-inner drop-shadow':`Intro-Container-inner disappear text-inner drop-shadow`}>
-        <h1>Welcome to A11 Gallery!</h1>
+        <h1>Welcome to <span>A11</span> Gallery!</h1>
       {/* <ScrollIntoView selector="#galery"> */}
 
-<button onClick={handleClick}>Let's Go</button>
+<button data-aos="fade-in" onClick={handleClick}>Let's Go</button>
       {/* </ScrollIntoView> */}
 
 
 
       </div>
-        <div className={state?"overlay":'overlay disappear'} style={{backgroundImage:`url("/cover.jpg")`}}>
+        <div  className={state?"overlay":'overlay disappear'} style={{backgroundImage:`url("/cover.jpg")`}}>
      
           
       </div>

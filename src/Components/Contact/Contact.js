@@ -20,7 +20,7 @@ export default function Video() {
   const [wish, setWish] = useState(0);
   const [bg, toggleBg] = useState(false);
   return (
-    <div className={`Video-Container ${bg ? "black" : "white"}`} id="video">
+    <div data-aos="fade-in" className={`Video-Container ${bg ? "black" : "white"}`}>
     
       <div className={`blur-wallpaper ${bg ? "bg-black" : "bg-img"}`}></div>
 

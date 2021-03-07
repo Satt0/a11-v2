@@ -42,12 +42,17 @@ const dispatch = useDispatch()
 
  
   return (
-    <div id="galery" className="Galery" onClick={()=>{   
+    <>
+    <h2 data-aos="fade-in"  id="galery" className="label-text p-3" style={{color:'white'}}>-Galery-</h2>
+    <div data-aos="fade-in" className="Galery" onClick={()=>{   
       
-  }}>
-      <SidePanel onClick={onClick} index={a} />
-      <Show  length={display[a].length} view={display[a].view} />
-      <TopPanel onClick={onClick} index={a} />
-    </div>
+    }}>
+  
+        <SidePanel onClick={onClick} index={a} />
+        <Show  length={display[a].length} view={display[a].view} />
+        <TopPanel onClick={onClick} index={a} />
+      </div>
+    
+    </>
   );
 }

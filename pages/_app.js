@@ -3,6 +3,7 @@ import 'src/App.scss'
 import 'src/Components/Header/Header.scss'
 import 'src/Components/Intro/Intro.scss'
 import 'src/Components/Galery/Galery.scss'
+import 'aos/dist/aos.css';
 import 'src/Components/Galery/Contents/Show/Show.scss'
 import 'src/Components/Galery/Contents/Show/Viewpager/ViewPager.scss'
 import 'src/Components/Galery/Contents/Show/Viewpager/Carousel/Carousel.scss'
