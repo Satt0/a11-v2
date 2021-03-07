@@ -38,18 +38,18 @@
      
      &:nth-child(1){
        transform: translateY(-15%);
-       animation: moveup 20s infinite forwards;
+       animation: moveup 10s infinite forwards $time-func;
 
      }
      &:nth-child(2){
       transform: translateY(0);
 
-       animation: movedown 20s infinite forwards;
+       animation: movedown 10s infinite forwards $time-func;
      }
      &:nth-child(3){
       transform: translateY(15%);
 
-      animation: moveup 20s infinite forwards;
+      animation: moveup 10s infinite forwards $time-func;
     }
    }
  }
@@ -61,7 +61,7 @@
     color:rgba(116, 112, 112, 0.719);
 
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.226);
-    font-family: $font2;
+    font-family: $introFont;
     border:none;
   h1{
     opacity: 0;

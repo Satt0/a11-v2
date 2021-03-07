@@ -29,7 +29,7 @@
   }
   &.hasBg{
     opacity: 1;
-    background: linear-gradient(190deg,#a3c8ee,hsla(0,0%,100%,0) 65%);
+    background: linear-gradient(190deg,#a3c8ee,hsla(0,0%,100%,.8) 65%);
 
   }
   &.noBg{
@@ -52,10 +52,10 @@
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) ;
     border-radius:25px;
     margin-right: 2rem;
-    font-family: $font2;
+    font-family: $font1;
     border:none;
     transition: all .2s;
-    color:rgba(231, 46, 46, 0.61);
+    color:rgba(255, 255, 255, 0.61);
     background-color: rgba(203, 209, 218, 0.6);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     &.show{
@@ -87,19 +87,18 @@
     display: inline-block;
     cursor: pointer;
 
-    color:white;
+    color:rgb(46, 46, 46);
     padding:2px 2rem;
     border-radius: 20px;
-    font-weight: 500;
-    font-family: $font2;
+    font-weight: 300;
+    font-family: $font1;
     box-shadow: 0px 5px 10px transparent;
     transition: all .2s;
 
-    &:hover{
-      -webkit-box-shadow: 0px 5px 10px rgba(50, 50, 50, 1);
--moz-box-shadow: 0px 5px 10px rgba(50, 50, 50, 1);
-box-shadow: 0px 5px 10px rgba(50, 50, 50, 1);
-    }
+   
+     
+box-shadow: 0px 5px 10px rgba(50, 50, 50, .4);
+    background-color: none;
   }
   li.sound-cloud{
     background-color: orange;

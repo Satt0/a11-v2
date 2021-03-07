@@ -17,9 +17,9 @@ export default function Intro() {
         <div className="overlay" style={{backgroundImage:`url("/cover.png")`}}>
 
         </div>
-          <FlipCard order={true}/>
-          <FlipCard order={false}/>
-          <FlipCard order={true}/>
+          <FlipCard start={0} end={15}/>
+          <FlipCard start={15} end={30}/>
+          <FlipCard start={30} end={45}/>
 
           
       </div>

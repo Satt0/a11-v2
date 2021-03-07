@@ -29,7 +29,7 @@ export default function TopPanel({ onClick, index }) {
           <span>next:{list[(index + 1) % list.length].name}</span>
         </p>
       </div>
-      <div className="ml-auto mr-4">
+      <div className="ml-auto mr-0 d-flex flex-nowrap mr-3">
         <div key={"btn-left" + state1} className="button-nav" onClick={()=>{setState1(a=>a+1)}}>
           <img
             onClick={onClick((index - 1 + list.length) % list.length)}
