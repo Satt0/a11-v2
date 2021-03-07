@@ -1,140 +1,78 @@
 @import "../../App.scss";
 #header {
-  // background-color: rgba(134, 134, 134, 0.3);
-  min-height: $navHeight;
-  #music-player{
-    position: fixed;
-    transition: all .5s;
-   top:2vh;right:0;
-  @media only screen and (min-width:1200px) {
-    opacity:.5;
-    &:hover{
-      opacity:1;
-    }
-  }
-   &.nostyle {
-    // box-shadow: 0 0px 0px 0px gray;
-    // background-color: rgba(134, 134, 134, 0.1);
-    // transition: 0.10s ease;
-    transform: scale(.3) translateY(-100px);
-    opacity: 0;
-    display:none;
-  }
-  &.style {
-    // box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
-    //   rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    // transition: 0.4s ease;
-    transform: scale(1) translateY(0px);
-   
-    
-  }
-  }
-  
-display:flex;
-justify-content: center;
-align-items: center;
-transition: 0.10s ease;
   position: fixed;
-  z-index: 199999999999999;
   width: 100%;
- 
-.link-container{
+  padding-top:2rem;
+  &.hasBg{
+    opacity: 1;
+    background: linear-gradient(190deg,#a3c8ee,hsla(0,0%,100%,0) 65%);
 
-   text-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
-      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+  &.noBg{
+    opacity: 1;
+    background: linear-gradient(190deg,#a3c8ee,hsla(0,0%,100%,0) 65%);
+  }
+  padding-bottom: 2rem;
+  transition: all .6s $time-func;
+  z-index: 212124;
+  color:black;
+  font-size: 1.4rem; 
+  .main-header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .btn-toggle{
+    width:9rem;
+    padding:4px 2rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) ;
+    border-radius:25px;
+    margin-right: 2rem;
+    border:none;
+    color:gray;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  }
+}
+.dropdown{
+  
+  animation: slide-top .2s $time-func forwards;
+  position: absolute;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  height:50px;
-
-  li,p {
-    
+  text-align: center;
+  top:0; right:15rem;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  li{
+    margin-right: 3rem;
+    display: inline-block;
+  }
+  li.sound-cloud{
+    background-color: orange;
+    padding: 5px 2rem;
+    border-radius: 30px;
+    color:white
+  }
+  &.hide{
+    display: none;  
+    }
+  @media screen and(max-width:750px) {
     position: relative;
-    font-size: 1.7em;
-    @media only screen and (max-width:400px){
-      font-size: 1.2em;
+    justify-content:center;
+    flex-direction: column;
+    width:100%;
+    margin-top: 1rem;
+
+    top:unset;
+    right:unset;
+    li{
+      margin:.6rem 1rem;
     }
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.59);
-    font-weight: bolder;
-    margin-right: 15px;
-    margin-bottom: 0;
-    font-weight: 300;
-    cursor: pointer;
-    font-family: $font1;
-    color: $mainColor;
-    .song-name{
-      user-select: none;
-      transform: translateY(15px);
-      cursor: default;
-      position: absolute;
-      bottom:5px;
-      overflow: hidden;
-      width:120px;
-      
-      .name{
-        cursor: default;
-        user-select: none;
-        position: static;
-        font-size: 16px;
-        animation:moveText 10s infinite linear;
-        width:200px;
-      }
-    }
-  }
-}
-  
-.img{
-margin-top: 20px;
-  width: 60px;
-height:auto;
-
- &.on{
-  transform: translateY(50px);
-  -webkit-animation: rotating 10s linear infinite;
-  -moz-animation: rotating 10s linear infinite;
-  -ms-animation: rotating 10s linear infinite;
-  -o-animation: rotating 10s linear infinite;
-  animation: rotating 10s linear infinite;
- }
-}
-  
- 
-
-}
-.hamburger{
-  width:30px;
-  height:50px;
-  z-index: 1999999999999991;
-  display:none;
-  position: fixed;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  right:15px;
-  top:0px;
-
- 
-  transition: .4s ease;
-  cursor: pointer;
-  
-  span{
-    display: block;
-    border-bottom: 3px solid white;
-    margin-bottom: 7px;
-    border-radius: 15px;
-    transition: .3s ease-out;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.59);
+    
     
   }
-
+}
 }
 
-@keyframes moveText{
-  from{
-    transform: translateX(70%);
-  }
-  to{
-    transform: translateX(-100%);
-  }
-}

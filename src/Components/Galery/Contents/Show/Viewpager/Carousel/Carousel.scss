@@ -128,14 +128,3 @@
 
 
 
-@keyframes slide-top {
-  0% { 
-    opacity: .6;
-    
-    transform: translateY(0)  scale3d(0.96,0.96,1); }
-  
-  40% { transform:  scale3d(1.01,1.01,1); }
-  100% {
-    opacity:1;
-    transform: translateY(0)  scale3d(1,1,1); }
-}

@@ -8,6 +8,7 @@ const initialState = {
   img: [],
   index: false,
   currentIndex: 0,
+  view:'home'
 }
 
 const reducer = (state = initialState, action) => {

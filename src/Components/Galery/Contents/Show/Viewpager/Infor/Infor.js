@@ -19,7 +19,7 @@ export default function infor({ index }) {
    }
   },[next.id])
   return (
-    <div className={`${styles.infor} pt-5 pb-5 pl-2`}>
+    <div className={`${styles.infor} pt-5 pb-2 pl-2`}>
       <div
         key={infor.id + "img"}
         className={` text-center ${styles.imgContainer}`}
