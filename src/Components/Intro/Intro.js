@@ -51,8 +51,8 @@ useEffect(()=>{
 
 
       </div>
-        <div  className={state?"overlay":'overlay disappear'} style={{backgroundImage:`url("/cover.jpg")`}}>
-     
+        <div  className={state?"overlay":'overlay disappear'} >
+     <FlipCard/>
           
       </div>
         

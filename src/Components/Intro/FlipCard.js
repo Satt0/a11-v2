@@ -1,52 +1,28 @@
-
-import  { useState,useEffect } from 'react'
-import { useSpring, animated as a } from 'react-spring'
-import styles from 'styles/FlipCard.module.scss'
+import  { useState, useEffect } from 'react'
 import {useSelector} from 'react-redux'
-import {getImgPath} from 'lib/ulti'
-export default function FlipCard({start,end}) {
-  const [flipped, set] = useState(false)
-  const [current,setCurrent]=useState(()=>{
-      if(start && end ){
-            return getNext(start,end,start+3,1)
-            
-      }
-      else{
-          return 0;
-      }
-  })
+import styles from 'styles/FlipCard.module.scss'
+const slides = [
+  { id: 0, url: 'photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i' },
+  { id: 1, url: 'photo-1544572571-ab94fd872ce4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1534&q=80' },
+  { id: 2, url: 'reserve/bnW1TuTV2YGcoh1HyWNQ_IMG_0207.JPG?ixlib=rb-1.2.1&w=1534&q=80' },
+  { id: 3, url: 'photo-1540206395-68808572332f?ixlib=rb-1.2.1&w=1181&q=80' },
+]
 
-  const images=useSelector(state=>state.img).filter(e=>e.view==='girl' || e.view==='boy')
+export default function App () {
+    const img=useSelector(state=>state.img)?.filter(e=>e.view==='moment' || e.view==='teacher')
+  const [index, set] = useState(0)
  
-  useEffect(()=>{
-     const a= setInterval(()=>{
-         if(window.scrollY<(window.innerHeight-300)){
-            set(a=>!a) 
-         }
-        
-      },1050 + Math.random()*1000)
-
-      return ()=>{
-          clearInterval(a)
-      }
-  },[flipped])
-  useEffect(()=>{
-    if(flipped)
-    {
-        setCurrent(a=>getNext(start,end,a,2))
+  useEffect(() =>{
+    const a= setTimeout(() => set(state => (state + 1) % img.length), 4000)
+    return ()=>{
+        clearTimeout(a)
     }
-  },[flipped])
-  return (
-    <div key={start+'Flip-key'} className="Flip" >
-        <div  onClick={() =>{set(state => !state);console.log(flipped);}} className={`${styles.card} ${flipped?styles.flip:''}`}>
-        <div className={styles.front} style={{backgroundImage:`url("${getImgPath(images[current].img[0].url)}")`}}></div>
-        <div className={styles.back} style={{backgroundImage:`url("${getImgPath(images[getNext(start,end,current,1)].img[0].url)}")`}}>
-        </div>
-        </div>
-    </div>
-  )
-}
-
-function getNext(start,end,current,skip){
-    return current+skip>=end?start:current+skip
+  }, [index])
+  return (<div
+  key={"randomize"+img[index].id}
+    class={styles.bg}
+    style={{ backgroundImage: `url("${img[index].img[0].url}")` }}
+  />)
+    
+  
 }

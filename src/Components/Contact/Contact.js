@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ReactPlayer from "react-player/lazy";
+
 import wishes from "./wishes";
 export default function Video() {
   const data = [
@@ -19,8 +20,10 @@ export default function Video() {
   const [play, setPlay] = useState(0);
   const [wish, setWish] = useState(0);
   const [bg, toggleBg] = useState(false);
+
+  
   return (
-    <div data-aos="fade-in" className={`Video-Container ${bg ? "black" : "white"}`}>
+    <div className={`Video-Container ${bg ? "black" : "white"}`}>
     
       <div className={`blur-wallpaper ${bg ? "bg-black" : "bg-img"}`}></div>
 

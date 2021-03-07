@@ -54,14 +54,16 @@
     margin-right: 2rem;
     font-family: $font1;
     border:none;
-    font-weight: 400;
+    font-weight: 300;
     transition: all .2s;
     color:rgb(46, 46, 46);
+
     background-color: rgba(255, 255, 255, 0.137);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     &.show{
       
-     
+      color:rgb(133, 116, 116);
+
 
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     }
@@ -69,7 +71,7 @@
 }
 .dropdown{
   
-  // animation: slide-top .2s ease backwards;
+  animation: slide-top .2s ease backwards;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -89,17 +91,16 @@
     cursor: pointer;
     
     color:rgb(46, 46, 46);
-    padding:6px 2rem;
-    // border-radius: 20px;
+    padding:6px 2.4rem;
     font-weight: 300;
     font-family: $font1;
     transition: all .2s;
 
-   border-bottom: 2px solid transparent;
-     
+     border-radius: 4px;
     background-color: none;
     &:hover{
-      border-bottom: 2px solid gray;
+      background-color: rgba(255, 255, 255, 0.137);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 
     }
   }

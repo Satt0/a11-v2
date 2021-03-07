@@ -43,7 +43,7 @@ const dispatch = useDispatch()
  
   return (
     <>
-    <h2 data-aos="fade-in"  id="galery" className="label-text p-3" style={{color:'white'}}>-Galery-</h2>
+    <h2   id="galery" className="label-text p-3" style={{color:'white'}}>-Galery-</h2>
     <div data-aos="fade-in" className="Galery" onClick={()=>{   
       
     }}>
