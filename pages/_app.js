@@ -13,7 +13,6 @@ import 'src/Components/Contact/Contact.scss'
 import 'src/Components/Ending1/Ending1.scss'
 
 import {Provider} from 'react-redux'
-// import store from 'src/Store/Store'
 import {useStore} from 'store.js'
 function MyApp({ Component, pageProps }) {
 const store=useStore({img:pageProps.items,index:false,currentIndex:0,view:"home"})

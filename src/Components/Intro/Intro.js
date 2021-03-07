@@ -4,26 +4,55 @@ import FlipCard from './FlipCard'
 import ScrollIntoView from 'react-scroll-into-view'
 import {getImgPath} from 'lib/ulti'
 export default function Intro() {
+const [state,setState]=useState(true)
+const handleClick=()=>{
+    setState(false)
+}
+useEffect(()=>{
+  let a
+  if(!state)
+  {
+    a=setTimeout(()=>{
+     try{
+      const id=document.getElementById('galery')
+      id.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
+     }
+     catch(err){
+       
+     }
 
+    },500)
+  }
+  return ()=>{
+    clearTimeout(a)
+  }
+},[state])
+useEffect(()=>{
+  let a
+  if(!state){
+   a= setTimeout(()=>{
+      setState(true)
 
+    },1000)
+  }
+  return ()=>{
+      clearTimeout(a)
+  }
+},[state])
   return (
     <div className="Intro-Container" id="intro">
-      <div className="Intro-Container-inner text-inner drop-shadow">
-
+      <div className={state?'Intro-Container-inner text-inner drop-shadow':`Intro-Container-inner disappear text-inner drop-shadow`}>
         <h1>Welcome to A11 Gallery!</h1>
-<ScrollIntoView selector="#galery">
-<button>Let's Go</button>
+      {/* <ScrollIntoView selector="#galery"> */}
 
-</ScrollIntoView>
+<button onClick={handleClick}>Let's Go</button>
+      {/* </ScrollIntoView> */}
+
+
+
       </div>
-        <div className="overlay" style={{backgroundImage:`url("/cover.jpg")`}}>
-      {/* <div className="Intro-Container-inner FlipBox">
-
-        </div>
-          <FlipCard start={0} end={15}/>
-          <FlipCard start={15} end={30}/>
-          <FlipCard start={30} end={45}/> */}
-
+        <div className={state?"overlay":'overlay disappear'} style={{backgroundImage:`url("/cover.jpg")`}}>
+     
           
       </div>
         

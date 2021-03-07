@@ -6,7 +6,7 @@
   &.white {
     color: black;
   }
-  background-image: url("/contact/bg2.png");
+  // background-image: url("/contact/bg2.png");
   padding: 2vw;
   overflow: hidden;
   background-attachment: fixed;
@@ -35,6 +35,7 @@
     }
     &.bg-img {
       background-color: white;
+      background: linear-gradient(190deg,#a3c8ee,hsla(0,0%,100%,.8) 65%);
     }
   }
   .portrait {

@@ -20,9 +20,9 @@ useEffect(()=>{
 
         <button className={!toggle?"btn-toggle show":"btn-toggle"} onClick={()=>{setToggle(a=>!a)}}>{toggle?'hide':'show'}</button>
           </div>
-        <div className={toggle?'dropdown':"dropdown hide"}>
+        <div className={toggle?'dropdown ':"dropdown hide"}>
           <ScrollIntoView selector="#intro">
-          <li className="sound-cloud">Home
+          <li >Home
           
         
           </li>
