@@ -8,7 +8,7 @@ useEffect(()=>{
   if(window.innerWidth<970){
     setToggle(false)
   }
-})
+},[])
 
   return (
     <>
