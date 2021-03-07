@@ -9,6 +9,18 @@ export default function Header() {
       setToggle(true);
     }
   }, []);
+  useEffect(()=>{
+    let a  
+    console.log(sc);
+    if(!sc){
+        a=setTimeout(()=>{
+          setSc(true)
+        },4000)
+      }
+      return ()=>{
+        clearTimeout(a)
+      }
+  },[sc])
 
   return (
     <>
