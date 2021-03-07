@@ -9,7 +9,7 @@ const slides = [
 ]
 
 export default function App () {
-    const img=useSelector(state=>state.img)?.filter(e=>e.view==='moment' || e.view==='teacher')
+    const img=useSelector(state=>state.img)?.filter(e=>e.view==='moment')
   const [index, set] = useState(0)
  
   useEffect(() =>{
@@ -22,7 +22,10 @@ export default function App () {
   key={"randomize"+img[index].id}
     class={styles.bg}
     style={{ backgroundImage: `url("${img[index].img[0].url}")` }}
-  />)
+  >
+      <div style={{ backgroundImage: `url("${img[(index+1)%img.length].img[0].url}")` }}></div>
+
+  </div>)
     
   
 }

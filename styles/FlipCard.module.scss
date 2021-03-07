@@ -6,6 +6,11 @@
   background-position: center;
   will-change: opacity;
   animation: appear 1s $time-func forwards;
+  *{
+    opacity: 0;
+    width:0;
+    height:0;
+  }
 }
 @keyframes appear{
   from {
