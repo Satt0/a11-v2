@@ -2,11 +2,11 @@ import React, { useState ,useEffect} from "react";
 import ScrollIntoView from "react-scroll-into-view";
 
 export default function Header() {
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const [sc, setSc] = useState(true);
 useEffect(()=>{
-  if(window.innerWidth<970){
-    setToggle(false)
+  if(window.innerWidth>970){
+    setToggle(true)
   }
 },[])
 
