@@ -29,7 +29,7 @@
   }
   &.hasBg{
     opacity: 1;
-    background: linear-gradient(190deg,#a3c8ee,rgba(206, 206, 206, 0.5) 65%);
+    background: linear-gradient(190deg,#a3c8ee,hsla(0,0%,100%,0) 65%);
 
   }
   &.noBg{
@@ -112,6 +112,7 @@ box-shadow: 0px 5px 10px rgba(50, 50, 50, 1);
     display: none;  
     }
   @media screen and(max-width:860px) {
+    
     position: relative;
     justify-content:center;
     flex-direction: column;
