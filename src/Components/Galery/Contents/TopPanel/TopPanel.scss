@@ -4,7 +4,7 @@
   
   background-image: linear-gradient(
     to right,
-    rgba(100, 100, 91, 0.7),
+    rgba(176, 216, 243, 0.7),
     transparent
   );
   display:block;
@@ -44,10 +44,10 @@
       }
       .text-lower{
         font-family: $introFont;
-        font-size: 5vw;
+        font-size: 1.7rem;
         white-space: nowrap;
         span{
-            font-size: 4vw;
+            font-size: 1.2rem;
         }
         
       }

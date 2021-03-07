@@ -1,11 +1,10 @@
 @import "../../App.scss";
 .Video-Container {
-  &.black{
-    color:white;
-
+  &.black {
+    color: white;
   }
-  &.white{
-    color:black;
+  &.white {
+    color: black;
   }
   background-image: url("/contact/bg2.png");
   padding: 2vw;
@@ -42,11 +41,10 @@
     display: none;
   }
   .caption {
-    
     max-width: 400px;
     overflow: scroll;
     height: 85%;
-    
+
     font-family: $introFont;
 
     font-size: 1.6rem;
@@ -55,8 +53,10 @@
       margin: 0 auto;
     }
   }
+  padding: 4rem 8vw;
+  @media only screen and(max-width:1150px) {
+    padding: 0;
 
-  @media only screen and(max-width:1250px) {
     flex-direction: column-reverse;
     justify-content: flex-end;
     height: auto;
@@ -100,7 +100,6 @@
     cursor: pointer;
     user-select: none;
     border-radius: 2px;
-    // border: 1px solid white;
     text-align: center;
   }
 }

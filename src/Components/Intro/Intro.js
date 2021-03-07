@@ -14,11 +14,14 @@ export default function Intro() {
 
       </div>
       <div className="Intro-Container-inner FlipBox">
-        <div className="overlay" style={{backgroundImage:`url("/cover.jpg")`}}>
+        <div className="overlay" style={{backgroundImage:`url("/cover.png")`}}>
 
         </div>
           <FlipCard order={true}/>
           <FlipCard order={false}/>
+          <FlipCard order={true}/>
+
+          
       </div>
         
     </div>

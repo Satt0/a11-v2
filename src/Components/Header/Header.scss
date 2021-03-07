@@ -2,10 +2,34 @@
 #header {
   position: fixed;
   width: 100%;
+  z-index: 1239812379127391283;
   padding-top:2rem;
+
+  .sound-cloud-container{
+    position: fixed;
+    right:3vw;
+    bottom:3vw;
+    button{
+      transition: all .3s ;
+      opacity: .4;
+      &:hover{
+        opacity: 1;
+      }
+      position: absolute;
+      border: none;
+      background-color: transparent;
+      right:0;
+      bottom:0;
+    }
+    .sc{
+      &.show{
+        display:none;
+      }
+    }
+  }
   &.hasBg{
     opacity: 1;
-    background: linear-gradient(190deg,#a3c8ee,hsla(0,0%,100%,0) 65%);
+    background: linear-gradient(190deg,#a3c8ee,rgba(206, 206, 206, 0.5) 65%);
 
   }
   &.noBg{
@@ -13,7 +37,7 @@
     background: linear-gradient(190deg,#a3c8ee,hsla(0,0%,100%,0) 65%);
   }
   padding-bottom: 2rem;
-  transition: all .6s $time-func;
+  transition: all .6s;
   z-index: 212124;
   color:black;
   font-size: 1.4rem; 
@@ -28,10 +52,18 @@
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) ;
     border-radius:25px;
     margin-right: 2rem;
+    font-family: $font2;
     border:none;
-    color:gray;
-    background-color: rgba(0, 0, 0, 0.1);
+    transition: all .2s;
+    color:rgba(231, 46, 46, 0.61);
+    background-color: rgba(203, 209, 218, 0.6);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    &.show{
+      color:gray;
+      transition: all .2s;
+
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    }
   }
 }
 .dropdown{
@@ -43,22 +75,43 @@
   align-items: center;
   text-align: center;
   top:0; right:15rem;
-  padding-top: 1rem;
+  padding-top: .5rem;
   margin-top: 2rem;
+  .link-container{
+    *{
+      display:inline-block;
+    }
+  }
   li{
-    margin-right: 3rem;
+    margin-right: 2rem;
     display: inline-block;
+    cursor: pointer;
+
+    color:white;
+    padding:2px 2rem;
+    border-radius: 20px;
+    font-weight: 500;
+    font-family: $font2;
+    box-shadow: 0px 5px 10px transparent;
+    transition: all .2s;
+
+    &:hover{
+      -webkit-box-shadow: 0px 5px 10px rgba(50, 50, 50, 1);
+-moz-box-shadow: 0px 5px 10px rgba(50, 50, 50, 1);
+box-shadow: 0px 5px 10px rgba(50, 50, 50, 1);
+    }
   }
   li.sound-cloud{
     background-color: orange;
     padding: 5px 2rem;
     border-radius: 30px;
-    color:white
+    color:white;
+    
   }
   &.hide{
     display: none;  
     }
-  @media screen and(max-width:750px) {
+  @media screen and(max-width:860px) {
     position: relative;
     justify-content:center;
     flex-direction: column;

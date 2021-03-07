@@ -15,31 +15,9 @@ A simple CSS preset to enable box-sizing, set some text rendering options to dec
 - website: https://github.com/tomhodgins/preset
 */
 
-* {
-  box-sizing: border-box;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-kerning: auto;
-  list-style-type: none;
-}
 
-html,
-body {
 
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
-    segoe ui, arial, sans-serif;
- 
-}
 
-*{
-  margin: 0;
-  padding:0;
-
-  &:focus {
-    outline: 0 !important;
-}
-}
 .App{
   .container{
     margin:0;padding:0;

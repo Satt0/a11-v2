@@ -1,30 +1,58 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState } from "react";
 import ScrollIntoView from "react-scroll-into-view";
 
 export default function Header() {
-  const ref = useRef(null);
   const [toggle, setToggle] = useState(false);
-  const [mouse, setMouse] = useState(false);
+  const [sc, setSc] = useState(true);
 
 
   return (
     <>
       <header id="header" className={toggle?'hasBg':'noBg'}>
           <div className="main-header">
-          <a href="#intro" className="ml-5">
-            <img src='/favicon.ico' width="60px" height="60px"/>
-          </a>
+          <ScrollIntoView selector="#intro" >
+            <img style={{cursor:'pointer'}}  className="ml-5" src='/favicon.ico' width="60px" height="60px"/>
+          </ScrollIntoView>
 
-        <button className="btn-toggle" onClick={()=>{setToggle(a=>!a)}}>{toggle?'hide':'show'}</button>
+        <button className={!toggle?"btn-toggle show":"btn-toggle"} onClick={()=>{setToggle(a=>!a)}}>{toggle?'hide':'show'}</button>
           </div>
         <div className={toggle?'dropdown':"dropdown hide"}>
-         <div>
-         <li>Intro</li>
+          <ScrollIntoView selector="#intro">
+          <li className="sound-cloud">Home
+          
+        
+          </li>
+          </ScrollIntoView>
+         <div className="link-container">
+
+          <ScrollIntoView selector="#galery">
+          <li>Intro</li>
+
+          </ScrollIntoView>
+          <ScrollIntoView selector="#video">
+
           <li>Video</li>
+          </ScrollIntoView>
          </div>
-          <li className="sound-cloud">Sound Cloud</li>
         </div>
-       
+        <div className="sound-cloud-container">
+          <button
+          title="click to open sound cloud"
+            onClick={()=>{
+              setSc(a=>!a)
+            }}
+          ><img src="/sc.png" alt="soundclound icon" width="32px" height="32px"/></button>
+         <iframe
+          className={sc?'sc show':'sc hide'}
+            width="300px"
+            height="400px"
+            scrolling="no"
+            frameBorder="no"
+            allow="autoplay"
+            title="Sound clound"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/929815216&color=%23444444&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+          ></iframe>
+         </div>
       </header>
      
     </>
