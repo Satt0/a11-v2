@@ -30,7 +30,6 @@ const dispatch = useDispatch()
   useEffect(() => {
     const data=image.filter(e=>e.view===display[a].view)
     const timeout=(Math.ceil(data.length / display[a].length) * 6500);
-   console.log(timeout);
     const t = setTimeout(() => {
      if(!index){
       seta((a) => (a + 1) % 4);

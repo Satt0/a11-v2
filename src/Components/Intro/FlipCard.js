@@ -8,7 +8,7 @@ export default function FlipCard({start,end}) {
   const [flipped, set] = useState(false)
   const [current,setCurrent]=useState(()=>{
       if(start && end ){
-            return Math.floor(Math.random()*(end-start))+start
+            return getNext(start,end,start+3,1)
             
       }
       else{
@@ -39,8 +39,8 @@ export default function FlipCard({start,end}) {
   return (
     <div key={start+'Flip-key'} className="Flip" >
         <div  onClick={() =>{set(state => !state);console.log(flipped);}} className={`${styles.card} ${flipped?styles.flip:''}`}>
-        <div className={styles.front} style={{backgroundImage:`url("${images[current].img[0].url}")`}}></div>
-        <div className={styles.back} style={{backgroundImage:`url("${images[getNext(start,end,current,1)].img[0].url}")`}}>
+        <div className={styles.front} style={{backgroundImage:`url("${getImgPath(images[current].img[0].url)}")`}}></div>
+        <div className={styles.back} style={{backgroundImage:`url("${getImgPath(images[getNext(start,end,current,1)].img[0].url)}")`}}>
         </div>
         </div>
     </div>

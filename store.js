@@ -23,6 +23,9 @@ const reducer = (state = initialState, action) => {
   {
       return {...state,index:false}
   }
+  else if(action.type==='changeView'){
+    return {...state,view:action.payload}
+  }
 return state
 }
 
