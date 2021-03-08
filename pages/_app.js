@@ -16,7 +16,15 @@ import 'src/Components/Ending1/Ending1.scss'
 import {Provider} from 'react-redux'
 import {useStore} from 'store.js'
 function MyApp({ Component, pageProps }) {
-const store=useStore({img:pageProps.items,index:false,currentIndex:0,view:"home"})
+const store=useStore({img:pageProps.items,index:false,currentIndex:0,view:"home",
+currentTheme:'pink',
+theme:{
+  blue:'rgba(176, 216, 243',
+  pink:'rgba(243, 176, 243',
+  purple:'rgba(218, 176, 243'
+}
+
+})
   return (<Provider store={store}>
     <Component {...pageProps} />
   </Provider>)

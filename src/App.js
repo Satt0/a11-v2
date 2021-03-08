@@ -19,7 +19,6 @@ export default function App() {
 
       <Intro />
       <Galery />
-      <h2  id="video" className="label-text p-3"> -Video-</h2>
 
       <Video />
       <Ending1 />

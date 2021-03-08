@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ScrollIntoView from "react-scroll-into-view";
-
+import {useSelector,useDispatch} from 'react-redux'
 export default function Header() {
+  const currentTheme=useSelector(state=>state.currentTheme)
+  const theme=useSelector(state=>state.theme)
+  const dispatch = useDispatch()
   const [toggle, setToggle] = useState(false);
   const [sc, setSc] = useState(true);
   useEffect(() => {
@@ -27,7 +30,8 @@ export default function Header() {
       <header
       
         id="header"
-        className={toggle ? "hasBg" : "noBg"}
+        className={toggle ? "" : "noBg"}
+        style={{background:toggle?`linear-gradient(190deg,${theme[currentTheme]},.4),hsla(0,0%,100%,.8) 65%)`:`linear-gradient(190deg,${theme[currentTheme]},.1),hsla(0,0%,100%,0) 35%)`}}
       >
         <div className="main-header">
           <ScrollIntoView selector="#intro">
@@ -50,9 +54,9 @@ export default function Header() {
           </button>
         </div>
         <div className={toggle ? "dropdown " : "dropdown hide"}>
-          <ScrollIntoView selector="#intro">
+          {/* <ScrollIntoView selector="#intro">
             <li>Home</li>
-          </ScrollIntoView>
+          </ScrollIntoView> */}
           <div className="link-container">
             <ScrollIntoView selector="#galery">
               <li>Intro</li>
@@ -60,6 +64,11 @@ export default function Header() {
             <ScrollIntoView selector="#video">
               <li>Video</li>
             </ScrollIntoView>
+              <li
+              onClick={()=>{
+                dispatch({type:'changeTheme',payload:currentTheme})
+              }}
+              >change Theme</li>
           </div>
         </div>
         <div className="sound-cloud-container">

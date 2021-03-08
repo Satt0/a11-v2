@@ -13,6 +13,8 @@ export default function Galery() {
   ];
 const index = useSelector(state => state.index)
 const image=useSelector(state=>state.img)
+const theme=useSelector(state=>state.theme);
+const curTheme=useSelector(state=>state.currentTheme)
 const dispatch = useDispatch()
 
   const [a, seta] = useState(0);
@@ -43,8 +45,14 @@ const dispatch = useDispatch()
  
   return (
     <>
-    <h2   id="galery" className="label-text p-3" style={{color:'white'}}>-Galery-</h2>
-    <div data-aos="fade-in" className="Galery" onClick={()=>{   
+    <h2  
+        style={{background:`linear-gradient(to right,${theme[curTheme]},.3),hsla(0,0%,100%,.8) 35%)`}}
+
+    id="galery" className="label-text p-3">-Galery-</h2>
+    <div
+    style={{background:`linear-gradient(to right,${theme[curTheme]},.3),hsla(0,0%,100%,.8) 35%)`}}
+    
+    data-aos="fade-in" className="Galery" onClick={()=>{   
       
     }}>
   

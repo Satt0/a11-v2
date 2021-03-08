@@ -86,6 +86,7 @@
     }
   }
   li{
+    user-select: none;
     margin-right: 2rem;
     display: inline-block;
     cursor: pointer;
@@ -108,7 +109,7 @@
   &.hide{
     display: none;  
     }
-  @media screen and(max-width:860px) {
+  @media screen and(max-width:1200px) {
     
     position: relative;
     justify-content:center;
