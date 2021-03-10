@@ -10,14 +10,14 @@ overflow: hidden;
   .overlay {
     position: absolute;
     opacity: .9;
-    filter: blur(6px) brightness(90%);
+    filter: blur(3px) grayscale(25%);
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     transition:inherit;
     &.disappear{
-      filter: blur(1px) brightness(100%);
+      filter: blur(1px) ;
 
     }
   }
@@ -50,7 +50,7 @@ overflow: hidden;
     h1 {
       opacity: 0;
       font-size: 5vw;
-      animation: appear 5.9s 300ms forwards $time-func infinite ;
+      animation: appear 7.9s 300ms forwards ease infinite ;
       span{
         font-family: $introFont;
       }
@@ -79,38 +79,19 @@ overflow: hidden;
     }
 
   }
-  // @media screen and(max-width:950px) {
-  //   flex-direction: column-reverse;
-  //   &-inner {
-  //     width: 100%;
-  //     height: 75%;
-  //   }
-  //   .text-inner {
-  //     // background: linear-gradient(
-  //     //   190deg,
-  //     //   #fafcff,
-  //     //   rgba(255, 255, 255, 0.1) 65%
-  //     // );
 
-  //     height: 35%;
-  //     width: 100%;
-  //   }
-  //   .FlipBox {
-  //     //  position: relative;;
-  //     .overlay {
-  //       background-image: url("/cover.jpg") !important;
-  //       background-position: center center;
-  //     }
-  //   }
-  // }
 }
 
 @keyframes appear {
-  from {
+  0% {
     opacity: 0.3;
-    transform: translateY(25%);
+    transform: translateY(0);
   }
-  to {
+  50%{
+    opacity:1;
+    transform: translateY(-25%);
+  }
+  100% {
     opacity: 1;
 
     transform: translateY(0);

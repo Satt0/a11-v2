@@ -57,6 +57,7 @@ export default function Intro() {
         </h1>
 
         <button 
+        data-aos="fade-in"
         style={{backgroundImage:` linear-gradient(
           to right,
           ${color}, 0.3),
