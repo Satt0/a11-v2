@@ -53,7 +53,7 @@ export default function Carousel({ length, view, img }) {
     };
   });
   return (
-    <div className="Carousel-Container" id="carousel-id"  style={{touchAction:"none"}}>
+    <div className="Carousel-Container" id="carousel-id" >
       <div style={{ opacity: 0, position: "absolute", zIndex: -50 }}>
         {preload.map((e, i) => (
           <div

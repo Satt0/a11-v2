@@ -1,22 +1,12 @@
 import { useState, useEffect } from "react";
-import {useDrag} from 'react-use-gesture'
 import {useColor} from 'lib/hook'
 
 export default function TopPanel({ onClick, index }) {
   const [current, setCurrent] = useState(0);
   const [state1, setState1] = useState(0);
   const [state2, setState2] = useState(0);
-  const [ges,setGes]=useState(false)
   const color=useColor()
-  const bind = useDrag(({ down, movement: [mx, my] }) => {
-    // set({ x: down ? mx : 0, y: down ? my : 0 })
-    if(mx>10){
-
-        setGes(true)
-      console.log('ok');
-    }
-
-  })
+ 
   const list = [
     { name: "Teachers", img: "/card/bg-teacher.jpg" },
     { name: "Girls", img: "/card/bg-girl.JPG" },
@@ -26,20 +16,9 @@ export default function TopPanel({ onClick, index }) {
   useEffect(() => {
     setCurrent(index);
   }, [index]);
-  useEffect(()=>{
-    let a;  
-    if(ges){
-        a=setTimeout(()=>{
-          onClick((index + 1) % list.length)()
-          setGes(false)
-        },200)
-      }
-      return ()=>{
-        clearTimeout(a)
-      }
-  },[ges])
+
   return (
-    <div className="TopPanel-Container pb-2" {...bind()} style={{touchAction:"none",userSelect:'none',
+    <div className="TopPanel-Container pb-2" style={{userSelect:'none',
     
     backgroundImage:`linear-gradient(
       to right,
