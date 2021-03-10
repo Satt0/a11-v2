@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getImgPath } from "lib/ulti";
+import {useColor} from 'lib/hook'
 export default function Carousel({ length, view, img }) {
   const dispatch = useDispatch();
-
+  const color=useColor()
   const [on, switchOff] = useState(true);
   const [data, setData] = useState([]);
   const [preload, setPreload] = useState([]);
@@ -52,7 +53,7 @@ export default function Carousel({ length, view, img }) {
     };
   });
   return (
-    <div className="Carousel-Container" id="carousel-id">
+    <div className="Carousel-Container" id="carousel-id"  style={{touchAction:"none"}}>
       <div style={{ opacity: 0, position: "absolute", zIndex: -50 }}>
         {preload.map((e, i) => (
           <div
@@ -64,9 +65,9 @@ export default function Carousel({ length, view, img }) {
         ))}
       </div>
       {data.map((e, i) => {
-        const color = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
-          Math.random() * 256
-        )}, ${Math.floor(Math.random() * 256)}`;
+        // const color = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
+        //   Math.random() * 256
+        // )}, ${Math.floor(Math.random() * 256)}`;
         return (
           <div
             onClick={() => {
@@ -86,7 +87,7 @@ export default function Carousel({ length, view, img }) {
               className="content-carousel"
               style={{
                 backgroundImage: `url("${getImgPath(e.img[0].url)}")`,
-                boxShadow: `${color}, 0.35) 0px 15px 25px`,
+                boxShadow: `${color}, 0.7) 0px 15px 25px`,
                 margin: 0,
                 padding: 0,
               }}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import SidePanel from "./Contents/SidePanel/SidePanel";
 import Show from "./Contents/Show/Show";
 import {useSelector,useDispatch} from 'react-redux'
+import {useColor} from 'lib/hook'
 import TopPanel from "./Contents/TopPanel/TopPanel";
 export default function Galery() {
     const display = [
@@ -13,8 +14,7 @@ export default function Galery() {
   ];
 const index = useSelector(state => state.index)
 const image=useSelector(state=>state.img)
-const theme=useSelector(state=>state.theme);
-const curTheme=useSelector(state=>state.currentTheme)
+const color=useColor()
 const dispatch = useDispatch()
 
   const [a, seta] = useState(0);
@@ -46,11 +46,11 @@ const dispatch = useDispatch()
   return (
     <>
     <h2  
-        style={{background:`linear-gradient(to right,${theme[curTheme]},.3),hsla(0,0%,100%,.8) 35%)`}}
+        style={{background:`linear-gradient(to right,${color},.3),hsla(0,0%,100%,.8) 35%)`}}
 
     id="galery" className="label-text p-3">-Galery-</h2>
     <div
-    style={{background:`linear-gradient(to right,${theme[curTheme]},.3),hsla(0,0%,100%,.8) 35%)`}}
+    style={{background:`linear-gradient(to right,${color},.3),hsla(0,0%,100%,.8) 35%)`}}
     
     data-aos="fade-in" className="Galery" onClick={()=>{   
       

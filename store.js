@@ -27,7 +27,6 @@ const reducer = (state = initialState, action) => {
     return {...state,view:action.payload}
   }else if(action.type==='changeTheme'){
     const arr=Object.entries(state.theme)
-    console.log(arr);
     const found=arr.findIndex(e=>e[0]===action.payload)
 
     return {...state,currentTheme:arr[(found+1)%arr.length][0]}

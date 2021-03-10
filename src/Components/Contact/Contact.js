@@ -2,8 +2,9 @@ import React, { useState,useEffect } from "react";
 import ReactPlayer from "react-player/lazy";
 import {useSelector} from 'react-redux'
 import wishes from "./wishes";
+import {useColor} from 'lib/hook'
 export default function Video() {
-
+const color=useColor()
   const data = [
     {
       name: "Kỉ hiếu (2019)",
@@ -28,7 +29,7 @@ const curTheme=useSelector(state=>state.currentTheme)
     <>
           <h2  id="video"
           
-          style={{background:!bg?`linear-gradient(to left,${theme[curTheme]},.4),hsla(0,0%,100%,.8) 65%)`:'black',color:bg?'white':''}}
+          style={{background:!bg?`linear-gradient(to left,${color},.4),hsla(0,0%,100%,.8) 65%)`:'black',color:bg?'white':''}}
 
           
           className="label-text p-3"> -Video-</h2>
@@ -37,7 +38,7 @@ const curTheme=useSelector(state=>state.currentTheme)
     
       <div className={`blur-wallpaper ${bg ? "bg-black" : "bg-img"}`}
       
-      style={{background:!bg?`linear-gradient(to left,${theme[curTheme]},.4),hsla(0,0%,100%,.8) 65%)`:''}}
+      style={{background:!bg?`linear-gradient(to left,${color},.4),hsla(0,0%,100%,.8) 65%)`:''}}
       ></div>
 
       <div

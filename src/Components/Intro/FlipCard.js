@@ -9,11 +9,11 @@ const slides = [
 ]
 
 export default function App () {
-    const img=useSelector(state=>state.img)?.filter(e=>e.view==='moment')
+    const img=useSelector(state=>state.bg)
   const [index, set] = useState(0)
  
   useEffect(() =>{
-    const a= setTimeout(() => set(state => (state + 1) % img.length), 4000)
+    const a= setTimeout(() => set(state => (state + 1) % img.length), 2000)
     return ()=>{
         clearTimeout(a)
     }
@@ -21,9 +21,9 @@ export default function App () {
   return (<div
   key={"randomize"+img[index].id}
     class={styles.bg}
-    style={{ backgroundImage: `url("${img[index].img[0].url}")` }}
+    style={{ backgroundImage: `url("${img[index].bg[0].url}")` }}
   >
-      <div style={{ backgroundImage: `url("${img[(index+1)%img.length].img[0].url}")` }}></div>
+      <div style={{ backgroundImage: `url("${img[(index+1)%img.length].bg[0].url}")` }}></div>
 
   </div>)
     
