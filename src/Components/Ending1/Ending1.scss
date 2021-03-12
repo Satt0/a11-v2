@@ -2,7 +2,7 @@
 @import '../../App.scss';
 .Ending{
    position: relative;
-    min-height:400px;
+    min-height:700px;
     height:20vh;
   .line-border{
     // border-top: 2px solid rgba(128, 128, 128, 0.301);
@@ -17,7 +17,8 @@
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-left: 20vw;
     h2{
         color:black;
         font-size: 3rem;
@@ -29,6 +30,7 @@
         font-family:  $introFont;
 
     }
+    
   
 }
 

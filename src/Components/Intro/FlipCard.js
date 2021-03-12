@@ -8,7 +8,7 @@ export default function App () {
   const [index, set] = useState(0)
  
   useEffect(() =>{
-    const a= setTimeout(() => set(state => (state + 1) % img.length), 3000)
+    const a= setTimeout(() => set(state => (state + 1) % img.length), 6000)
     return ()=>{
         clearTimeout(a)
     }
@@ -18,7 +18,6 @@ export default function App () {
     className={styles.bg}
     style={{ backgroundImage: `url("${img[index].bg[0].url}")` }}
   >
-      <div style={{ backgroundImage: `url("${img[(index+1)%img.length].bg[0].url}")` }}></div>
 
   </div>)
     

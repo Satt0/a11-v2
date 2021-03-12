@@ -1,4 +1,4 @@
-@import "/src/helpers/variables";
+@import "src/App.scss";
 
 .infor {
   font-family: $introFont;
@@ -18,9 +18,11 @@
    min-width: 5vw;
    margin-right: 1vw;
    min-height: 3vw;
-   
-    cursor: pointer;
+   font-family: $font1;
+   cursor: pointer;
   h3  {
+    font-weight: 200;
+
       font-size: 2.3vw;
       @media screen  and (max-width:1000px){
         font-size: 1.3em;
