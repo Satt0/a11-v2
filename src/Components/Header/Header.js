@@ -8,9 +8,9 @@ export default function Header() {
   const [toggle, setToggle] = useState(false);
   const [sc, setSc] = useState(true);
   useEffect(() => {
-    if (window.innerWidth > 970) {
-      setToggle(true);
-    }
+   let a= setInterval(()=>{
+    dispatch({type:'changeTheme',payload:currentTheme})
+   },20000)
   }, []);
   useEffect(()=>{
     let a  
