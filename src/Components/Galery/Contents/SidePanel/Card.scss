@@ -11,6 +11,8 @@
   min-height: 100px;
   position: absolute;
   transform: scale(0.9);
+  filter:  saturate(70%) ;
+
   cursor: pointer;
   border-radius: 5px;
   background-size: cover;
@@ -45,6 +47,8 @@
 }
 
 .Card.zoom {
+  filter:  saturate(120%) ;
+
   box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;
 
   transform: scale(1.05) !important;

@@ -6,6 +6,7 @@ import {useColor} from 'lib/hook'
 export default function Intro() {
   const color=useColor()
   const [state, setState] = useState(true);
+  const [delay,setDelay]=useState(false)
   const theme = useSelector((state) => state.theme);
   const curTheme = useSelector((state) => state.currentTheme);
   const handleClick = () => {
@@ -40,6 +41,14 @@ export default function Intro() {
       clearTimeout(a);
     };
   }, [state]);
+  useEffect(()=>{
+    const a=setTimeout(()=>{
+      setDelay(true)
+    },1000)
+    return ()=>{
+      clearTimeout(a)
+    }
+  },[])
   return (
     <div className="Intro-Container" id="intro">
       <div
@@ -47,7 +56,7 @@ export default function Intro() {
           backgroundImage: ` linear-gradient(180deg,${theme[curTheme]},.4), transparent)`,
         }}
         className={
-          state
+          state && delay
             ? "Intro-Container-inner text-inner drop-shadow"
             : `Intro-Container-inner disappear text-inner drop-shadow`
         }

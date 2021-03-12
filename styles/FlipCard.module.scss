@@ -6,9 +6,9 @@
   display: inline-block;
   position: relative;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   will-change: opacity;
-  background-attachment: fixed;
+  // background-attachment: fixed;
   animation: appear 1s linear forwards;
   *{
     opacity: 0;

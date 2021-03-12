@@ -52,7 +52,7 @@ const dispatch = useDispatch()
     <div
     style={{background:`linear-gradient(to right,${color},.3),hsla(0,0%,100%,.8) 35%)`}}
     
-    data-aos="fade-in" className="Galery" onClick={()=>{   
+     className="Galery" onClick={()=>{   
       
     }}>
   
