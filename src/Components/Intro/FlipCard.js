@@ -23,7 +23,7 @@ export default function App () {
     className={styles.bg}
     style={{ backgroundImage: `url("${img[index].bg[0].url}")` }}
   >
-
+          <div style={{width:0,height:0,overflow:'hidden',backgroundImage: `url("${img[(index+1)%img.length].bg[0].url}")`}}></div>
   </div>)
     
   
