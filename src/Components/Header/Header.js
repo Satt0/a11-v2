@@ -11,6 +11,7 @@ export default function Header() {
    let a= setInterval(()=>{
     dispatch({type:'changeTheme',payload:currentTheme})
    },20000)
+   return (()=>{clearInterval(a)})
   }, []);
   useEffect(()=>{
     let a  
