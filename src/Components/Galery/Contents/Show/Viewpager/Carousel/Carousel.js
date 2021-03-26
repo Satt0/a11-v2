@@ -11,6 +11,7 @@ export default function Carousel({ length, view, img }) {
   const [count, setCount] = useState(Math.floor(Math.random() * img.length));
   useEffect(() => {
     let a;
+
     if (on) {
       a = setInterval(() => {
         setCount((a) => (a + length) % img.length);
@@ -20,7 +21,7 @@ export default function Carousel({ length, view, img }) {
     return () => {
       clearInterval(a);
     };
-  }, [view, length, img, on]);
+  }, [view, length, img, on,count]);
   useEffect(() => {
     const list = [];
     const pre = [];

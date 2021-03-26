@@ -7,15 +7,14 @@ export default function Header() {
   const dispatch = useDispatch()
   const [toggle, setToggle] = useState(false);
   const [sc, setSc] = useState(true);
-  useEffect(() => {
-   let a= setInterval(()=>{
-    dispatch({type:'changeTheme',payload:currentTheme})
-   },20000)
-   return (()=>{clearInterval(a)})
-  }, []);
+  // useEffect(() => {
+  //  let a= setInterval(()=>{
+  //   dispatch({type:'changeTheme',payload:currentTheme})
+  //  },20000)
+  //  return (()=>{clearInterval(a)})
+  // }, []);
   useEffect(()=>{
     let a  
-    console.log(sc);
     if(!sc){
         a=setTimeout(()=>{
           setSc(true)
@@ -102,45 +101,3 @@ export default function Header() {
   );
 }
 
-// <figure
-//           id="music-player"
-//           className={!toggle ? "style mr-2 mt-5" : "nostyle"}
-//           onMouseEnter={() => {
-//             setMouse(true);
-//             console.log("ok");
-//           }}
-//           onMouseLeave={() => {
-//             setMouse(false);
-//           }}
-//           ref={ref}
-//         >
-//           <iframe
-//             width="100%"
-//             height="450"
-//             scrolling="no"
-//             frameBorder="no"
-//             allow="autoplay"
-//             title="Sound clound"
-//             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/929815216&color=%23444444&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-//           ></iframe>
-
-//         </figure>
-
-//         <div className="link-container w-100">
-//           <ScrollIntoView selector="#galery" className="ml-2">
-//             <li>Intro</li>
-//           </ScrollIntoView>
-
-//           <ScrollIntoView selector="#video">
-//             <li>Video</li>
-//           </ScrollIntoView>
-//           <li
-//             className="ml-auto"
-//             onClick={() => {
-//               setToggle((state) => !state);
-//             }}
-//           >
-
-//             {toggle ? "Hiện SoundCloud" : "Ẩn SoundCloud"}
-//           </li>
-//         </div>

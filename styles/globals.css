@@ -18,6 +18,9 @@ button:focus{
   outline: none;
   
 }
+html {
+  scroll-behavior: smooth;
+}
 .hover,.hover-red{
   transition: all .2s;
   /* border: 1px solid black; */
