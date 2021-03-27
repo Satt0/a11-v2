@@ -24,7 +24,12 @@ const color=useColor()
   const [bg, toggleBg] = useState(false);
 const theme=useSelector(state=>state.theme);
 const curTheme=useSelector(state=>state.currentTheme)
-  
+  useEffect(()=>{
+    if(bg){
+      const player=document.getElementById('video')
+      player.scrollIntoView({behavior:"smooth",block:'start'})
+    }
+  },[bg])
   return (
     <>
           <h2  id="video"

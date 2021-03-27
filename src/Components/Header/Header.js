@@ -33,15 +33,21 @@ export default function Header() {
         className={toggle ? "" : "noBg"}
         style={{background:toggle?`linear-gradient(190deg,${theme[currentTheme]},.4),hsla(0,0%,100%,.8) 65%)`:`linear-gradient(190deg,${theme[currentTheme]},.1),hsla(0,0%,100%,0) 35%)`}}
       >
-        <div className="main-header">
+        <div className="main-header" >
           <ScrollIntoView selector="#intro">
+            <div id="brand-logo" className="ml-5 ">  
             <img
               style={{ cursor: "pointer" }}
-              className="ml-5"
+              
+              
               src="/favicon.ico"
               width="60px"
               height="60px"
             />
+            <p
+            
+            >A11 Family</p>
+            </div>
           </ScrollIntoView>
 
           <button
