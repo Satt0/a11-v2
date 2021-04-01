@@ -20,7 +20,7 @@ A simple CSS preset to enable box-sizing, set some text rendering options to dec
 
 
 .App{
-  animation: appear 1s linear forwards;
+ 
   .container{
     margin:0;padding:0;
     width:100vw;
@@ -28,11 +28,3 @@ A simple CSS preset to enable box-sizing, set some text rendering options to dec
   }
 }
 
-@keyframes appear{
-  from {
-    filter:saturate(0%);
-  }
-  to{
-    filter:saturate(100%);
-  }
-}
