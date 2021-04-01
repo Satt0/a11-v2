@@ -11,7 +11,7 @@
   background-color: transparent;
 
   .script-bf-box {
-
+    
     display:none;
     transition: all .3s cubic-bezier(0,.7,.38,1.23);
     &:nth-child(odd){
@@ -53,7 +53,7 @@
     }
     .content-carousel {
       border-radius: 5px;
-
+      overflow: hidden;
       opacity: 0;
       -webkit-animation: slide-top 1000ms ease forwards ;
       animation: slide-top 1000ms ease forwards;
@@ -63,10 +63,13 @@
       margin: 0;
       z-index: 121234;
       will-change: inherit;
-
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
+.bg-main{
+  opacity: 0;
+  animation: fade-in 1.4s forwards cubic-bezier(.51,1.05,.59,.99);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
       will-change: transform;
       
     

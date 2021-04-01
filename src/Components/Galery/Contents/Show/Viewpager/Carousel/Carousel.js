@@ -84,16 +84,22 @@ export default function Carousel({ length, view, img }) {
             className={on ? "script-bf-box animated" : "script-bf-box"}
           >
             <div
-              key={e.id}
+              key={`${view}-${i}`}
               className="content-carousel"
               style={{
-                backgroundImage: `url("${getImgPath(e.img[0].url)}")`,
+                
                 boxShadow: `${color}, 0.7) 0px 15px 25px`,
                 margin: 0,
                 padding: 0,
               }}
             >
-              
+              <div className="bg-main"
+                key={e.id}
+              style={{
+                position:'absolute',
+                width:'100%',
+                height:'100%',
+                backgroundImage: `url("${getImgPath(e.img[0].url)}")`}}></div>
               {!e.hasInfor ? <p className="text-title">{e.name}</p> : ""}
             </div>
           </div>
