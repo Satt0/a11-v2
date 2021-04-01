@@ -86,7 +86,7 @@ const curTheme=useSelector(state=>state.currentTheme)
             next: {data[(play + 1) % data.length].name}
           </h3>
         </div>
-        <div className="container-fluid video-container">
+        <div className="container-fluid video-container" id="video-player-container">
           <ReactPlayer
             url={data[play].url}
             autoPlay
