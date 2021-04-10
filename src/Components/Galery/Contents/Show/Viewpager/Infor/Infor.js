@@ -21,7 +21,7 @@ export default function infor({ index }) {
    }
   },[next.id])
   return (
-    <div className={`${styles.infor} pt-5 pb-2 pl-2`}>
+    <div className={`${styles.infor}`}>
       <div
         key={infor.id + "img"}
         className={` text-center ${styles.imgContainer}`}
@@ -35,7 +35,7 @@ export default function infor({ index }) {
       >
        
       </div>
-      <div key={infor.id} className={`${styles.information} w-100`}>
+      <div key={infor.id} className={`${styles.information}`}>
         <h2 className="h1" >-{infor.name}-</h2>
         <h2 className="h3">
           -Role: <strong>"{infor.role ?? "Thành viên chủ chốt"}"</strong>

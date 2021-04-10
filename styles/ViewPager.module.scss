@@ -2,15 +2,17 @@
 
 .infor {
   font-family: $introFont;
-  flex-direction: row;
+
   background: linear-gradient(190deg,#ebf4fd,hsla(0,0%,100%,0) 45%);
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  height: 100%;
-  @media only screen and(min-width:1000px) {
-    padding-left: 10% !important;
+  padding:2vw 5vw;
+  @media screen and(max-width:900px) {
+    padding:2vw 1vw;
   }
+  display:grid;
+ grid-template-columns: 1fr 1fr;
+
+  height: 100%;
+ 
   .nav {
    
     display: inline-block;
@@ -47,13 +49,14 @@
   }
 }
 .imgContainer {
-  height:90%;
-
+  height:100%;
+  max-width: calc(100%-20px);
+  margin:0 auto;
   -webkit-animation: test 0.5s cubic-bezier(0,.7,.38,1.23);
 	        animation: test 0.5s cubic-bezier(0,.7,.38,1.23);
   width: 100%;
   position: relative;
-  max-width: 450px;
+  
   border-radius: 6px;
 
   background-position: center top;

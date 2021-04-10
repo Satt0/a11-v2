@@ -8,25 +8,14 @@
      align-items: center;
      .Card-container{
          position: relative;
-         width:75%;
+         width:90%;
          height:20vh;
-         transition:all .5s;
-        //  &:nth-child(even){
-        //      transform:rotate(2deg);
-        //  }
-        //  &:nth-child(odd){
-        //     transform:rotate(-2deg);
+        
+       
         
        
      }
-    //  .Card-container.selected{
-    //     &:nth-child(even){
-    //         animation:swinging1 10s infinite;
-    //     }
-    //     &:nth-child(odd){
-    //         animation:swinging2 10s infinite;
-    //     }
-    //  }
+   
      @media only screen and (orientation:portrait){
          .Card-container{
              display:none;
