@@ -27,4 +27,6 @@ A simple CSS preset to enable box-sizing, set some text rendering options to dec
     margin-top: 40px;
   }
 }
-
+.classFadeIn{
+  animation:fade-in .4s ease forwards;
+}

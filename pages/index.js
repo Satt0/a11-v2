@@ -30,6 +30,7 @@ export default function Home({ items }) {
   );
 }
 export async function getStaticProps() {
+  
   const url =
     process.env.NODE_ENV === "production"
       ? "https://desolate-escarpment-45092.herokuapp.com"

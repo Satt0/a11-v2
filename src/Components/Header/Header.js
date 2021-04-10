@@ -28,10 +28,15 @@ export default function Header() {
   return (
     <>
       <header
-      
+        onMouseEnter={()=>{
+          setToggle(true)
+        }}
+        onMouseLeave={()=>{
+          setToggle(false)
+        }}
         id="header"
         className={toggle ? "" : "noBg"}
-        style={{background:toggle?`linear-gradient(190deg,${theme[currentTheme]},.4),hsla(0,0%,100%,.8) 65%)`:`linear-gradient(190deg,${theme[currentTheme]},.1),hsla(0,0%,100%,0) 35%)`}}
+        style={{opacity:toggle?'1':'0.3',background:toggle?`linear-gradient(190deg,${theme[currentTheme]},.4),hsla(0,0%,100%,.8) 65%)`:`linear-gradient(190deg,${theme[currentTheme]},.1),hsla(0,0%,100%,0) 35%)`}}
       >
         <div className="main-header" >
           <ScrollIntoView selector="#intro">

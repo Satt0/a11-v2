@@ -49,7 +49,7 @@ export default function infor({ index }) {
           }}
           className={styles.nav + " hover hover-yellow"}
         >
-          <h3>prev</h3>
+          <h3>{'<'}</h3>
         </div>
         <div
           onClick={() => {
@@ -57,7 +57,7 @@ export default function infor({ index }) {
           }}
           className={styles.nav + " hover hover-red"}
         >
-          <h3>close</h3>
+          <h3>X</h3>
         </div>
         <div
           onClick={() => {
@@ -65,7 +65,7 @@ export default function infor({ index }) {
           }}
           className={styles.nav + " hover hover-yellow"}
         >
-          <h3>next</h3>
+          <h3>{'>'}</h3>
         </div>
       </div>
         

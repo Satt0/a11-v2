@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import 'src/App.scss'
+import "animate.css/animate.min.css";
 import 'src/Components/Header/Header.scss'
 import 'src/Components/Intro/Intro.scss'
 import 'src/Components/Galery/Galery.scss'

@@ -67,8 +67,9 @@ overflow: hidden;
       border:none;
       height:5rem;
       font-family: $introFont;
-      background: transparent;
+      background: rgba(160, 149, 149, 0.397);
     border-radius: 5px;
+   
     transition: all .7s $time-func;
     &:focus{
       outline: none;
@@ -76,7 +77,7 @@ overflow: hidden;
     }
       &:hover{
             transform: scale(1.04);
-            opacity: .6;
+         
         }
     }
 

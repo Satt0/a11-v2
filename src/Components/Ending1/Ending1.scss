@@ -2,27 +2,20 @@
 @import '../../App.scss';
 .Ending{
    position: relative;
-    min-height:700px;
+    min-height:400px;
     height:20vh;
-  .line-border{
-    // border-top: 2px solid rgba(128, 128, 128, 0.301);
-    width:100%;
-    position: absolute;
-    top:0;
-    left:0;
-    // margin: 0 3rem;
 
-  }
+ 
    
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    padding-left: 20vw;
+    align-items: center;
+  
     h2{
-        color:black;
+        color:rgba(0, 0, 0, 0.658);
         font-size: 3rem;
-        text-shadow: 2px 2px 2px rgba($color: #000000, $alpha: .4);
+       
 
       
     }

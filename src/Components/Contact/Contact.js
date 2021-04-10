@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import ReactPlayer from "react-player/lazy";
-import {useSelector} from 'react-redux'
+import ScrollAnimation from "react-animate-on-scroll";
+
 import wishes from "./wishes";
 import {useColor} from 'lib/hook'
 export default function Video() {
@@ -22,8 +23,7 @@ const color=useColor()
   const [play, setPlay] = useState(0);
   const [wish, setWish] = useState(0);
   const [bg, toggleBg] = useState(false);
-const theme=useSelector(state=>state.theme);
-const curTheme=useSelector(state=>state.currentTheme)
+
   useEffect(()=>{
     if(bg){
       const player=document.getElementById('video')
@@ -32,36 +32,21 @@ const curTheme=useSelector(state=>state.currentTheme)
   },[bg])
   return (
     <>
-          <h2  id="video"
-          
-          style={{background:!bg?`linear-gradient(to left,${color},.4),hsla(0,0%,100%,.8) 65%)`:'black',color:bg?'white':''}}
 
-          
-          className="label-text p-3"> -Video-</h2>
 
-    <div className={`Video-Container ${bg ? "black" : "white"}`}>
+    <div id="video"  className={`Video-Container ${bg ? "black" : "white"}`}
+    
+    >
     
       <div className={`blur-wallpaper ${bg ? "bg-black" : "bg-img"}`}
-      
-      style={{background:!bg?`linear-gradient(to left,${color},.4),hsla(0,0%,100%,.8) 65%)`:''}}
+        style={{background:!bg?`linear-gradient(to right,${color},.3),hsla(0,0%,100%,.8) 35%)`:''}}
       ></div>
 
       <div
         className="Video-Select p-1 shared-inner"
-        style={{ minWidth: 300, zIndex: 2 }}
+        style={{ minWidth: 300, zIndex: 2,display:bg?'none':'' }}
         >
-        <div className="landscape">
-          <h1 className="title">Playing: {data[play].name}</h1>
-
-          <h3
-            onClick={() => {
-              setPlay((play + 1) % data.length);
-              toggleBg(false);
-            }}
-          >
-            -next: {data[(play + 1) % data.length].name}-
-          </h3>
-        </div>
+        
         <div
           className="caption p-2"
           onClick={() => {
@@ -73,10 +58,10 @@ const curTheme=useSelector(state=>state.currentTheme)
       </div>
 
       <div
-        className=" shared-inner overflow-hidden container-fluid p-2 d-flex  flex-column justify-content-center align-items-center"
-        style={{ zIndex: 2, height: "100%" }}
+        className={` shared-inner overflow-hidden container-fluid p-2 d-flex  flex-column${bg?'-reverse':''} justify-content-center align-items-center`}
+        style={{ zIndex: 2, height: "100%", }}
         >
-        <div className="portrait p-0 m-0" style={{ height: "auto" }}>
+        <div className="portrait p-0 m-0" style={{ height: "auto"}}>
           <h1 className="title">Playing: {data[play].name}</h1>
           <h3
             onClick={() => {
@@ -86,7 +71,7 @@ const curTheme=useSelector(state=>state.currentTheme)
             next: {data[(play + 1) % data.length].name}
           </h3>
         </div>
-        <div className="container-fluid video-container" id="video-player-container">
+        <div className={bg?'on':'off'} style={{height:!bg?'45vh':'80vh',}} id="video-player-container">
           <ReactPlayer
             url={data[play].url}
             autoPlay

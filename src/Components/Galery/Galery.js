@@ -48,14 +48,14 @@ const dispatch = useDispatch()
     <h2  
         style={{background:`linear-gradient(to right,${color},.3),hsla(0,0%,100%,.8) 35%)`}}
 
-    id="galery" className="label-text p-3">-Galery-</h2>
+    id="galery" className="label-text">-Galery-</h2>
     <div
     style={{background:`linear-gradient(to right,${color},.3),hsla(0,0%,100%,.8) 35%)`}}
     
      className="Galery" onClick={()=>{   
       
     }}>
-  
+      
         <SidePanel onClick={onClick} index={a} />
         <Show  length={display[a].length} view={display[a].view} />
         <TopPanel onClick={onClick} index={a} />

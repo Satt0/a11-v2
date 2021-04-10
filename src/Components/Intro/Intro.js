@@ -17,7 +17,7 @@ export default function Intro() {
     if (!state) {
       a = setTimeout(() => {
         try {
-          const id = document.getElementById("galery");
+          const id = document.getElementById("story");
           id.scrollIntoView({
             behavior: "smooth",
             block: "start",
@@ -62,21 +62,21 @@ export default function Intro() {
         }
       >
         <h1 >
-          Welcome to <span style={{ color:`${color},.8)`}}>A11</span> Gallery!
+          Welcome to <span style={{ color:`${color},.8)`,filter:"saturate(150%)"}}>A11</span> Gallery!
         </h1>
 
         <button 
-        data-aos="fade-in"
+      
         style={{backgroundImage:` linear-gradient(
           to right,
-          ${color}, 0.3),
-          rgba(255, 255, 255, 0.76)
+          ${color}, 0.2),
+          rgba(255, 255, 255, 0.36)
         )` 
       ,
     color:`${color},1)`
     }}
-        
-        data-aos="fade-in" onClick={handleClick}>
+      
+     onClick={handleClick}>
           Let's Go
         </button>
       </div>
