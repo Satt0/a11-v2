@@ -15,7 +15,7 @@
   .nav {
    
     display: inline-block;
-    padding: 0 1.5vw;
+    padding: 0 2.5vw;
   
    margin-right: 1vw;
    
@@ -31,7 +31,7 @@
 
       font-size: 2.3vw;
       @media screen  and (max-width:1000px){
-        font-size: 1.3em;
+        font-size: 1.8rem;
       }
     }
    
@@ -39,6 +39,7 @@
   }
   .navContainer{
     position: absolute;
+
     bottom:12vh;
     left:0; 
     display:flex;
