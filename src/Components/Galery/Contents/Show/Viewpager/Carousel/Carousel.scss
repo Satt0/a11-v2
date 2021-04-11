@@ -4,6 +4,8 @@
   width: 100%;
   height: 100%;
   display: flex;
+  border: .2rem dashed #ead4c3;
+  border-radius: 3px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -23,7 +25,7 @@
     }
   }
   .script-bf-box {
-    
+   
     display:none;
     transition: all .3s cubic-bezier(0,.7,.38,1.23);
     &:nth-child(odd){

@@ -19,13 +19,14 @@
   
    margin-right: 1vw;
    
-   
+   border: 1px solid #ead4c3;
    cursor: pointer;
    border-radius: 4px;
   h3  {
     opacity: .5;
     margin:0;
-  
+   
+    color:  #ead4c3;
    font-family: 'Courier New', Courier, monospace;
 
       font-size: 2.3vw;
@@ -70,7 +71,8 @@
     left: 0px;
     bottom: -10vh;
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid #ead4c3;
+    color:  #ead4c3;
     border-radius: 3px;
     padding: 5px 15px;
     transition: all .2s;

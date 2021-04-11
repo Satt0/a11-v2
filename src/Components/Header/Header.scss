@@ -4,7 +4,7 @@
   width: 100%;
   z-index: 1239812379127391283;
   padding-top: 2rem;
-
+  background-color: #ead4c3e1;
   .sound-cloud-container {
     position: fixed;
     right: 3vw;
@@ -29,17 +29,17 @@
   }
   &.hasBg {
     opacity: 1;
-    background: linear-gradient(190deg, #a3c8ee, hsla(0, 0%, 100%, 0.8) 65%);
+  
+   
   }
   &.noBg {
     display: none;
-    // opacity: 1;
-    // background: linear-gradient(190deg, #a3c8eeb4, hsla(0, 0%, 100%, 0) 35%);
+    
   }
   padding-bottom: 2rem;
   transition: all 0.6s;
   z-index: 212124;
-  color: black;
+  color: white;
   font-size: 1.4rem;
   .main-header {
     display: flex;
@@ -54,19 +54,7 @@
       img{
         transition: inherit;
       }
-      p{
-        margin:0;
-        font-family: $introFont;
-        // background-color: rgba(255, 255, 255, 0.678);
-        background:linear-gradient(to right,rgba(255, 255, 255, 0.699),transparent);
-        padding:.5rem 2rem .5rem .8rem;
-        border-radius: 4px;
-        position: absolute;
-        white-space: nowrap;
-        color:rgba(21, 176, 223, 0.705);
-        left:50%;
-        opacity: 0;
-      }
+      
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -5px,
       rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
       transition: all .2s;
@@ -112,7 +100,7 @@
       display: inline-block;
       cursor: pointer;
       
-      color: rgb(46, 46, 46);
+      color: rgb(54, 54, 52);
       padding: 6px 2.4rem;
       font-weight: 300;
       font-family: $font1;

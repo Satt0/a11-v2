@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getImgPath } from "lib/ulti";
-import {useColor} from 'lib/hook'
+import {useColor,useScroll} from 'lib/hook'
 export default function Carousel({ length, view, img }) {
   const dispatch = useDispatch();
   const color=useColor()
+  const scroll=useScroll()
   const [on, switchOff] = useState(true);
   const [data, setData] = useState([]);
   const [preload, setPreload] = useState([]);
@@ -38,21 +39,9 @@ export default function Carousel({ length, view, img }) {
     setCount(pivot);
   }, [view, img]);
   useEffect(() => {
-    const action = () => {
-      const el = document.getElementById("carousel-id").getBoundingClientRect();
-      const windows = window.pageYOffset;
-      if (el.bottom < 50 || (el.top / windows >= 5 && el.top > 0)) {
-        switchOff(false);
-      } else {
-        switchOff(true);
-      }
-    };
-
-    window.addEventListener("scroll", action);
-    return () => {
-      window.removeEventListener("scroll", action);
-    };
-  });
+    switchOff(scroll)
+    console.log(scroll);
+  },[scroll]);
   return (
     <div className="Carousel-Container" id="carousel-id" >
       <div style={{ opacity: 0, position: "absolute", zIndex: -50 }}>

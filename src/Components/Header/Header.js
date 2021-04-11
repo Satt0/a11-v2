@@ -39,7 +39,7 @@ export default function Header() {
        
         id="header"
         className={toggle ? "" : "noBg"}
-        style={{opacity:toggle?'1':'0.3',background:toggle?`linear-gradient(190deg,${theme[currentTheme]},.4),hsla(0,0%,100%,.8) 65%)`:`linear-gradient(190deg,${theme[currentTheme]},.1),hsla(0,0%,100%,0) 35%)`}}
+        // style={{opacity:toggle?'1':'1',background:toggle?`linear-gradient(190deg,${theme[currentTheme]},.4),hsla(0,0%,100%,.8) 65%)`:`linear-gradient(190deg,${theme[currentTheme]},.1),hsla(0,0%,100%,0) 35%)`}}
       >
         <div className="main-header" >
           <ScrollIntoView selector="#intro">
@@ -52,9 +52,7 @@ export default function Header() {
               width="60px"
               height="60px"
             />
-            <p
             
-            >A11 Family</p>
             </div>
           </ScrollIntoView>
 
@@ -63,17 +61,16 @@ export default function Header() {
         <div className={"dropdown "}>
          
           <div className="link-container">
+          <ScrollIntoView selector="#story">
+              <li>Welcome</li>
+            </ScrollIntoView>
             <ScrollIntoView selector="#galery">
               <li>Intro</li>
             </ScrollIntoView>
             <ScrollIntoView selector="#video">
               <li>Video</li>
             </ScrollIntoView>
-              <li
-              onClick={()=>{
-                dispatch({type:'changeTheme',payload:currentTheme})
-              }}
-              >change Theme</li>
+             
           </div>
         </div>
         <div className="sound-cloud-container">

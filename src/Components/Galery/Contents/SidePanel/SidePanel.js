@@ -1,5 +1,6 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Card from "./Card";
+import {useScroll} from 'lib/hook'
 export default function SidePanel({ onClick, index }) {
   const list = [
     { name: "Teachers", img: "/card/bg-teacher.jpg" },
@@ -8,6 +9,22 @@ export default function SidePanel({ onClick, index }) {
     { name: "Moments", img: "/card/bg-leader.JPG" },
   ];
   const [toggle,setToggle]=React.useState(false)
+  const scroll=useScroll()
+  useEffect(()=>{
+   
+    let a
+    if(scroll===true){
+      setToggle(true)
+      
+      a=setTimeout(()=>{
+        setToggle(false)
+      },5000)
+    }
+    
+    return ()=>{
+      clearTimeout(a)
+    }
+  },[scroll])
   return (
     <div className="SidePanel">
      

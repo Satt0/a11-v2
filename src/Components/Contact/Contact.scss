@@ -1,7 +1,8 @@
 @import "../../App.scss";
 .Video-Container {
   
-  
+  border-top:.4rem dashed #ead4c3;
+  border-bottom:.4rem dashed #ead4c3;
   &.black {
     color: white;
   }

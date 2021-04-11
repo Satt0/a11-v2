@@ -34,7 +34,8 @@
       background-size: cover;
       background-repeat: no-repeat;
       border-radius: 3px;
-      box-shadow: rgba(0, 0, 0, 0.54) 0px 3px 8px;
+      border:2px dashed #ead4c3;
+     
   }
   &-text{
     animation:  slideRight .3s forwards cubic-bezier(0, 0.7, 0.38, 1.23);
