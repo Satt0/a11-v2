@@ -29,7 +29,7 @@ const reducer = (state = initialState, action) => {
     // const arr=Object.entries(state.theme)
     // const found=arr.findIndex(e=>e[0]===action.payload)
 
-    return {...ValidityState}
+    return {...state}
   }
 return state
 }
