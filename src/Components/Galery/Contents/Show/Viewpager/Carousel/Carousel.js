@@ -70,7 +70,8 @@ export default function Carousel({ length, view, img }) {
             title={e.name + " (Click)"}
             className={on ? "script-bf-box animated" : "script-bf-box"}
           >
-           
+           <img src='/rope.jpg' className="rope isLeft" />
+            <img src='/rope.jpg'  className="rope isRight" />
             <div
               key={`${view}-${i}`}
               className="content-carousel"
@@ -81,8 +82,7 @@ export default function Carousel({ length, view, img }) {
                 padding: 0,
               }}
             >
-               <img src='/rope.jpg' className="rope isLeft" />
-            <img src='/rope.jpg'  className="rope isRight" />
+               
               <div className="bg-main"
                 key={e.id}
               style={{

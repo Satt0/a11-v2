@@ -27,6 +27,7 @@
   .script-bf-box {
    
     display:none;
+    
     transition: all .3s cubic-bezier(0,.7,.38,1.23);
     &:nth-child(odd){
      &.animated{
@@ -66,6 +67,7 @@
       }
     }
     .content-carousel {
+      overflow: hidden;
       border-radius: 5px;
       background-color: white;
     

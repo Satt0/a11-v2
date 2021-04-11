@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { values } from "lodash-es";
+
 import FlipCard from "./FlipCard";
 import { useSelector } from "react-redux";
 import {useColor} from 'lib/hook'
@@ -68,12 +68,7 @@ export default function Intro() {
         <button 
       
         style={{
-      //     backgroundImage:` linear-gradient(
-      //     to right,
-      //     ${color}, 1),
-      //     rgba(255, 255, 255, 1) 45%
-      //   )` 
-      // ,
+     
     color:`${color},1)`
     }}
       
