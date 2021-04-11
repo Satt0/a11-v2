@@ -16,6 +16,7 @@
     -webkit-animation: slide-top 1000ms ease forwards ;
     animation: slide-top 1000ms ease forwards;
     display: inline-block;
+    filter:grayscale(90%);
   }
   .preload-bg{
     width:0;

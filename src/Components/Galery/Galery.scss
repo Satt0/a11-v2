@@ -20,17 +20,18 @@ position: relative;
    @media screen and (max-width:1200px) {
     padding: 3rem 2vw;
    }
+   @media screen and (max-width:1050px) {
+    padding: 0;
+   }
    
     .Show{
-        width:80%;
+        width:90%;
         z-index: 2;
         height:100%;
         overflow: visible;
     }
     .SidePanel{
-          width:20vw;
-       
-          min-width: 200px;
+        
           height:100%;
     }
     @media only screen and (orientation:portrait)

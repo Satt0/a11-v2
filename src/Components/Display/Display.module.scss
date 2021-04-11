@@ -1,14 +1,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 .container{
-    max-width:900px;
+   
 
-    padding: 3rem 5vw;
-    margin:0 auto;
+  width:100%;
+ 
     min-height:700px;
+    // background:linear-gradient(180deg,rgba(143, 4, 224, 0.562),rgba(255, 255, 255, 0.425) 40%);
+    background-size: cover;
+    background-position: center right;
 }
 .paragraph{
+    max-width:900px;
+    padding: 3rem 5vw;
+    margin:0 auto;
     text-align: center;
+    
 }
 .group{
     height:300px;

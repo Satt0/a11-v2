@@ -9,9 +9,7 @@ export default function Ending1() {
      
         <div
           className="Ending end1"
-          style={{
-            background: `linear-gradient(to right,${color},.3),hsla(0,0%,100%,.8) 35%)`,
-          }}
+         
         >
           <h2 className="h4">-The End-</h2>
         

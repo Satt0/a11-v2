@@ -27,13 +27,16 @@ export default function Header() {
 
   return (
     <>
+     <button
+            className={!toggle ? "btn-toggle show" : "btn-toggle"}
+            onClick={() => {
+              setToggle((a) => !a);
+            }}
+          >
+            {toggle ? "hide" : "show"}
+          </button>
       <header
-        onMouseEnter={()=>{
-          setToggle(true)
-        }}
-        onMouseLeave={()=>{
-          setToggle(false)
-        }}
+       
         id="header"
         className={toggle ? "" : "noBg"}
         style={{opacity:toggle?'1':'0.3',background:toggle?`linear-gradient(190deg,${theme[currentTheme]},.4),hsla(0,0%,100%,.8) 65%)`:`linear-gradient(190deg,${theme[currentTheme]},.1),hsla(0,0%,100%,0) 35%)`}}
@@ -55,19 +58,10 @@ export default function Header() {
             </div>
           </ScrollIntoView>
 
-          <button
-            className={!toggle ? "btn-toggle show" : "btn-toggle"}
-            onClick={() => {
-              setToggle((a) => !a);
-            }}
-          >
-            {toggle ? "hide" : "show"}
-          </button>
+         
         </div>
-        <div className={toggle ? "dropdown " : "dropdown hide"}>
-          {/* <ScrollIntoView selector="#intro">
-            <li>Home</li>
-          </ScrollIntoView> */}
+        <div className={"dropdown "}>
+         
           <div className="link-container">
             <ScrollIntoView selector="#galery">
               <li>Intro</li>

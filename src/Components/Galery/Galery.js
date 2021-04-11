@@ -46,11 +46,9 @@ const dispatch = useDispatch()
   return (
     <>
     <h2  
-        style={{background:`linear-gradient(to right,${color},.3),hsla(0,0%,100%,.8) 35%)`}}
 
     id="galery" className="label-text">-Galery-</h2>
     <div
-    style={{background:`linear-gradient(to right,${color},.3),hsla(0,0%,100%,.8) 35%)`}}
     
      className="Galery" onClick={()=>{   
       

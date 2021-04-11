@@ -8,7 +8,9 @@
   background-size: cover;
   background-position: center center;
   will-change: opacity;
-  // background-attachment: fixed;
+ @media screen  and(orientation:landscape){
+  background-attachment: fixed;
+ }
   animation: appear 1s linear forwards;
   *{
     opacity: 0;

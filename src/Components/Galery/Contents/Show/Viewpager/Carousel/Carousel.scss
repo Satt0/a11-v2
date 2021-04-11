@@ -8,8 +8,20 @@
   justify-content: center;
   align-items: center;
   overflow: visible;
+  padding:0 2vw;
   background-color: transparent;
-
+  .rope{
+    width:5px;
+    position: absolute;
+    z-index: -1;
+    top:-143px;
+    &.isLeft{
+      left:5%;
+    }
+    &.isRight{
+      right:5%;
+    }
+  }
   .script-bf-box {
     
     display:none;
@@ -53,7 +65,8 @@
     }
     .content-carousel {
       border-radius: 5px;
-      overflow: hidden;
+      background-color: white;
+    
       opacity: 0;
       -webkit-animation: slide-top 1000ms ease forwards ;
       animation: slide-top 1000ms ease forwards;

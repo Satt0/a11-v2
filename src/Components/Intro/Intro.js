@@ -69,8 +69,8 @@ export default function Intro() {
       
         style={{backgroundImage:` linear-gradient(
           to right,
-          ${color}, 0.2),
-          rgba(255, 255, 255, 0.36)
+          ${color}, 1),
+          rgba(255, 255, 255, 1) 45%
         )` 
       ,
     color:`${color},1)`

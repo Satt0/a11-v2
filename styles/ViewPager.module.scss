@@ -3,7 +3,6 @@
 .infor {
   font-family: $introFont;
 
-  background: linear-gradient(190deg,#ebf4fd,hsla(0,0%,100%,0) 45%);
   padding:2vw 5vw;
   @media screen and(max-width:900px) {
     padding:2vw 1vw;
@@ -55,10 +54,14 @@
   -webkit-animation: test 0.5s cubic-bezier(0,.7,.38,1.23);
 	        animation: test 0.5s cubic-bezier(0,.7,.38,1.23);
   width: 100%;
+  max-width: 30vw;
+  @media screen and(max-width:1050px) {
+    max-width: unset;
+  }
   position: relative;
   
   border-radius: 6px;
-
+    
   background-position: center top;
   background-size: cover;
   button {

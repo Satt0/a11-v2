@@ -39,7 +39,6 @@ const color=useColor()
     >
     
       <div className={`blur-wallpaper ${bg ? "bg-black" : "bg-img"}`}
-        style={{background:!bg?`linear-gradient(to right,${color},.3),hsla(0,0%,100%,.8) 35%)`:''}}
       ></div>
 
       <div

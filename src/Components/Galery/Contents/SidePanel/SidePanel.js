@@ -7,10 +7,12 @@ export default function SidePanel({ onClick, index }) {
     { name: "Boys", img: "/card/bg-boys.jpg" },
     { name: "Moments", img: "/card/bg-leader.JPG" },
   ];
-  
+  const [toggle,setToggle]=React.useState(false)
   return (
     <div className="SidePanel">
-      {list.map((e, i) => (
+     
+     <div className={`SidePanel-container ${toggle?'on':'off'}`}>
+     {list.map((e, i) => (
         <div
           key={i}
           onClick={onClick(i)}
@@ -25,6 +27,15 @@ export default function SidePanel({ onClick, index }) {
           />
         </div>
       ))}
+     </div>
+      <button
+      style={{
+        transform:`translateX(${toggle?'0':'8'}vw)`
+      }}
+      onClick={()=>{
+        setToggle(state=>!state)
+      }}
+      className="hide-side">{toggle?'hide':'show'}</button>
     </div>
   );
 }
