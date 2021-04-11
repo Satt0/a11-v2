@@ -40,7 +40,7 @@ export default function Carousel({ length, view, img }) {
   }, [view, img]);
   useEffect(() => {
     switchOff(scroll)
-    console.log(scroll);
+    
   },[scroll]);
   return (
     <div className="Carousel-Container" id="carousel-id" >
