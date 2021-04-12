@@ -50,7 +50,10 @@ export default function Intro() {
     }
   },[])
   return (
+
+    
     <div className="Intro-Container" id="intro">
+    
       <div
         style={{
           backgroundImage: ` linear-gradient(180deg,${theme[curTheme]},.4), transparent)`,
@@ -76,9 +79,12 @@ export default function Intro() {
           Let's Go
         </button>
       </div>
+    
+    
       <div className={state ? "overlay" : "overlay disappear"}>
         <FlipCard />
       </div>
     </div>
-  );
+ 
+ );
 }
