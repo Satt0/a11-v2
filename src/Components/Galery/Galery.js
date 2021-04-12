@@ -45,9 +45,7 @@ const dispatch = useDispatch()
  
   return (
     <>
-    <h2  
-
-    id="galery" className="label-text">-Galery-</h2>
+   
     <div
     
      className="Galery" onClick={()=>{   
