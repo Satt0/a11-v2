@@ -41,6 +41,9 @@
     height: 100%;
     width: 100%;
     transition: inherit;
+    &.disappear{
+      opacity: 0;
+    }
    
    
   }
@@ -52,7 +55,12 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
+    padding:0 12%;
+    @media screen and (max-width:768px) {
+      align-items: center;
+      padding:0;
+    }
     color: rgba(255, 255, 255, 0.719);
     
      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.226);
@@ -60,18 +68,28 @@
     border: none;
    
     h1 {
-      opacity: 0;
+      
       font-size: 5vw;
-      opacity: .5;
-      &:hover{
-        opacity: 1;
-      }
-      animation: appear 7.9s 300ms forwards ease infinite ;
+    
+  
+     
+      
       span{
         font-family: $introFont;
       }
       @media screen and(max-width:950px){
         font-size: 2rem;
+      }
+    }
+    em{
+      font-size: 3vw;
+    
+   
+     
+      
+     
+      @media screen and(max-width:950px){
+        font-size: 1.5rem;
       }
     }
     button{

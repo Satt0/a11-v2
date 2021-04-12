@@ -22,8 +22,9 @@ export default function App() {
       <SVG/>
       </div> */}
       <Header />
-
-      <Intro />
+      <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
+          <Intro />
+        </ScrollAnimation>
       <Parallax
        
         bgImage="/bg4.jpg"

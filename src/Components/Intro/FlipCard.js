@@ -5,19 +5,28 @@ import { getImgPath } from "lib/ulti";
 
 export default function App() {
   const img = useSelector((state) => state.bg);
+  const [data,setData]=useState([])
   const [width,setWidth]=useState(0);
-  const [index, set] = useState(() => {
-    if (img.length) {
-      return Math.floor(Math.random() * img.length);
+
+  useEffect(()=>{
+    if(img.length){
+      let arr=[...img]
+      for(let i=arr.length-1;i>=0;i--){
+          const index=Math.floor(Math.random()*i);
+          const temp=arr[i]
+          arr[i]=arr[index]
+          arr[index]=temp;
+      }
+      setData(arr)
+
     }
-    return 0;
-  });
+  },[img])
 useEffect(()=>{
   const onResize=()=>{
     if(typeof window !== undefined){
       const width=window.innerWidth;
-      console.log(width);
-      setWidth(width)
+      
+      setWidth(Math.max(width,450))
     }
   }
     window.addEventListener('resize',onResize)
@@ -30,11 +39,11 @@ useEffect(()=>{
 
   return (
     <div
-      key={"randomize" + img[index].id}
+     
       className={styles.bg}
-      style={{width:width*img.length,animationDuration:`${img.length*30}s`}}
+      style={{width:width*img.length,animationDuration:`${data.length*30}s`}}
     >
-      {img.map((e,i)=>{
+      {data.map((e,i)=>{
         return (<div
           key={"bg-carousel-"+i}
           className={styles.itemBg}
