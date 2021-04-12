@@ -69,7 +69,7 @@
             
          
           </h1>
-          <em className="h1 ml-4">-a website made from Memories-</em>
+          <em className="h1">-a website made from Memories-</em>
           <button 
           
           style={{
