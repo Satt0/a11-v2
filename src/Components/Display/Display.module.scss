@@ -1,37 +1,69 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@import 'src/App.scss';
 .container{
    
     border-top:.4rem dotted #ead4c3;
     border-bottom:.4rem dotted #ead4c3;
   width:100%;
  
-    min-height:700px;
+    
     background-size: cover;
     background-position:left;
 }
 .paragraph{
-    max-width:900px;
+    max-width:1400px;
     padding: 3rem 5vw;
     margin:0 auto;
     text-align: center;
-    
+     position: relative;
 }
 .group{
-    height:300px;
+ 
+   
     font-family: 'Comfortaa', cursive;
     text-align: left;
     font-size: 1.3rem;
     font-weight: 300;
-   
-   img{
+   strong{
+      
        width:100%;
-       height:auto;
-       display:inline-block;
-       border-radius: 4px;
-       box-shadow:      4px 4px 4px rgba(128, 128, 128, 0.548);
    }
+   
 }
-.title{
+
+.langBtn{
+    color:white;
+   
+    position:absolute;
+    background-color:$color1;
+    border:none;
+    border-radius: 2px;
+    right:5px;
+    top:15px;
+}
+.groupText{
+    display: grid;
+    margin-bottom: 2rem;
+
     
+    grid-template-columns: 40% 60%;
+    @media screen and(max-width:700px) {
+        grid-template-columns: 1fr;
+    }
+    img{
+        width:100%;
+        border-radius: 3px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transition: all .5s $time-func;
+        &:hover{
+            transform: scale(1.06);
+        }
+        
+    }
+    p{
+        
+    font-family: 'Comfortaa', cursive;
+      padding: 0 5%;
+    }
 }

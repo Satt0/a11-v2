@@ -17,7 +17,7 @@ import 'src/Components/Ending1/Ending1.scss'
 import {Provider} from 'react-redux'
 import {useStore} from 'store.js'
 function MyApp({ Component, pageProps }) {
-const store=useStore({img:pageProps.items,bg:pageProps.bg,index:false,currentIndex:0,view:"home",
+const store=useStore({img:pageProps.items,bg:pageProps.bg,posts:pageProps.posts,index:false,currentIndex:0,view:"home",
 currentTheme:'yellow',
 theme:{
   blue:'rgba(176, 216, 243',

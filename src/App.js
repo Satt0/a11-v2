@@ -18,9 +18,7 @@ export default function App() {
         background: `linear-gradient(to right,${color},.2),hsla(0,0%,100%,.9) 65%)`,
       }}
     >
-      {/* <div  style={{width:"100vw",height:'100vh',display:'flex',alignItems:'center',maxWidth:900,margin:'0 auto'}}>
-      <SVG/>
-      </div> */}
+      
       <Header />
       <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
           <Intro />
@@ -31,9 +29,9 @@ export default function App() {
         bgImageAlt="the cat"
         strength={200}
       >
-        <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
+        
           <Display />
-        </ScrollAnimation>
+       
       </Parallax>
       <Parallax
        

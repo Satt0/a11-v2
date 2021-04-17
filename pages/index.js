@@ -37,10 +37,12 @@ export async function getStaticProps() {
       : "http://localhost:1337";
   const data = fetch(`${url}/carousels`).then((res) => res.json());
   const bg= fetch(`${url}/wallpapers`).then(res=>res.json())
+  const posts= fetch(`${url}/posts`).then(res=>res.json())
   return {
     props: {
       items: await data,
-      bg:await bg
+      bg:await bg,
+      posts:await posts
     },
   };
 }

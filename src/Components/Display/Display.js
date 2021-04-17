@@ -1,24 +1,74 @@
+import styles from "./Display.module.scss";
+// import { useSelector } from "react-redux";
 
-import styles from './Display.module.scss'
+import ScrollAnimation from "react-animate-on-scroll";
 
-import {useColor} from 'lib/hook'
+import React from "react";
+const posts=[
+    {
+        title:'We Are A11 Family!',
+        img:'uploads/IMG_0540_8d6a42f7a8.JPG',
+        markdown:<>
+            Text goes here.
 
-const Display=()=>{
-const color=useColor()
-return (<div id="story" className={styles.container} 
+        </>
 
->
+    },
+    {
+        title:'We Are From LG1!',
+        img:'uploads/62013178_2265769397073980_5691405672399241216_n_2edc443686.jpg',
+        markdown:<>
+          Text goes here.
 
-        <div className={styles.paragraph} >
-           
-            <div className={styles.group}>
-               
-               <p className="text-center"> <strong style={{fontWeight:700,fontSize:'1.8rem'}} className={styles.title}>We are A11 Family!</strong></p>
-            <p style={{color:'red'}}>This is under contruction</p>
-            </div>
+        </>
+
+    },
+    {
+        title:'We Love Our People!',
+        img:'uploads/65055791_2396914737210439_5405818453481226240_n_29b0fbc380.jpg',
+        markdown:<>
+        <p>Text goes here.</p>
+
+    </>
+        
+
+    },
+]
+const Display = () => {
+ 
+
+  return (
+    <div id="story" className={styles.container}>
+      <div className={styles.paragraph}>
+        <button className={styles.langBtn} title="click to change language">
+          EN-VI
+        </button>
+        
+        <div className={styles.group}>
+          
+          
+          {
+              posts.map((e,i)=>{
+                  const isOdd=i%2==1;
+                  return (
+                          <ScrollAnimation animateOnce={true} animateIn="classSlideUp">
+
+                    <h1 className={`text-${!isOdd?'left':'right'} h3 pl-3 pr-3`}>{e.title}</h1>
+                  <div className={styles.groupText} style={{direction:isOdd?"rtl":"ltr"}}>
+                    <img src={e.img} />
+                    <p children={e.markdown}/>
+                      
+                    
+                  </div>
+
+                  </ScrollAnimation>)
+              })
+          }
+          
         </div>
-       
-</div>)
-}
+      </div>
+    </div>
+  );
+};
 
-export default Display
+export default Display;
