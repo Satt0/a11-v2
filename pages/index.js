@@ -41,7 +41,7 @@ export async function getStaticProps() {
     props: {
       items: await data,
       bg:await bg,
-      posts:[]
+    
     },
   };
 }
