@@ -51,14 +51,7 @@ const posts = {
 const Display = () => {
   const [lang, setLang] = useState(true);
   const [sticky, setSticky] = useState(false);
-  useEffect(() => {
-    const userLang = navigator.language || navigator.userLanguage;
-    if (userLang === "vi") {
-      setLang(true);
-    } else {
-      setLang(false);
-    }
-  }, []);
+  
   useEffect(() => {
     const handler = () => {
       if (typeof window !== undefined) {
