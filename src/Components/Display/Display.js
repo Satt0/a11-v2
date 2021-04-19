@@ -30,7 +30,7 @@ const posts = {
   ),
   en: (
     <>
-      <h1 className="text-center">Itroduction</h1>
+      <h1 className="text-center">Introduction</h1>
       <p>
         "Childhood, teenage or adulthood passed and gave back many great memories in
         the moving life of every one. But perhaps, Teenage or Youth is the period that we had so many things to
@@ -54,9 +54,9 @@ const Display = () => {
   useEffect(() => {
     const userLang = navigator.language || navigator.userLanguage;
     if (userLang === "vi") {
-      if (!sticky) setLang(true);
+      setLang(true);
     } else {
-      if (sticky) setLang(false);
+      setLang(false);
     }
   }, []);
   useEffect(() => {
