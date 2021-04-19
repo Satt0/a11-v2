@@ -38,7 +38,7 @@ const posts = {
         Youth as well as our friendship is so pure and beautiful .
       </p>
       <p>
-        The best memories of my youth is meeting You, studying together in A11
+        The best memory of my youth is meeting You, studying together in A11
         family. Three years, not long enough to be together, but it is enough to make a
         strong and beautiful friendship among all of us.
       </p>
