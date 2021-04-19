@@ -19,6 +19,10 @@ const color=useColor()
       name: "20/11 (2018)",
       url: "https://youtu.be/nTAOuwwOJuk",
     },
+    {
+      name:'Múa thư pháp (2016)',
+      url:"https://youtu.be/p2QbcTbFwxM"
+    }
   ];
   const [play, setPlay] = useState(0);
   const [wish, setWish] = useState(0);
