@@ -17,7 +17,7 @@ export default function Home({ items }) {
         <meta property="og:type" content="website" />
         <meta property="fb:app_id" content="your fb app id" />
         <meta property="og:title" content="A11 Offical website" />
-
+        <meta name="google-site-verification" content="lBOnPeMua7lB4A8lVICjiIC_poeNuYmHnQWEAtVj3pY" />
         <meta name="twitter:card" content="summary" />
         <meta
           property="og:description"

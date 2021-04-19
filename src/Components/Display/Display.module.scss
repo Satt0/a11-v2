@@ -1,69 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
+@import "src/App.scss";
+.container {
+  border-top: 0.4rem dotted #ead4c3;
+  border-bottom: 0.4rem dotted #ead4c3;
+  width: 100%;
 
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
-@import 'src/App.scss';
-.container{
-   
-    border-top:.4rem dotted #ead4c3;
-    border-bottom:.4rem dotted #ead4c3;
-  width:100%;
- 
+  background-size: cover;
+  background-position: left;
+}
+.paragraph {
+  font-family: $introFont;
+  max-width: 900px;
+  padding: 3rem 5vw;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.group {
+  text-align: left;
+  font-size: 1.7rem;
+  figcaption {
+    font-size: 1rem;
+    font-family: $font3;
+    background-color: $color1;
+  }
+}
+
+.langBtn {
+  position: absolute;
+    height:100vh;
+  right: 5px;
+  top: 15px;
+  button {
+    color: white;
+    font-family: $font1;
+    font-size: 1.4rem;
+    top :4px;
     
-    background-size: cover;
-    background-position:left;
-}
-.paragraph{
-    max-width:1400px;
-    padding: 3rem 5vw;
-    margin:0 auto;
-    text-align: center;
-     position: relative;
-}
-.group{
- 
-   
-    font-family: 'Comfortaa', cursive;
-    text-align: left;
-    font-size: 1.3rem;
-    font-weight: 300;
-   strong{
-      
-       width:100%;
-   }
-   
-}
-
-.langBtn{
-    color:white;
-   
-    position:absolute;
-    background-color:$color1;
-    border:none;
+    
+    z-index: 123123;
+    background-color: $color1;
+    border: none;
     border-radius: 2px;
-    right:5px;
-    top:15px;
+  }
 }
-.groupText{
-    display: grid;
-    margin-bottom: 2rem;
+.groupText {
+  display: grid;
+  margin-bottom: 2rem;
 
-    
-    grid-template-columns: 40% 60%;
-    @media screen and(max-width:700px) {
-        grid-template-columns: 1fr;
+  grid-template-columns: 40% 60%;
+  @media screen and(max-width:700px) {
+    grid-template-columns: 1fr;
+  }
+  img {
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: all 0.5s $time-func;
+    &:hover {
+      transform: scale(1.06);
     }
-    img{
-        width:100%;
-        border-radius: 3px;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        transition: all .5s $time-func;
-        &:hover{
-            transform: scale(1.06);
-        }
-        
-    }
-    p{
-        
-    font-family: 'Comfortaa', cursive;
-      padding: 0 5%;
-    }
+  }
+  p {
+    font-family: "Comfortaa", cursive;
+    padding: 0 5%;
+  }
 }

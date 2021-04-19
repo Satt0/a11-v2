@@ -45,7 +45,7 @@ const dispatch = useDispatch()
  
   return (
     <>
-   
+  
     <div
     
      className="Galery" onClick={()=>{   

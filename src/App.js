@@ -25,7 +25,7 @@ export default function App() {
         </ScrollAnimation>
       <Parallax
        
-        bgImage="/bg4.jpg"
+        bgImage="/bg1.jpg"
         bgImageAlt="the cat"
         strength={200}
       >
