@@ -103,6 +103,6 @@ const Wish = ({ name, wishes, change }) => (
     {wishes.map((e) => (
       <p>{e}</p>
       ))}
-    <p className="text-right w-100">---from {name}---</p>
+    <p className="text-right w-100">---from Creator---</p>
   </div>
 );

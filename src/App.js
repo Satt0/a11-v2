@@ -27,7 +27,7 @@ export default function App() {
        
         bgImage="/bg1.jpg"
         bgImageAlt="the cat"
-        strength={50}
+        strength={550}
       >
         
           <Display />
@@ -37,7 +37,7 @@ export default function App() {
        
         bgImage="/bg1.jpg"
         bgImageAlt="the cat"
-        strength={50}
+        strength={550}
       >
         <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
           <Galery />
@@ -47,7 +47,7 @@ export default function App() {
       
         bgImage="/bg5.jpg"
         bgImageAlt="the cat"
-        strength={50}
+        strength={550}
       >
         <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
           <Video />
@@ -57,7 +57,7 @@ export default function App() {
       
         bgImage="/bg8.jpg"
         bgImageAlt="the cat"
-        strength={50}
+        strength={550}
       >
       <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
         <Ending1 />

@@ -14,6 +14,7 @@ export default function Ending1() {
           <h2 className="h4">-The End-</h2>
         
           <h5>last updated: {new Date().toUTCString().substring(0, 16)}</h5>
+          <h6>contact: <a target="_blank" rel="noopener" href="https://www.facebook.com/hoangminhtan6601/">facebook</a></h6>
         </div>
     
     </>
