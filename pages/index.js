@@ -24,7 +24,8 @@ export default function Home({ items }) {
           content="A11 k52 -  Trung học phổ thông Lạng Giang số 1!"
         />
         <meta property="og:image" content={"/bg/leader/leader1.JPG"} />
-        <script data-ad-client="ca-pub-7301220330128784" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script data-ad-client="ca-pub-7301220330128784" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
       </Head>
       <App />
     </>
