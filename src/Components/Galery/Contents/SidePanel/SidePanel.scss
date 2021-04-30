@@ -7,7 +7,7 @@
     align-items: center;
     .hide-side{
         position: absolute;
-        transition: transform .4s;
+        transition: transform .25s $time-func;
         background-color: rgba(224, 224, 176, 0.473);
         color:white;
         padding:4px 9px;

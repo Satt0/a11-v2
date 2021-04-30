@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SidePanel from "./Contents/SidePanel/SidePanel";
 import Show from "./Contents/Show/Show";
 import {useSelector,useDispatch} from 'react-redux'
-
+import {useScroll} from 'lib/hook'
 import TopPanel from "./Contents/TopPanel/TopPanel";
 export default function Galery() {
     const display = [
@@ -14,7 +14,7 @@ export default function Galery() {
   ];
 const index = useSelector(state => state.index)
 const image=useSelector(state=>state.img)
-
+const atView=useScroll()
 const dispatch = useDispatch()
 
   const [a, seta] = useState(0);
@@ -32,22 +32,27 @@ const dispatch = useDispatch()
   useEffect(() => {
     const data=image.filter(e=>e.view===display[a].view)
     const timeout=(Math.ceil(data.length / display[a].length) * 6500);
-    const t = setTimeout(() => {
-     if(!index){
-      seta((a) => (a + 1) % 4);
-     }
-    }, timeout);
+    let t
+    if(atView){
+      
+       t = setTimeout(() => {
+        if(!index){
+         seta((a) => (a + 1) % 4);
+        }
+       }, timeout);
+    }
+    
     return () => {
       clearTimeout(t);
     };
-  },[a,index,image]);
+  },[a,index,image,atView]);
 
  
   return (
     <>
   
     <div
-    
+    id="galery"
      className="Galery" onClick={()=>{   
       
     }}>

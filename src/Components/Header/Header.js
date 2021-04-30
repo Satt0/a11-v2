@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ScrollIntoView from "react-scroll-into-view";
-import { useSelector, useDispatch } from "react-redux";
+
 export default function Header() {
-  const currentTheme = useSelector((state) => state.currentTheme);
-  const theme = useSelector((state) => state.theme);
-  const dispatch = useDispatch();
+
   const [toggle, setToggle] = useState(false);
   const [sc, setSc] = useState(true);
 

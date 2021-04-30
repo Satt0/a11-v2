@@ -4,7 +4,7 @@
   width: 100%;
   z-index: 1239812379127391283;
   padding-top: 2rem;
-  background-color: #ead4c3e1;
+  background-color: #f1e7dfa8;
   .sound-cloud-container {
     position: fixed;
     right: 3vw;
@@ -12,12 +12,13 @@
     button {
       transition: all 0.3s;
       opacity: 0.4;
+      
       &:hover {
         opacity: 1;
       }
       position: absolute;
       border: none;
-      background-color: transparent;
+     
       right: 0;
       bottom: 0;
     }
@@ -99,16 +100,16 @@
       margin-right: 2rem;
       display: inline-block;
       cursor: pointer;
-      
+      transition: all .2s;
       color: rgb(54, 54, 52);
       padding: 6px 2.4rem;
       font-weight: 300;
       font-family: $font1;
 
       border-radius: 4px;
-      background-color: none;
+      background-color: #ead4c33f;
       &:hover {
-        background-color: rgba(255, 255, 255, 0.137);
+        background-color: #ead4c3bd;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
           rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
       }
