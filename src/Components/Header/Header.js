@@ -26,7 +26,10 @@ export default function Header() {
           setToggle((a) => !a);
         }}
       >
-        {toggle ? "hide" : "show"}
+        {/* {toggle ? "hide" : "show"} */}
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
       <header id="header" className={toggle ? "" : "noBg"}>
         <div className="main-header">
@@ -44,13 +47,13 @@ export default function Header() {
         <div className={"dropdown "}>
           <div className="link-container">
             <ScrollIntoView selector="#story">
-              <li>Welcome</li>
+              <li> <div className="square"></div> Welcome</li>
             </ScrollIntoView>
             <ScrollIntoView selector="#galery">
-              <li>Intro</li>
+              <li><div className="square"></div>Intro</li>
             </ScrollIntoView>
             <ScrollIntoView selector="#video">
-              <li>Video</li>
+              <li><div className="square"></div>Video</li>
             </ScrollIntoView>
           </div>
         </div>

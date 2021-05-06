@@ -4,29 +4,22 @@
   width: 100%;
   z-index: 1239812379127391283;
   padding-top: 2rem;
-  background-color: #f1e7dfa8;
+  //background-color: #f1e7dfa8;
+  animation: slidedown .4s;
+  background: linear-gradient(to right,transparent 10%,white 90%);
   .sound-cloud-container {
     position: fixed;
     right: 3vw;
     bottom: 3vw;
-    button {
-      transition: all 0.3s;
-      opacity: 0.4;
-      
-      &:hover {
-        opacity: 1;
-      }
-      position: absolute;
-      border: none;
-     
-      right: 0;
-      bottom: 0;
+    opacity: .5;
+    transition: all .2s;
+    &:hover{
+      opacity: 1;
     }
-    .sc {
-      &.show {
-        display: none;
-      }
+    @media screen  and (max-width:600px){
+      display: none;
     }
+    
   }
   &.hasBg {
     opacity: 1;
@@ -34,8 +27,8 @@
    
   }
   &.noBg {
-    display: none;
-    
+    //display: none;
+    animation: slideup .4s forwards;
   }
   padding-bottom: 2rem;
   transition: all 0.6s;
@@ -97,7 +90,7 @@
     }
     li {
       user-select: none;
-      margin-right: 2rem;
+      margin-right: 1rem;
       display: inline-block;
       cursor: pointer;
       transition: all .2s;
@@ -106,12 +99,13 @@
       font-weight: 300;
       font-family: $font1;
 
-      border-radius: 4px;
-      background-color: #ead4c33f;
+      
+      //background-color: #ead4c33f;
       &:hover {
-        background-color: #ead4c3bd;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-          rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        //background-color: #ead4c3bd;
+        color: #ead4c3bd;
+        // box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+        //   rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
       }
     }
     max-height: 500px;
@@ -142,12 +136,12 @@
 }
 
 .btn-toggle {
-  width: 9rem;
+  width: 40px;
   position: fixed;
   z-index: 123123123;
-  padding: 4px 1rem;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  padding: 6px;
+  //text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
   margin-right: 2rem;
   font-family: $font1;
   border: none;
@@ -156,14 +150,37 @@
   font-weight: 300;
   transition: all 0.2s;
   color: rgb(46, 46, 46);
-
-  background-color: rgba(255, 255, 255, 0.137);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  &.show {
-    color: rgb(133, 116, 116);
-
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -5px,
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -5px,
       rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+ 
+  
+  display:flex;
+  flex-direction: column;
+  span{
+    width:100%;
+    height:2px;
+    margin: 3px 0;
+    border-bottom: 2px solid #ead4c3;
+  }
+}
+
+@keyframes slidedown{
+  from{
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideup{
+  from{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to{
+    transform: translateY(-400px);
+    opacity: 0;
   }
 }
