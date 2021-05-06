@@ -4,7 +4,20 @@ import styles from "styles/FlipCard.module.scss";
 import { getImgPath } from "lib/ulti";
 
 export default function App() {
-  const img = useSelector((state) => state.bg);
+  const img = useSelector((state) => {
+    
+    const data=state.bg
+    if(data.length){
+     for(let i=data.length-1;i>=0;i--){
+       const index=Math.floor(Math.random()*i)
+       const temp=data[i]
+       data[i]=data[index]
+       data[index]=temp;
+   }
+    }
+    
+     return data
+  });
   const [data,setData]=useState([])
   const [width,setWidth]=useState(0);
 
