@@ -31,3 +31,15 @@
 .classSlideUp{
   animation:slideUp .5s ease forwards;
 }
+.hover-link{
+    font-family: $font1;
+    font-weight: lighter;
+    font-size: 1.3rem;
+    transition: all .2s;
+cursor: pointer;
+    border: 2px dashed transparent;
+    &:hover{
+      color:white;
+      border: 2px dashed white;
+    }
+}

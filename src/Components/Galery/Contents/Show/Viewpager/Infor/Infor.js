@@ -36,11 +36,11 @@ export default function infor({ index }) {
        
       </div>
       <div key={infor.id} className={`${styles.information}`}>
-        <h2 className="h1" >-{infor.name}-</h2>
+        <h2 className="h1" >** {infor.name}**</h2>
         <h2 className="h3">
-          -Role: <strong>"{infor.role ?? "Thành viên chủ chốt"}"</strong>
+          Role: <strong>"{infor.role ?? "Thành viên chủ chốt"}"</strong>
         </h2>
-        <h2 className="h3">-Quote: "{infor.description}"</h2>
+        <h2 className="h3">Quote: "{infor.description}"</h2>
 
         <div className={styles.navContainer}>
         <div

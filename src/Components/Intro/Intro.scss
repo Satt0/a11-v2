@@ -127,15 +127,7 @@
   }
 
 }
-.square{
-  display:none;
-  width:19px;
-  height:19px;
-  border-radius: 3px;
-   background-color: #d9fd60;
-   margin-right: 3px;
-   transform: translateY(2px);
-}
+
 @keyframes appear {
   0% {
     opacity: 0.3;
