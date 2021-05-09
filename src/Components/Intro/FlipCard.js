@@ -19,6 +19,7 @@ export default function App() {
      return data
   });
   const [data,setData]=useState([])
+  const [preload,setPreload]=useState([])
   const [width,setWidth]=useState(0);
 
   useEffect(()=>{
@@ -30,10 +31,34 @@ export default function App() {
           arr[i]=arr[index]
           arr[index]=temp;
       }
-      setData(arr)
-
+      if(arr.length>2){
+        setPreload(arr)
+        setData([arr[0],arr[1]])
+      }
+      else{
+        setData(arr)
+      }
     }
   },[img])
+  useEffect(()=>{
+      let a
+    if(preload.length>2){
+      a=new Array(preload.length-2); 
+          for(let i = 0 ; i < a.length;i++){
+            a[i]=setTimeout(()=>{
+                setData(state=>([...state,preload[(i+2)%preload.length]]))
+                console.log(preload[i+2]);
+            },(i+1)*5000)
+          }
+      }
+      return ()=>{
+        if(a){
+          a.forEach(timeout=>{
+            clearTimeout(timeout)
+          })
+        }
+      }
+  },[preload])
 useEffect(()=>{
   const onResize=()=>{
     if(typeof window !== undefined){
@@ -54,7 +79,7 @@ useEffect(()=>{
     <div
      
       className={styles.bg}
-      style={{width:width*img.length,animationDuration:`${data.length*30}s`}}
+      style={{width:width*img.length,animationDuration:`${img.length*30}s`}}
     >
       {data.map((e,i)=>{
         return (<div
