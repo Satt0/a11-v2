@@ -77,7 +77,8 @@ const color=useColor()
         <div className={bg?'on':'off'} style={{height:!bg?'45vh':'80vh',}} id="video-player-container">
           <ReactPlayer
             url={data[play].url}
-            autoPlay
+            
+            muted={true}
             controls={true}
             width="100%"
             height="100%"
