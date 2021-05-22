@@ -77,7 +77,6 @@ export default function Carousel({ length, view, img }) {
               className="content-carousel"
               style={{
                 
-                boxShadow: `${color}, 0.7) 0px 15px 25px`,
                 margin: 0,
                 padding: 0,
               }}
@@ -89,8 +88,10 @@ export default function Carousel({ length, view, img }) {
                 position:'absolute',
                 width:'100%',
                 height:'100%',
-                backgroundImage: `url("${getImgPath(e.img[0].url)}")`}}></div>
-              {!e.hasInfor ? <p className="text-title">{e.name}</p> : ""}
+                backgroundImage: `url("${getImgPath(e.img[0].url)}")`}}>
+
+                <p className="text-title">{e.name}</p> 
+                </div>
             </div>
           </div>
         );

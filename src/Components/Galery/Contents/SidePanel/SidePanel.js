@@ -12,19 +12,24 @@ export default function SidePanel({ onClick, index }) {
   const scroll=useScroll()
   useEffect(()=>{
    
-    let a
+   
     if(scroll===true){
       setToggle(true)
       
-      a=setTimeout(()=>{
-        setToggle(false)
-      },5000)
+     
     }
     
-    return ()=>{
-      clearTimeout(a)
-    }
+    
   },[scroll])
+  useEffect(()=>{
+    let a
+      if(toggle){
+        a=setTimeout(()=>{
+          setToggle(false)
+        },5000)
+      }
+      return ()=>clearTimeout(a)
+  },[toggle])
   return (
     <div className="SidePanel">
      
@@ -46,13 +51,14 @@ export default function SidePanel({ onClick, index }) {
       ))}
      </div>
       <button
+      title="toggle side bar"
       style={{
-        transform:`translateX(${toggle?'0':'8'}vw)`
+        transform:`rotateY(${toggle?'0':'180deg'})`
       }}
       onClick={()=>{
         setToggle(state=>!state)
       }}
-      className="hide-side">{toggle?'hide':'show'}</button>
+      className="hide-side"><img width="30px" src="/right-arrow.png"/></button>
     </div>
   );
 }

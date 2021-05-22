@@ -7,14 +7,15 @@
     align-items: center;
     .hide-side{
         position: absolute;
-        transition: transform .25s $time-func;
-        background-color: rgba(224, 224, 176, 0.473);
+        transition: all .25s $time-func;
         color:white;
         padding:4px 9px;
         border:none;
         border-radius: 2px;
+        background-color: transparent;
         left:1vw;
-        bottom:.7vw;
+        top:1.7vw;
+      
     }
      &-container{
         width:17vw;

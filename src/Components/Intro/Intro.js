@@ -3,6 +3,7 @@
   import FlipCard from "./FlipCard";
   import { useSelector } from "react-redux";
   import {useColor} from 'lib/hook'
+  import Leaf from './Leaf'
   export default function Intro() {
     const color=useColor()
     const [state, setState] = useState(true);
@@ -53,7 +54,7 @@
 
       
       <div className="Intro-Container" id="intro">
-      
+       
         <div
           style={{
             backgroundImage: ` linear-gradient(180deg,${theme[curTheme]},.4), transparent)`,
@@ -64,22 +65,14 @@
               : `Intro-Container-inner disappear text-inner drop-shadow`
           }
         >
-          <h1 >
-            Welcome to <span style={{ color:`${color},.8)`,filter:"saturate(150%)"}}>A11</span> Family!
-            
-         
-          </h1>
-          <em className="h1">-a website made from Memories-</em>
-          <button 
           
-          style={{
-      
-      color:`${color},1)`
-      }}
+          <Leaf/>
+          {/* <button 
+         
         
       onClick={handleClick}>
-            Let's Go
-          </button>
+            Let's Go 👇
+          </button> */}
         </div>
       
       

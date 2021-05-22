@@ -28,9 +28,7 @@ export default function infor({ index }) {
         style={{
           backgroundImage: `url("${getImgPath(
             infor.mainImage?.url ?? infor.img[0].url
-          )}")`,
-          boxShadow:`${color}, 0.9) 0px 50px 100px -20px,
-         ${color}, 0.6) 0px 30px 60px -30px`
+          )}")`
         }}
       >
        
@@ -49,7 +47,7 @@ export default function infor({ index }) {
           }}
           className={styles.nav + " hover hover-yellow"}
         >
-          <h3>{'<'}</h3>
+          <><img key="prev" style={{transform:'rotateY(180deg)'}} src="/right-arrow.png" width="50px"/></>
         </div>
         <div
           onClick={() => {
@@ -57,7 +55,7 @@ export default function infor({ index }) {
           }}
           className={styles.nav + " hover hover-red"}
         >
-          <h3>X</h3>
+        <img key="close" src="/cross.png" width="30px"/>
         </div>
         <div
           onClick={() => {
@@ -65,7 +63,7 @@ export default function infor({ index }) {
           }}
           className={styles.nav + " hover hover-yellow"}
         >
-          <h3>{'>'}</h3>
+          <img key="next" src="/right-arrow.png" width="50px"/>
         </div>
       </div>
         

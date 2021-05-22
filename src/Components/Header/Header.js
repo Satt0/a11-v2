@@ -42,6 +42,7 @@ export default function Header() {
       setToggle(false)
     },0)
   },[])
+
   useEffect(() => {
     const a=setTimeout(()=>{
       setHelper(false)
@@ -71,12 +72,9 @@ export default function Header() {
           setHelper(false)
         }}
       >
-        {/* {toggle ? "hide" : "show"} */}
-        {/* <span></span>
-        <span></span>
-        <span></span> */}
+        
         <img src="/favicon.ico" width="42px"/>
-        <img  className="cursor-helper" src="/pointer.png" width="34px" style={{background:'transparent',display:helper?"":'none'}}/>
+        <img alt="click here"  className="cursor-helper" src="/pointer.png" width="34px" style={{background:'transparent',display:helper?"":'none'}}/>
       </button>
      
        
@@ -99,7 +97,7 @@ export default function Header() {
             width="100%"
             height="100%"
             scrolling="no"
-            frameborder="no"
+            frameBorder="no"
             allow="autoplay"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/929815216&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
           ></iframe>
