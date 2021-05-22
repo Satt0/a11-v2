@@ -1,9 +1,7 @@
 import React from "react";
-import ScrollAnimation from "react-animate-on-scroll";
-
-import { useColor } from "lib/hook";
+import {useSelector} from 'react-redux'
 export default function Ending1() {
-  const color = useColor();
+  const date=useSelector(state=>state.date)
   return (
     <>
      
@@ -13,7 +11,7 @@ export default function Ending1() {
         >
           <h2 className="h4">-The End-</h2>
         
-          <h5>last updated: {new Date().toUTCString().substring(0, 16)}</h5>
+          <h5>last updated: {date}</h5>
           <h6>contact: <a target="_blank" rel="noopener" href="https://www.facebook.com/hoangminhtan6601/">facebook</a></h6>
         </div>
     

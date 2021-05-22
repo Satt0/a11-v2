@@ -8,6 +8,7 @@ const initialState = {
   img: [],
   index: false,
   currentIndex: 0,
+  date:new Date().toUTCString().substring(0, 16),
   view:'home'
 }
 

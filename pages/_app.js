@@ -19,6 +19,7 @@ import {useStore} from 'store.js'
 function MyApp({ Component, pageProps }) {
 const store=useStore({img:pageProps.items,bg:pageProps.bg,index:false,currentIndex:0,view:"home",
 currentTheme:'yellow',
+date:new Date().toUTCString().substring(0, 16),
 theme:{
   blue:'rgba(176, 216, 243',
   pink:'rgba(243, 176, 243',

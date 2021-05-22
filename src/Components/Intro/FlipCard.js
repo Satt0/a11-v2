@@ -47,7 +47,7 @@ export default function App() {
           for(let i = 0 ; i < a.length;i++){
             a[i]=setTimeout(()=>{
                 setData(state=>([...state,preload[(i+2)%preload.length]]))
-                console.log(preload[i+2]);
+               
             },(i+1)*5000)
           }
       }
