@@ -35,12 +35,21 @@ const useStyles=makeStyles((theme)=>({
 export default function Header() {
   const styles=useStyles()
   const [toggle, setToggle] = useState(false);
+  const [helper,setHelper]=useState(true)
   const [sc, setSc] = useState(true);
   const hideAfterClick=useCallback(()=>{
     setTimeout(()=>{
       setToggle(false)
     },0)
   },[])
+  useEffect(() => {
+    const a=setTimeout(()=>{
+      setHelper(false)
+    },10000)
+    return () => {
+      clearTimeout(a)
+    }
+  }, [])
   useEffect(() => {
     let a;
     if (!sc) {
@@ -59,6 +68,7 @@ export default function Header() {
         className="btn-toggle"
         onClick={() => {
           setToggle((a) => !a);
+          setHelper(false)
         }}
       >
         {/* {toggle ? "hide" : "show"} */}
@@ -66,6 +76,7 @@ export default function Header() {
         <span></span>
         <span></span> */}
         <img src="/favicon.ico" width="42px"/>
+        <img  className="cursor-helper" src="/pointer.png" width="34px" style={{background:'transparent',display:helper?"":'none'}}/>
       </button>
      
        
