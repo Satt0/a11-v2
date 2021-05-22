@@ -99,7 +99,7 @@ const Display = () => {
           {lang ? posts.vn : posts.en}
           <p className="text-right">**a11-k52-lg1**</p>
           <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
-          <figure>
+          <figure className={styles.figure}>
             <img src="uploads/IMG_0540_8d6a42f7a8.JPG" width="100%" />
             <figcaption className="text-center">-March 2019-</figcaption>
           </figure>

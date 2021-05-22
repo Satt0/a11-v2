@@ -2,8 +2,8 @@
 @import "src/App.scss";
 .container {
   border-top: 0.4rem dotted #ead4c3;
+  z-index: 5;
   
-
   width: 100%;
 
   background-size: cover;
@@ -19,6 +19,7 @@
 }
 .group {
   text-align: left;
+  z-index: 3;
   p{
     opacity: .8;
     
@@ -31,6 +32,24 @@
   }
 }
 
+.figure{
+  img{
+    transition:transform  .3s $time-func;
+     filter:grayscale(.3)
+  }
+  @media screen and (hover:hover) and (min-width:1000px){
+    &:hover{
+
+     img{
+        transform: scale(1.5) translateY(-6%);
+        filter:grayscale(.05);
+        border-radius: 4px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      cursor: none;
+     }
+    }
+  }
+}
 .langBtn {
   position: absolute;
     height:100vh;
