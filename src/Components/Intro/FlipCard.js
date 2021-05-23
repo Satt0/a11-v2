@@ -48,7 +48,7 @@ export default function App() {
             a[i]=setTimeout(()=>{
                 setData(state=>([...state,preload[(i+2)%preload.length]]))
                
-            },(i+1)*0)
+            },(i+1)*5000)
           }
       }
       return ()=>{
