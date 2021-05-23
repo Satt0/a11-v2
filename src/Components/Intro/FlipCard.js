@@ -48,7 +48,7 @@ export default function App() {
             a[i]=setTimeout(()=>{
                 setData(state=>([...state,preload[(i+2)%preload.length]]))
                
-            },(i+1)*5000)
+            },(i+1)*0)
           }
       }
       return ()=>{
@@ -81,8 +81,9 @@ useEffect(()=>{
       className={styles.bg}
       style={{width:width*img.length,animationDuration:`${img.length*30}s`}}
     >
-      {data.map((e,i)=>{
-        return (<div
+      {[...data,data[0]].map((e,i)=>{
+        if(e){
+          return (<div
           key={"bg-carousel-"+i}
           className={styles.itemBg}
           style={{
@@ -94,6 +95,7 @@ useEffect(()=>{
             )}")`,
           }}
         ></div>)
+        }
       })}
     </div>
   );

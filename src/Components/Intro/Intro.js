@@ -10,9 +10,23 @@
     const [delay,setDelay]=useState(false)
     const theme = useSelector((state) => state.theme);
     const curTheme = useSelector((state) => state.currentTheme);
-    const handleClick = () => {
-      setState(false);
-    };
+    const [leaf,setLeaf]=useState(false)
+   useEffect(()=>{
+      
+      const handler=()=>{
+        if(window.innerWidth>900){
+          setLeaf(true)
+        }
+        else{
+          setLeaf(false)
+        }
+      }
+      window.addEventListener('resize',handler)
+      handler()
+      return ()=>{
+        window.removeEventListener('resize',handler)
+      }
+   },[])
     useEffect(() => {
       let a;
       if (!state) {
@@ -66,13 +80,8 @@
           }
         >
           
-          <Leaf/>
-          {/* <button 
-         
-        
-      onClick={handleClick}>
-            Let's Go 👇
-          </button> */}
+          {leaf?<Leaf/>:<></>}
+          
         </div>
       
       

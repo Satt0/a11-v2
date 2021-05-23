@@ -13,6 +13,7 @@ const useStyles=makeStyles((theme)=>({
       display:'grid',
       gridTemplateRows:'max-content 1fr',
       paddingTop:'13vh',
+      opacity:.8,
       overflow:'auto',
       width:'100vw',
      height:'100vh',
