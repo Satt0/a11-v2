@@ -20,6 +20,9 @@
     margin: 0 2.5vw;
   transition: all .7s $time-func;
    margin-right: 1vw;
+   img{
+     width:2rem;
+   }
   @media screen and(hover:hover) {
     &:hover{
       transform: scale(1.4) rotate(2* 360deg);
@@ -36,7 +39,7 @@
   .navContainer{
     position: absolute;
 
-    bottom:12vh;
+    bottom:2rem;
     left:0; 
     display:flex;
     flex-wrap: nowrap;
@@ -51,7 +54,7 @@
   max-width: calc(100%-20px);
   margin:0 auto;
   margin-top: 3vh;
-  box-shadow: rgba(138, 131, 124, 0.329) 46.31px 25.31px 4px;
+  box-shadow: rgba(138, 131, 124, 0.329) 3vw 2vh 4px;
     z-index: 12312;
   -webkit-animation: test 0.5s cubic-bezier(0,.7,.38,1.23);
 	        animation: test 0.5s cubic-bezier(0,.7,.38,1.23);
@@ -108,7 +111,15 @@
     
     width: 100%;
     font-size: 2vw;
-    
+    font-family: $font3;
+    span{
+      font-family: $introFont;
+    }
+    strong{
+      font-family: $introFont;
+      font-weight: lighter;
+      color:rgb(230, 120, 171);
+    }
     animation: slideRight 0.3s forwards cubic-bezier(0,.7,.38,1.23);
   -webkit-animation: slideRight 0.3s forwards cubic-bezier(0,.7,.38,1.23);
     @media only screen and(max-width:1000px) {

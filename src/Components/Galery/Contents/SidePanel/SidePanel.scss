@@ -50,44 +50,13 @@
        
      }
    
-     @media only screen and (orientation:portrait){
+     @media only screen and (max-width:$galery-res){
          .Card-container{
              display:none;
          }
          
      }
 }
-@keyframes swinging1{
-    0%{
-        transform:rotate(2deg);
-
-    }
-    50%{
-        transform:rotate(-2deg);
-
-    }
-    100%{
-        transform:rotate(2deg);
-
-    }
-}
-@keyframes swinging2{
-    0%{
-        transform:rotate(-2deg);
-
-    }
-    50%{
-        transform:rotate(2deg);
-
-    }
-    100%{
-        transform:rotate(-2deg);
-
-    }
-}
-
-
-
 
 
 

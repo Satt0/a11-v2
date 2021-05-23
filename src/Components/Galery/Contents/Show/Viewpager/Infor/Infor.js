@@ -33,12 +33,12 @@ export default function infor({ index }) {
       >
        
       </div>
-      <div key={infor.id} className={`${styles.information}`}>
-        <h2 className="h1" >** {infor.name}**</h2>
-        <h2 className="h3">
-          Role: <strong>"{infor.role ?? "Thành viên chủ chốt"}"</strong>
+      <div  className={`${styles.information}`}>
+        <h2 key={infor.id+'name'} className="h1" ><span>** {infor.name}**</span></h2>
+        <h2 key={infor.id +'role'} className="h3">
+          Role: "<strong>{infor.role ?? "Thành viên chủ chốt"}</strong>"
         </h2>
-        <h2 className="h3">Quote: "{infor.description}"</h2>
+        <h2 key={infor.id+'quote'} className="h3">Quote: "<strong>{infor.description}</strong>"</h2>
 
         <div className={styles.navContainer}>
         <div
@@ -47,7 +47,7 @@ export default function infor({ index }) {
           }}
           className={styles.nav + " hover hover-yellow"}
         >
-          <><img key="prev" style={{transform:'rotateY(180deg)'}} src="/right-arrow.png" width="50px"/></>
+         <img key="prev" style={{transform:'rotateY(180deg)'}} src="/right-arrow.png" />
         </div>
         <div
           onClick={() => {
@@ -55,7 +55,7 @@ export default function infor({ index }) {
           }}
           className={styles.nav + " hover hover-red"}
         >
-        <img key="close" src="/cross.png" width="30px"/>
+        <img key="close" src="/cross.png" />
         </div>
         <div
           onClick={() => {
@@ -63,7 +63,7 @@ export default function infor({ index }) {
           }}
           className={styles.nav + " hover hover-yellow"}
         >
-          <img key="next" src="/right-arrow.png" width="50px"/>
+          <img key="next" src="/right-arrow.png" />
         </div>
       </div>
         
