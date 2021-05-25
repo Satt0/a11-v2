@@ -10,7 +10,7 @@
   }
   display: flex;
   position: relative;
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease;
   overflow: hidden;
   height: 45vw;
   .overlay {
@@ -19,7 +19,6 @@
     transition: inherit;
     justify-content: flex-start;
     align-items: center;
-    //background-color: black;
 
     overflow-x: scroll;
 
@@ -95,7 +94,6 @@
       color: #f0f0f0;
       background-color: transparent;
       background: #ead4c38c;
-      //background:linear-gradient(to right,#ead4c38f 50%,rgba(255, 255, 255, 0) 50%);
       background-size: 200%;
       background-position: center right;
       border-radius: 5px;
