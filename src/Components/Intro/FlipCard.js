@@ -21,25 +21,20 @@ export default function App() {
   const [data,setData]=useState([])
   const [preload,setPreload]=useState([])
   const [width,setWidth]=useState(0);
-
+  // preload 2 bg
   useEffect(()=>{
     if(img.length){
-      let arr=[...img]
-      for(let i=arr.length-1;i>=0;i--){
-          const index=Math.floor(Math.random()*i);
-          const temp=arr[i]
-          arr[i]=arr[index]
-          arr[index]=temp;
-      }
-      if(arr.length>2){
-        setPreload(arr)
-        setData([arr[0],arr[1]])
+      
+      if(img.length>2){
+        setPreload(img)
+        setData([img[0],img[1]])
       }
       else{
-        setData(arr)
+        setData(img)
       }
     }
   },[img])
+  // load bg after every 5s
   useEffect(()=>{
       let a
     if(preload.length>2){
@@ -59,6 +54,7 @@ export default function App() {
         }
       }
   },[preload])
+  // change width on resize window
 useEffect(()=>{
   const onResize=()=>{
     if(typeof window !== undefined){

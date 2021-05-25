@@ -1,0 +1,24 @@
+@import "../../App.scss";
+.Ending {
+  position: relative;
+  min-height: 550px;
+  height: 20vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    color: rgba(0, 0, 0, 0.658);
+    font-size: 3rem;
+  }
+  h2,
+  h5 {
+    font-family: $introFont;
+  }
+  h6{
+    font-family: $font2;
+  }
+}
+

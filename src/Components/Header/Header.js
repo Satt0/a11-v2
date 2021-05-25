@@ -1,7 +1,7 @@
 import React, { useState, useEffect ,useCallback} from "react";
 import ScrollIntoView from "react-scroll-into-view";
 import {Drawer,makeStyles} from  '@material-ui/core'
-
+import style from './Header.module.scss'
 const useStyles=makeStyles((theme)=>({
   drawer:{
     '& > div > div  > li':{
@@ -67,7 +67,7 @@ export default function Header() {
   return (
     <>
       <button
-        className="btn-toggle"
+        className={style.btnToggle}
         onClick={() => {
           setToggle((a) => !a);
           setHelper(false)

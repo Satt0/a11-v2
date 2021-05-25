@@ -1,11 +1,11 @@
   import React, { useEffect, useState } from "react";
-
   import FlipCard from "./FlipCard";
   import { useSelector } from "react-redux";
-  import {useColor} from 'lib/hook'
-  import Leaf from './Leaf'
+  import dynamic from 'next/dynamic'
+ 
+  const Leaf=dynamic(()=>import('./Leaf'))
   export default function Intro() {
-    const color=useColor()
+    
     const [state, setState] = useState(true);
     const [delay,setDelay]=useState(false)
     const theme = useSelector((state) => state.theme);

@@ -2,35 +2,32 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 .Intro-Container {
-  background-image: url('/homebg.jpg');
-    background-size: cover;
+  background-image: url("/homebg.jpg");
+  background-size: cover;
   background-position: center center;
-  ::-webkit-scrollbar{
+  ::-webkit-scrollbar {
     display: none;
   }
   display: flex;
   position: relative;
-  transition: all .5s ease;
-overflow: hidden;
+  transition: all 0.5s ease;
+  overflow: hidden;
   height: 45vw;
   .overlay {
     position: absolute;
-    display:block;
+    display: block;
     transition: inherit;
     justify-content: flex-start;
     align-items: center;
     //background-color: black;
-    
-   overflow-x: scroll;
-   
-   
-    
+
+    overflow-x: scroll;
+
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    transition:inherit;
-   
+    transition: inherit;
   }
   z-index: 0;
   min-height: 400px;
@@ -38,101 +35,83 @@ overflow: hidden;
   justify-content: center;
   align-items: center;
   &-inner {
-    
     height: 100%;
     width: 100%;
     transition: inherit;
-    &.disappear{
+    &.disappear {
       opacity: 0;
     }
-   *{
-     
-     &:hover{
-       opacity: 1;
-     }
-   }
-   
+    * {
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
   .text-inner {
-    
     z-index: 12312123123123;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
     align-items: flex-end;
-    padding:5% 12%;
-   
+    padding: 5% 12%;
+
     color: rgba(255, 255, 255, 0.918);
-    
-     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.226);
+
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.226);
     font-family: $font3;
     border: none;
-   
+
     h1 {
       cursor: pointer;
-      user-select: none ;
+      user-select: none;
       font-family: $font4;
       font-weight: lighter;
-      color:#e83e8c;
-      transition: all .2s;
+      color: #e83e8c;
+      transition: all 0.2s;
       font-size: 5vw;
-      opacity: .6;
-     @media screen  and(hover:none){
-       opacity: 1;
-     }
-     @media screen  and(hover:hover){
-     &:hover{
-       opacity: 1;
-     }
-    }
-     
-      @media screen and(max-width:950px){
+      opacity: 0.6;
+      @media screen and(hover:none) {
+        opacity: 1;
+      }
+      @media screen and(hover:hover) {
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      @media screen and(max-width:950px) {
         font-size: 2rem;
       }
-     
-
-      
-   
-    
-     
-      
-     
-      
-     
-     
     }
-    button{
+    button {
       font-size: 30px;
-      padding:7px 20px;
-      border:none;
-      height:4.5rem;
+      padding: 7px 20px;
+      border: none;
+      height: 4.5rem;
       font-family: $introFont;
       font-weight: lighter;
-      color:#f0f0f0;
+      color: #f0f0f0;
       background-color: transparent;
       background: #ead4c38c;
       //background:linear-gradient(to right,#ead4c38f 50%,rgba(255, 255, 255, 0) 50%);
       background-size: 200%;
       background-position: center right;
-    border-radius: 5px;
-   opacity: .5;
-    transition: all .7s ease;
-    &:focus{
-      outline: none;
-  box-shadow: none;
-    }
-      &:hover{
+      border-radius: 5px;
+      opacity: 0.5;
+      transition: all 0.7s ease;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      &:hover {
         opacity: 1;
-            transform: scale(1.04);
-            background-position: center left;
-         
-        }
+        transform: scale(1.04);
+        background-position: center left;
+      }
     }
-
   }
-
 }
 
 @keyframes appear {
@@ -140,8 +119,8 @@ overflow: hidden;
     opacity: 0.3;
     transform: translateY(0);
   }
-  50%{
-    opacity:1;
+  50% {
+    opacity: 1;
     transform: translateY(-25%);
   }
   100% {
@@ -151,16 +130,14 @@ overflow: hidden;
   }
 }
 
-@keyframes zoom{
-  0%{
-    transform: scale(1) ;
-  }
-  50%{
-    transform: scale(1.2) ;
-
-  }
-  100%{
+@keyframes zoom {
+  0% {
     transform: scale(1);
-
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }

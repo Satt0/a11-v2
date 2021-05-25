@@ -8,7 +8,7 @@ export default function Leaf() {
         <div className={style.snow}>
  
         
-      {arr.map((e,i)=><li key={"snowflake"+i} className='snowflake'>{i%2?<Leaf1/>:<Leaf2/>}</li>)}
+      {arr.map((e,i)=><li key={"snowflake"+i} className={style.snowflake}>{i%2?<Leaf1/>:<Leaf2/>}</li>)}
 </div>
     )
 }

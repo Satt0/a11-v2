@@ -1,14 +1,13 @@
-import Header from "./Components/Header/Header";
-// import { Route, Switch } from "react-router-dom";
+import dynamic from 'next/dynamic'
 import { Parallax } from "react-parallax";
-import SVG from './Components/SVG/SVG'
 import Intro from "./Components/Intro/Intro";
-import Galery from "./Components/Galery/Galery.js";
-import Video from "./Components/Contact/Contact";
-import Ending1 from "./Components/Ending1/Ending1";
 import Display from "./Components/Display/Display";
 import ScrollAnimation from "react-animate-on-scroll";
 import { useColor } from "lib/hook";
+const Galery = dynamic(()=>import('./Components/Galery/Galery'))
+const Ending1=dynamic(()=>import('./Components/Ending1/Ending1'))
+const Video=dynamic(()=>import('./Components/Contact/Contact'))
+const Header=dynamic(()=>import('./Components/Header/Header'))
 export default function App() {
   const color = useColor();
   return (
