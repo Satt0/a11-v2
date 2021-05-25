@@ -19,9 +19,7 @@ export default function App() {
     >
       
       <Header />
-      <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
-          <Intro />
-        </ScrollAnimation>
+      <Intro />
       <Parallax
        
         bgImage="/bg1.jpg"
