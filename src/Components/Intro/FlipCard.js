@@ -77,6 +77,7 @@ useEffect(()=>{
       className={styles.bg}
       style={{width:width*img.length,animationDuration:`${img.length*30}s`}}
     >
+      <p style={{position:'fixed',top:0,left:0,zIndex:123123}}>hello</p>
       {[...data,data[0]].map((e,i)=>{
         if(e){
           return (<div

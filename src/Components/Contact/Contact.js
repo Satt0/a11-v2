@@ -26,7 +26,7 @@ export default function Video() {
   const [play, setPlay] = useState(0);
   const [wish, setWish] = useState(0);
   const [bg, toggleBg] = useState(false);
-
+ 
   useEffect(() => {
     if (bg) {
       const player = document.getElementById("video");
@@ -37,9 +37,12 @@ export default function Video() {
     <>
       <div
         id="video"
+        
         className={`${style.VideoContainer} ${bg ? style.black : style.white}`}
       >
+        {bg?<button onClick={()=>{toggleBg(false)}} title="close"  className={style.buttonToggle}><img src="/cross.png" width="20px"/></button>:<></>}
         <div
+          onClick={()=>{toggleBg(a=>!a)}}
           className={`${style.blurWallpaper} ${
             bg ? style.bgBlack : style.bgImg
           }`}
@@ -66,7 +69,7 @@ export default function Video() {
           style={{ zIndex: 2, height: "100%" }}
         >
           <div
-            className={`${style.portrait} p-0 m-0`}
+            className={`${style.portrait} p-0 ${bg?'mt-2':''}`}
             style={{ height: "auto" }}
           >
             <h1 className="title">Playing: {data[play].name}</h1>
@@ -82,7 +85,7 @@ export default function Video() {
             className={`${bg ? style.on : style.off} ${
               style.videoPlayerContainer
             }`}
-            style={{ height: !bg ? "45vh" : "80vh" }}
+            
           >
             <ReactPlayer
               url={data[play].url}
@@ -90,6 +93,7 @@ export default function Video() {
               controls={true}
               width="100%"
               height="100%"
+              playing={bg}
               onPause={() => {
                 toggleBg(false);
               }}
@@ -98,7 +102,7 @@ export default function Video() {
               }}
               onEnded={() => {
                 setPlay((a) => (a + 1) % data.length);
-                toggleBg(false);
+                //toggleBg(true);
               }}
             />
           </div>
