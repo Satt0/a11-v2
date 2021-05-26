@@ -44,6 +44,7 @@ export async function getStaticProps() {
     props: {
       items: await data,
       bg: await bg,
+      date:new Date().toUTCString().substring(0, 16)
     },
   };
 }
