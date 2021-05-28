@@ -1,0 +1,52 @@
+@import "/src/App.scss";
+
+.SidePanel {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+.CardContainer {
+  position: relative;
+  width: 90%;
+  height: 20vh;
+  @media only screen and (max-width:$galery-res){
+    
+        display:none;
+  }
+    
+}
+.hide{
+  position: absolute;
+  transition: all .25s $time-func;
+  color:white;
+  padding:4px 9px;
+  border:none;
+  border-radius: 2px;
+  background-color: transparent;
+  left:1vw;
+  top:1.7vw;
+  @media only screen and (max-width:$galery-res){
+    
+    display:none;
+}
+}
+.SidePanelContainer {
+  width: 17vw;
+  min-width: 160px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  height: 100%;
+  will-change: width;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.on {
+  max-width: 300px;
+}
+.off {
+  max-width: 0;
+  min-width: 0;
+}

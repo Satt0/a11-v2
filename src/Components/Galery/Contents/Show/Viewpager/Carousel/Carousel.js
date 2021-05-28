@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getImgPath } from "lib/ulti";
-import {useColor,useScroll} from 'lib/hook'
+import {useScroll} from 'lib/hook'
 export default function Carousel({ length, view, img }) {
   const dispatch = useDispatch();
-  const color=useColor()
   const scroll=useScroll()
   const [on, switchOff] = useState(true);
   const [data, setData] = useState([]);

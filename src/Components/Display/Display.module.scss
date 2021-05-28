@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
 @import "src/App.scss";
 .container {
-  border-top: 0.4rem dotted #ead4c3;
+  border-top: 0.4rem dotted var(--color1);
   z-index: 5;
   
   width: 100%;

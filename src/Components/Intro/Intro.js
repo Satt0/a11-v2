@@ -2,7 +2,7 @@
   import FlipCard from "./FlipCard";
   import { useSelector } from "react-redux";
   import dynamic from 'next/dynamic'
- 
+  import styles from './Intro.module.scss'
   const Leaf=dynamic(()=>import('./Leaf'))
   export default function Intro() {
     
@@ -67,25 +67,16 @@
     return (
 
       
-      <div className="Intro-Container" id="intro">
+      <div className={styles.IntroContainer} id="intro">
        
-        <div
-          style={{
-            backgroundImage: ` linear-gradient(180deg,${theme[curTheme]},.4), transparent)`,
-          }}
-          className={
-            state && delay
-              ? "Intro-Container-inner text-inner drop-shadow"
-              : `Intro-Container-inner disappear text-inner drop-shadow`
-          }
-        >
+        
           
           {leaf?<Leaf/>:<></>}
           
-        </div>
+       
       
       
-        <div className={state ? "overlay" : "overlay disappear"}>
+        <div className={`${styles.overlay}`}>
           <FlipCard />
         </div>
       </div>
