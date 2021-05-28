@@ -1,35 +1,27 @@
 @import "/src/App.scss";
 .bg {
-  
-  
   height: 100%;
   z-index: 1;
-
-  
+  user-select: none;
+  touch-action: none;
   display: block;
-  
-  top:0;
+
+  top: 0;
   overflow: visible;
   position: absolute;
   
-
   animation: test linear forwards infinite;
- 
-  
-  min-width:100%;
-  
-  
+
+  min-width: 100%;
 }
-.itemBg{
- 
-  border-right:.4rem dashed var(--color1);
+.itemBg {
+  border-right: 0.4rem dashed var(--color1);
   background-size: cover;
   background-position: center center;
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 100%;
   position: absolute;
-  top:0;
- 
+  top: 0;
 }
 @keyframes appear {
   from {
@@ -47,4 +39,3 @@
     transform: translateX(-100%);
   }
 }
-

@@ -3,6 +3,7 @@
     background-image: url("/homebg.jpg");
     background-size: cover;
     background-position: center center;
+  
     ::-webkit-scrollbar {
       display: none;
     }
@@ -21,12 +22,14 @@
     }
   
 .overlay {
+  user-select: none;
+    overflow: hidden;
     position: absolute;
+    
     display: block;
     transition: inherit;
     justify-content: flex-start;
     align-items: center;
-
     overflow-x: scroll;
 
     top: 0;

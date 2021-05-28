@@ -1,3 +1,4 @@
+@import '/src/App.scss';
 .snow{
     width:100%;
     overflow: hidden;
@@ -6,6 +7,7 @@
     top:0;
     left:0;
     z-index: 1231231;
+    background: rgba($color1,.24);
     
 }
 .snowflake {

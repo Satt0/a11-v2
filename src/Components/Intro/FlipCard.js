@@ -79,7 +79,7 @@ useEffect(()=>{
     >
       
       {[...data,data[0]].map((e,i)=>{
-        if(e){
+       
           return (<div
           key={"bg-carousel-"+i}
           className={styles.itemBg}
@@ -88,11 +88,11 @@ useEffect(()=>{
             width:width,
             overflow: "hidden",
             backgroundImage: `url("${getImgPath(
-              e.bg[0].url
+              e?.bg[0].url || ''
             )}")`,
           }}
         ></div>)
-        }
+        
       })}
     </div>
   );
