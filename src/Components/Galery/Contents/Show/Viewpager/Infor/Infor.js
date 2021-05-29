@@ -2,15 +2,13 @@ import { useSelector, useDispatch } from "react-redux";
 import styles from "styles/ViewPager.module.scss";
 import { getImgPath } from "lib/ulti";
 import {useEffect} from 'react'
-import {useColor} from 'lib/hook'
 export default function infor({ index }) {
   const data = useSelector((state) => state.img);
   const infor = data.find((e) => e.id === index);
   const arr = data.filter((e) => e.view === infor.view);
-  const color=useColor()
   const next =
     arr[(arr.findIndex((e) => e.id === index && e.hasInfor) + 1) % arr.length];
-  const prev = arr[Math.max(arr.findIndex((e) => e.id === index) - 1, 0)];
+  const prev = arr[(arr.findIndex((e) => e.id === index) - 1 + arr.length)%arr.length];
   const dispatch = useDispatch();
   useEffect(() => {
     const a=setTimeout(()=>{

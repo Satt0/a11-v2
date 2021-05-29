@@ -24,7 +24,6 @@
   left: 0;
   z-index: 0;
   transition: all 0.3s;
-  
 }
 .bgBlack {
   background-color: black;
@@ -36,35 +35,33 @@
 .videoPlayerContainer {
   min-height: 300px;
   width: 100%;
-  display:grid;
+  display: grid;
   transition: all 0.3s $time-func;
 }
 .on {
- 
   grid-template-columns: 100%;
   grid-template-rows: 80vh;
-  @media screen  and (max-width:1200px){
+  @media screen and (max-width: 1200px) {
     grid-template-rows: 60vh;
   }
-  @media screen  and (max-width:600px){
+  @media screen and (max-width: 600px) {
     grid-template-rows: unset;
   }
-
 }
 .off {
   max-width: 60%;
-  @media screen  and (max-width:1200px){
+  @media screen and (max-width: 1200px) {
     max-width: 80%;
   }
-  @media screen  and (max-width:600px){
+  @media screen and (max-width: 600px) {
     max-width: unset;
   }
   grid-template-columns: 100%;
   grid-template-rows: 40vh;
 
-  padding-left:0 4vw;
-  @media screen and (max-width:900px) {
-    padding:0;
+  padding: 0 4vw;
+  @media screen and (max-width: 900px) {
+    padding: 0;
     grid-template-rows: unset;
   }
 }
@@ -72,7 +69,6 @@
 .VideoContainer {
   border-top: 0.4rem dashed var(--color1);
   border-bottom: 0.4rem dashed var(--color1);
-
 
   overflow: hidden;
 
@@ -86,7 +82,6 @@
   min-height: 100vh;
   min-width: 300px;
 
-  
   padding: 4rem 6vw;
   @media screen and(max-width:1200px) {
     padding: 3rem 2vw;
@@ -107,27 +102,27 @@
   }
 }
 .caption {
-    font-family: $introFont;
+  font-family: $introFont;
 
-    font-size: 1.6rem;
-    p {
-      max-width: 768px;
-      margin: 0 auto;
+  font-size: 1.6rem;
+  p {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+
+.buttonToggle {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  z-index: 12312123;
+  border: none;
+  background-color: transparent;
+  color: white;
+  img {
+    transition: all 0.7s $time-func;
+    &:hover {
+      transform: rotate(720deg) scale(1.2);
     }
   }
-
-  .buttonToggle{
-    position: absolute;
-    top:5%;
-    left:5%;
-    z-index: 12312123;
-    border:none;
-    background-color: transparent;
-    color:white;
-    img{
-      transition: all .7s $time-func;
-      &:hover{
-        transform: rotate(720deg) scale(1.2);
-      }
-    }
-  }
+}

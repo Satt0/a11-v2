@@ -29,7 +29,7 @@
   }
   .script-bf-box {
     display: none;
-
+    
     transition: all 0.3s cubic-bezier(0, 0.7, 0.38, 1.23);
     &:nth-child(odd) {
       &.animated {
@@ -62,7 +62,8 @@
       }
     }
     .content-carousel {
-     
+      border-radius: 2px 2px 0 0;
+      border-top: 2px solid $color1;
       overflow: hidden;
       transition: all 0.4s;
       background-color: white;
@@ -105,7 +106,7 @@
     }
   }
 
-  @media only screen and(orientation:portrait) {
+  @media only screen and(max-width:$galery-res) {
     flex-direction: row;
     flex-wrap: nowrap;
     .script-bf-box {
