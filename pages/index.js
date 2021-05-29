@@ -35,7 +35,7 @@ export default function Home({ items }) {
 }
 export async function getStaticProps() {
   const url =
-    process.env.NODE_ENV === "production" || true
+    process.env.NODE_ENV === "production"
       ? "https://desolate-escarpment-45092.herokuapp.com"
       : "http://localhost:1337";
   const data = fetch(`${url}/carousels`).then((res) => res.json());
