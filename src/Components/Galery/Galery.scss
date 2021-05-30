@@ -5,7 +5,7 @@
   
   
    @extend %bg;
-  border:none;
+    border:none;
     height:100vh;
     min-height: 500px;
     @media screen and (max-width:$galery-res) {
@@ -31,7 +31,7 @@ position: relative;
    }
    
     .Show{
-        width:90%;
+        width:95%;
         z-index: 2;
         height:100%;
         overflow: visible;

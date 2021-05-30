@@ -85,7 +85,7 @@ export default function Video() {
             className={`${bg ? style.on : style.off} ${
               style.videoPlayerContainer
             }`}
-            
+            //style={{border:"5px solid white",overflow:"hidden"}}
           >
             <ReactPlayer
               url={data[play].url}

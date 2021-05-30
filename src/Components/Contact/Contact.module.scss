@@ -36,34 +36,30 @@
   min-height: 300px;
   width: 100%;
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   transition: all 0.3s $time-func;
+  min-width: 300px;
+  min-height: calc(300px * 0.5625);
 }
 .on {
-  grid-template-columns: 100%;
-  grid-template-rows: 80vh;
-  @media screen and (max-width: 1200px) {
-    grid-template-rows: 60vh;
-  }
-  @media screen and (max-width: 600px) {
-    grid-template-rows: unset;
-  }
+  --width:80vw;
+  --height:calc(((var(--width))) * 0.5625);
+  width: var(--width);
+  height: var(--height);
+ 
 }
 .off {
-  max-width: 60%;
-  @media screen and (max-width: 1200px) {
-    max-width: 80%;
+  
+  --width:40vw;
+  --height:calc(((var(--width))) * 0.5625);
+  @media screen and(max-width:1200px) {
+    --width:70vw;
+  --height:calc(((var(--width))) * 0.5625);
   }
-  @media screen and (max-width: 600px) {
-    max-width: unset;
-  }
-  grid-template-columns: 100%;
-  grid-template-rows: 40vh;
+  width: var(--width);
+  height: var(--height);
 
-  padding: 0 4vw;
-  @media screen and (max-width: 900px) {
-    padding: 0;
-    grid-template-rows: unset;
-  }
 }
 
 .VideoContainer {
@@ -82,10 +78,7 @@
   min-height: 100vh;
   min-width: 300px;
 
-  padding: 4rem 6vw;
-  @media screen and(max-width:1200px) {
-    padding: 3rem 2vw;
-  }
+  
   h1 {
     font-size: 2rem;
     text-align: center;

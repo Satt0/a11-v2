@@ -16,15 +16,15 @@ export default function SidePanel({ onClick, index }) {
       setToggle(true);
     }
   }, [scroll]);
-  useEffect(() => {
-    let a;
-    if (toggle) {
-      a = setTimeout(() => {
-        setToggle(false);
-      }, 5000);
-    }
-    return () => clearTimeout(a);
-  }, [toggle]);
+  // useEffect(() => {
+  //   let a;
+  //   if (toggle) {
+  //     a = setTimeout(() => {
+  //       setToggle(false);
+  //     }, 5000);
+  //   }
+  //   return () => clearTimeout(a);
+  // }, [toggle]);
   return (
     <div className={styles.SidePanel}>
       <div
