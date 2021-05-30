@@ -2,7 +2,7 @@
 .Carousel-Container {
   z-index: 12;
   --height:100%;
-  --width:calc(var(--height) * 0.9);
+  --width:calc(var(--height) * 0.87);
   height: 100%;
   width: var(--width);
   @media screen and(max-width:900px) {
@@ -12,9 +12,9 @@
   margin:0 auto;
   display: flex;
   border-top: 0.4rem dashed var(--color1);
-  border-bottom: 0.4rem dashed var(--color1);
-  border-left: 0.4rem dotted var(--color1);
-  border-right: 0.4rem dotted var(--color1);
+  // border-bottom: 0.4rem dashed var(--color1);
+  // border-left: 0.4rem dotted var(--color1);
+  // border-right: 0.4rem dotted var(--color1);
   border-radius: 3px;
   flex-direction: row;
   justify-content: center;
@@ -52,7 +52,7 @@
     width: 100%;
     will-change: transform;
     cursor: pointer;
-    height: 85%;
+    height: 95%;
 
     position: relative;
     display: inline-block;
@@ -85,7 +85,7 @@
       .bg-main {
         opacity: 0;
         animation: fade-in 1.4s forwards cubic-bezier(0.51, 1.05, 0.59, 0.99);
-        background-position: center center;
+        background-position-x: center;
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;

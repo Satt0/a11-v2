@@ -87,8 +87,9 @@ export default function Carousel({ length, view, img }) {
                 position:'absolute',
                 width:'100%',
                 height:'100%',
+                backgroundPositionY:e.hasInfor?'center':'bottom',
                 backgroundImage: `url("${getImgPath(e.img[0].url)}")`}}>
-
+            
                 <p className="text-title">{e.name}</p> 
                 </div>
             </div>

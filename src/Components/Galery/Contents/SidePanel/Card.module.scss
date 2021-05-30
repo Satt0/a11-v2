@@ -12,14 +12,16 @@
   background-size: cover;
   background-position: center top;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  transition: all 0.3s cubic-bezier(0, 0.7, 0.38, 1.23);
-  will-change: transform;
+  transition: width 0.3s cubic-bezier(0, 0.7, 0.38, 1.23);
+  //will-change: transform;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-repeat: no-repeat;
   align-items: center;
+  background-size: cover;
+  background-position: center top;
   p {
     
     color: white;

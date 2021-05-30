@@ -26,11 +26,11 @@ export default function SidePanel({ onClick, index }) {
     return () => clearTimeout(a);
   }, [toggle]);
   return (
-    <div className={styles.SidePanel}>
+    <div className={`${styles.SidePanel} ${
+      toggle ? styles.on : styles.off
+    }`}>
       <div
-        className={`${styles.SidePanelContainer} ${
-          toggle ? styles.on : styles.off
-        }`}
+        className={`${styles.SidePanelContainer} `}
       >
         {list.map((e, i) => (
           <div
