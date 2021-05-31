@@ -49,6 +49,19 @@
   right: 15%;
   animation: moving 3s infinite;
 }
+.title-header{
+  font-family: $introFont;
+  margin:0;
+  padding:0;
+  backdrop-filter: blur(15px);
+  border-top: 4px dashed $color1;
+  font-size: 2.5rem;
+  padding: 1rem 10%;
+  width: 100%;
+  color:white;
+  
+  background: linear-gradient(to right,rgba($color1,.8), transparent);
+}
 @keyframes moving {
   0% {
     transform: translateY(0);

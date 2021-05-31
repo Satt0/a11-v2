@@ -18,37 +18,21 @@ export default function TopPanel({ onClick, index }) {
   }, [index]);
 
   return (
-    <div
-      className="TopPanel-Container pb-2"
-      style={{
-        userSelect: "none",
-
-    //     backgroundImage: `linear-gradient(
-    //   to right,
-    //   ${color}, 0.7),
-    //   white
-    // )`,
-      }}
-    >
-      <div
+    <>
+     <div
         className="preload-bg"
         style={{
           backgroundImage: `url("${list[(current + 1) % list.length].img}")`,
         }}
       ></div>
-      <div
-        className="TopPanel-Container-bg ml-2"
-        key={"top-pane" + index}
-        style={{ backgroundImage: `url("${list[current].img}")` }}
-      ></div>
-      <div className="TopPanel-Container-text ml-3" key={"text-move" + index}>
-        <p className="text-lower m-0">
-          <span>Now: </span>
-          {list[index].name} <br />
-          <span>next:{list[(index + 1) % list.length].name}</span>
-        </p>
-      </div>
-      <div className="ml-auto mr-0 d-flex flex-nowrap mr-3">
+    <div
+      className="TopPanel-Container pb-2"
+      style={{
+        userSelect: "none",
+      }}
+    >
+     
+       <div className="ml-auto mr-0 d-flex flex-nowrap mr-3">
         <div
           key={"btn-left" + state1}
           className="button-nav"
@@ -58,12 +42,33 @@ export default function TopPanel({ onClick, index }) {
         >
           <img
             onClick={onClick((index - 1 + list.length) % list.length)}
-            style={{ transform: "rotate(180deg)" }}
-            src="/arrow.svg"
+            style={{ transform: "rotateY(180deg)" }}
+            src="/right-arrow.png"
             width="34px"
             height="34px"
           />
         </div>
+        
+      </div>
+      <div
+        className="TopPanel-Container-bg"
+      >
+        <div
+        className="TopPanel-Container-bg-content"
+        key={"top-pane" + index}
+        style={{ backgroundImage: `url("${list[current].img}")` }}
+        >
+          <p className="text-lower title-panel m-0">
+         
+          {list[index].name} 
+       
+        </p>
+        </div>
+
+      
+      </div>
+      <div className="ml-auto mr-0 d-flex flex-nowrap mr-3">
+        
         <div
           className="ml-2 button-nav"
           key={"btn-right" + state2}
@@ -73,12 +78,12 @@ export default function TopPanel({ onClick, index }) {
         >
           <img
             onClick={onClick((index + 1) % list.length)}
-            src="/arrow.svg"
+            src="/right-arrow.png"
             width="34px"
             height="34px"
           />
         </div>
       </div>
-    </div>
+    </div></>
   );
 }

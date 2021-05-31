@@ -22,7 +22,7 @@ export default function App() {
       <Intro />
       <Parallax
        
-        bgImage="/bg1.jpg"
+        bgImage="/bg7.jpg"
         bgImageAlt="the cat"
         strength={550}
       >

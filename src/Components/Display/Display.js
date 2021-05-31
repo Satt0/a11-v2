@@ -75,6 +75,10 @@ const Display = () => {
     };
   }, []);
   return (
+    <>
+      <h1 className="title-header">#Intro</h1>
+    
+  
     <div id="story" className={styles.container}>
       <div className={styles.paragraph}>
         <div
@@ -108,7 +112,7 @@ const Display = () => {
             
         </div>
       </div>
-    </div>
+    </div>  </>
   );
 };
 

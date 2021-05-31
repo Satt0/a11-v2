@@ -50,13 +50,13 @@ const dispatch = useDispatch()
  
   return (
     <>
-  
+  <h1 className="title-header">#Gallery</h1>
     <div
     id="galery"
      className="Galery" onClick={()=>{   
       
     }}>
-      
+        
         <SidePanel onClick={onClick} index={a} />
         <Show  length={display[a].length} view={display[a].view} />
         <TopPanel onClick={onClick} index={a} />

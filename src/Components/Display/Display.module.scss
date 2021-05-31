@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
 @import "src/App.scss";
 .container {
-  border-top: 0.4rem dotted var(--color1);
+  
   z-index: 5;
   
   width: 100%;
@@ -16,6 +16,9 @@
   margin: 0 auto;
   text-align: center;
   position: relative;
+  background-color: rgba(255, 255, 255, 0.125);
+  border-radius: 4px;
+  backdrop-filter: blur(14px);
 }
 .group {
   text-align: left;

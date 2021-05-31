@@ -84,13 +84,13 @@ export default function Header() {
        <div className={styles.drawer}>
        <div>
        <ScrollIntoView selector="#story" onClick={hideAfterClick}>
-              <li className="hover-link" >  Welcome</li>
+              <li className="hover-link" >  Intro</li>
             </ScrollIntoView>
             <ScrollIntoView selector="#galery" onClick={hideAfterClick}>
-              <li className="hover-link">Intro</li>
+              <li className="hover-link">Gallery</li>
             </ScrollIntoView>
             <ScrollIntoView selector="#video" onClick={hideAfterClick}>
-              <li className="hover-link">Video</li>
+              <li className="hover-link">Videos</li>
             </ScrollIntoView>
        </div>
             <div className={styles.soundClound}>

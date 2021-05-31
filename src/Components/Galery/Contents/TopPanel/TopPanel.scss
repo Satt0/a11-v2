@@ -1,22 +1,37 @@
-@import "../../../../App.scss";
+@import "/src/App.scss";
 .TopPanel-Container {
  
   
   
   display:block;
   height:30%;
+  margin-bottom: 2rem;
   max-height: 130px;
   display:none;
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: $galery-res) {
-    display: flex;
+    display: grid;
+    grid-template-columns: max-content  1fr max-content;
+    grid-template-rows: 1fr;
+    padding:0 15%;
+    @media screen and(max-width:800px) {
+      padding: 0 5%;
+    }
+    @media screen and(max-width:450px) {
+      padding: 0;
+    }
   }
   .button-nav{
-    -webkit-animation: slide-top 1000ms ease forwards ;
-    animation: slide-top 1000ms ease forwards;
+    // -webkit-animation: slide-top 1000ms ease forwards ;
+    // animation: slide-top 1000ms ease forwards;
+    
     display: inline-block;
-    filter:grayscale(90%);
+    transition: all .7s $time-func;
+    filter:grayscale(90%) ;
+    &:hover{
+      transform: scale(1.2) rotate(720deg);
+    }
   }
   .preload-bg{
     width:0;
@@ -25,32 +40,54 @@
     overflow: hidden;
   }
   &-bg{
-    -webkit-animation: slide-top 1000ms ease forwards ;
-    animation: slide-top 1000ms ease forwards;
-      width:30%;
+   
+      width:100%;
       height:90%;
-      max-width: 190px;
-      background-position: center top;
-      background-size: cover;
+      
+      display: grid;
+      grid-template-columns:1fr;
       background-repeat: no-repeat;
       border-radius: 3px;
-      border:2px dashed #ead4c3;
+     
+      &-content{
+        width:100%;
+        height:100%;
+        border-radius: 4px;
+        max-width: 160px;
+        margin: 0 auto;
+        position: relative;
+        background-position: center top;
+        background-size: cover;
+        -webkit-animation: slide-top 1000ms ease forwards ;
+        animation: slide-top 1000ms ease forwards;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.317);
+      }
      
   }
-  &-text{
-    animation:  slideRight .3s forwards cubic-bezier(0, 0.7, 0.38, 1.23);
-      .text-upper{
-          font-family: $font2;
-      }
-      .text-lower{
-        font-family: $introFont;
-        font-size: 1.7rem;
-        white-space: nowrap;
-        span{
-            font-size: 1.2rem;
-        }
-        
-      }
+  .title-panel{
+    color:white;
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:2px 5px;
+    font-family: $introFont;
+    background: linear-gradient(to right,$color1,transparent);
   }
+  // &-text{
+  //   animation:  slideRight .3s forwards cubic-bezier(0, 0.7, 0.38, 1.23);
+  //     .text-upper{
+  //         font-family: $font2;
+  //     }
+  //     .text-lower{
+  //       font-family: $introFont;
+  //       font-size: 1.7rem;
+  //       white-space: nowrap;
+  //       span{
+  //           font-size: 1.2rem;
+  //       }
+        
+  //     }
+  // }
   
 }
