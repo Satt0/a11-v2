@@ -32,7 +32,7 @@ export default function TopPanel({ onClick, index }) {
       }}
     >
      
-       <div className="ml-auto mr-0 d-flex flex-nowrap mr-3">
+       <div className="ml-auto mr-0 d-flex flex-nowrap ml-3">
         <div
           key={"btn-left" + state1}
           className="button-nav"
