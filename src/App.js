@@ -40,16 +40,11 @@ export default function App() {
           <Galery />
         </ScrollAnimation>
       </Parallax>
-      <Parallax
-      
-        bgImage="/bg5.jpg"
-        bgImageAlt="the cat"
-        strength={550}
-      >
+     
         <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
           <Video />
         </ScrollAnimation>
-      </Parallax>
+      
       <Parallax
       
         bgImage="/bg8.jpg"

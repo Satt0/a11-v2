@@ -27,9 +27,14 @@
 }
 .bgBlack {
   background-color: black;
+  background-image: none !important;
 }
 .bgImg {
   background-color: transparent;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  filter:blur(14px) grayscale(70%);
 }
 
 .videoPlayerContainer {
@@ -38,7 +43,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  transition: all 0.3s $time-func;
+  transition: all .5s ease;
   min-width: 300px;
   min-height: calc(300px * 0.5625);
 }

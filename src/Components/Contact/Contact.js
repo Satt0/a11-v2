@@ -9,18 +9,22 @@ export default function Video() {
     {
       name: "Kỉ hiếu (2019)",
       url: "https://youtu.be/Vj9RyMifCAE",
+      bg:'http://i3.ytimg.com/vi/Vj9RyMifCAE/maxresdefault.jpg'
     },
     {
       name: "Memories (2018)",
       url: "https://youtu.be/lhsIzX1p_Bs",
+      bg:'http://i3.ytimg.com/vi/lhsIzX1p_Bs/hqdefault.jpg'
     },
     {
       name: "20/11 (2018)",
       url: "https://youtu.be/nTAOuwwOJuk",
+      bg:'http://i3.ytimg.com/vi/nTAOuwwOJuk/maxresdefault.jpg'
     },
     {
       name: "Múa thư pháp (2016)",
       url: "https://youtu.be/p2QbcTbFwxM",
+      bg:'http://i3.ytimg.com/vi/p2QbcTbFwxM/hqdefault.jpg'
     },
   ];
   const [play, setPlay] = useState(0);
@@ -44,6 +48,9 @@ export default function Video() {
         {bg?<button onClick={()=>{toggleBg(false)}} title="close"  className={style.buttonToggle}><img src="/cross.png" width="20px"/></button>:<></>}
         <div
           onClick={()=>{toggleBg(a=>!a)}}
+          style={{
+            backgroundImage:`url('${data[play].bg}')`
+          }}
           className={`${style.blurWallpaper} ${
             bg ? style.bgBlack : style.bgImg
           }`}
@@ -103,7 +110,7 @@ export default function Video() {
               }}
               onEnded={() => {
                 setPlay((a) => (a + 1) % data.length);
-                //toggleBg(true);
+                
               }}
             />
           </div>
@@ -112,11 +119,14 @@ export default function Video() {
     </>
   );
 }
-const Wish = ({ name, wishes, change }) => (
-  <div className="position-relative pb-3">
-    {wishes.map((e, i) => (
-      <p key={"wish" + i}>{e}</p>
-    ))}
-    <p className="text-right w-100">- from Tan -</p>
-  </div>
-);
+const Wish = ({ name, wishes, change }) => {
+  
+  return (
+    <div className="position-relative pb-3">
+      {wishes.map((e, i) => (
+        <p key={"wish" + i}>{e}</p>
+      ))}
+      <p className="text-right w-100">- from Tan -</p>
+    </div>
+  );
+}
