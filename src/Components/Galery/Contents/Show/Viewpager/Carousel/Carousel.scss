@@ -1,18 +1,18 @@
 @import "/src/App.scss";
 .Carousel-Container {
   z-index: 12;
-  --height:100%;
-  --width:calc(var(--height) * 0.87);
+  --height: 100%;
+  --width: calc(var(--height) * 0.87);
   height: 100%;
   width: var(--width);
   @media screen and(max-width:900px) {
-    width:100%;
+    width: 100%;
   }
-  
-  margin:0 auto;
+
+  margin: 0 auto;
   display: flex;
-  border-top: 0.4rem dashed var(--color1);
-  
+  border-top: 0.4rem solid white;
+
   border-radius: 3px;
   flex-direction: row;
   justify-content: center;
@@ -34,7 +34,7 @@
   }
   .script-bf-box {
     display: none;
-    
+
     transition: all 0.3s cubic-bezier(0, 0.7, 0.38, 1.23);
     &:nth-child(odd) {
       &.animated {
@@ -90,8 +90,7 @@
         display: flex;
         align-items: flex-end;
         background-size: cover;
-        
-       
+
         .text-title {
           text-align: center;
 
@@ -99,7 +98,10 @@
           font-weight: lighter;
           line-height: inherit;
           white-space: nowrap;
-          background-color: white;
+          background-color: rgba(255, 255, 255, 0.221);
+          backdrop-filter: blur(21px);
+          color:white;
+
           padding: 7px 14px;
           font-size: 2vw;
           @media screen and(min-width:1000px) {
@@ -109,7 +111,6 @@
           width: 100%;
         }
       }
-      
     }
   }
 

@@ -81,6 +81,7 @@ const Display = () => {
   
     <div id="story" className={styles.container}>
       <div className={styles.paragraph}>
+      <div className={styles.overlay}></div>
         <div
           onClick={() => {
             setLang((state) => !state);
@@ -100,6 +101,7 @@ const Display = () => {
         </div>
           
         <div className={styles.group}>
+         
           {lang ? posts.vn : posts.en}
           <p className="text-right">**a11-k52-lg1**</p>
           <ScrollAnimation animateOnce={true} animateIn="classFadeIn">

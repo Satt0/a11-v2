@@ -28,7 +28,7 @@
     
     display: inline-block;
     transition: all .7s $time-func;
-    filter:grayscale(90%) ;
+    filter:grayscale(90%) invert(1);
     &:hover{
       transform: scale(1.2) rotate(720deg);
     }
@@ -74,20 +74,6 @@
     font-family: $introFont;
     background: linear-gradient(to right,$color1,transparent);
   }
-  // &-text{
-  //   animation:  slideRight .3s forwards cubic-bezier(0, 0.7, 0.38, 1.23);
-  //     .text-upper{
-  //         font-family: $font2;
-  //     }
-  //     .text-lower{
-  //       font-family: $introFont;
-  //       font-size: 1.7rem;
-  //       white-space: nowrap;
-  //       span{
-  //           font-size: 1.2rem;
-  //       }
-        
-  //     }
-  // }
+  
   
 }

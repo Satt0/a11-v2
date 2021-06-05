@@ -3,23 +3,28 @@ import ScrollIntoView from "react-scroll-into-view";
 import {Drawer,makeStyles} from  '@material-ui/core'
 import style from './Header.module.scss'
 const useStyles=makeStyles((theme)=>({
+  root:{
+    backgroundColor:'unset'
+   
+  },
   drawer:{
     '& > div > div  > li':{
       listStyleType:'none',
       textAlign:'center',
       padding:theme.spacing(1)
     },
+    backdropFilter:'blur(5px)',
       padding:theme.spacing(2),
       display:'grid',
       gridTemplateRows:'max-content 1fr',
       paddingTop:'13vh',
-      opacity:.8,
+      opacity:.9,
+      backgroundColor: 'rgba(255, 255, 255, 0.11)',
       overflow:'auto',
       width:'100vw',
      height:'100vh',
       maxWidth:500,
-      backgroundColor:"#ead4c3cc",
-      zIndex:123123123123,
+      zIndex:500,
       [theme.breakpoints.down('sm')]:{
         padding:'0',
         paddingTop:'10vh',
@@ -80,7 +85,7 @@ export default function Header() {
      
        
        
-        <Drawer variant="persistent"  anchor="right" open={toggle} onClose={()=>{setToggle(false)}}>
+        <Drawer variant="persistent" classes={{paper:styles.root}}  anchor="right" open={toggle} onClose={()=>{setToggle(false)}}>
        <div className={styles.drawer}>
        <div>
        <ScrollIntoView selector="#story" onClick={hideAfterClick}>

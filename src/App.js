@@ -1,60 +1,50 @@
 import dynamic from 'next/dynamic'
+import {useState,useEffect} from 'react'
 import { Parallax } from "react-parallax";
+import {useSelector} from 'react-redux'
 import Intro from "./Components/Intro/Intro";
 import Display from "./Components/Display/Display";
-import ScrollAnimation from "react-animate-on-scroll";
-import { useColor } from "lib/hook";
 const Galery = dynamic(()=>import('./Components/Galery/Galery'))
 const Ending1=dynamic(()=>import('./Components/Ending1/Ending1'))
 const Video=dynamic(()=>import('./Components/Contact/Contact'))
 const Header=dynamic(()=>import('./Components/Header/Header'))
+ 
 export default function App() {
-  const color = useColor();
+  const bg=useSelector(state=>state.bg)
+  const [data,setData]=useState([])
+  const [bgIndex,setBgIndex]=useState(0)
+  useEffect(()=>{
+    const a=setInterval(()=>{
+      setBgIndex(i=>(i+1)%bg.length)
+    },8000)
+    return ()=>clearInterval(a)
+  },[bg])
+  useEffect(()=>{
+    console.log(bg);
+    setData(bg)
+  },[bg])
   return (
     <div
       className="App"
-      style={{
-        background: `linear-gradient(to right,${color},.2),hsla(0,0%,100%,.9) 65%)`,
-      }}
-    >
       
+    >
+      <div 
+        key={'app-bg-'+bgIndex}
+      style={{
+        backgroundImage:`url('${data[bgIndex]?.bg[0].url}')`
+      }} className="app-overlay"></div>
       <Header />
       <Intro />
-      <Parallax
-       
-        bgImage="/bg7.jpg"
-        bgImageAlt="the cat"
-        strength={550}
-      >
+      
         
           <Display />
        
-      </Parallax>
-      <Parallax
-       
-        bgImage="/bg1.jpg"
-        bgImageAlt="the cat"
-        strength={550}
-      >
-        <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
-          <Galery />
-        </ScrollAnimation>
-      </Parallax>
      
-        <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
-          <Video />
-        </ScrollAnimation>
+          <Galery />
       
-      <Parallax
-      
-        bgImage="/bg8.jpg"
-        bgImageAlt="the cat"
-        strength={550}
-      >
-      <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
+      <Video/>
         <Ending1 />
-      </ScrollAnimation>
-</Parallax>
+
       
     </div>
   );

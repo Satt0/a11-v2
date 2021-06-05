@@ -8,13 +8,21 @@
 
 
 .App {
+  
+
   .app-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    background-image: url('/bg1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    animation: fade-in-no-zoom .8s ease forwards;
 
     opacity: 0.8;
+    filter: blur(5px);
     height: 100vh;
     z-index: -1;
   }
@@ -52,15 +60,27 @@
 .title-header{
   font-family: $introFont;
   margin:0;
+  z-index: 1;
   padding:0;
-  backdrop-filter: blur(15px);
   border-top: 4px dashed $color1;
   font-size: 2.5rem;
   padding: 1rem 10%;
   width: 100%;
+  overflow: hidden;
   color:white;
-  
-  background: linear-gradient(to right,rgba($color1,.8), transparent);
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    width:100%;
+    height:100%;
+    //background: linear-gradient(to right,rgba($color1,.8), transparent);
+
+    top:0;
+    left:0;
+    z-index: -1;
+    filter: blur(12px);
+  }
 }
 @keyframes moving {
   0% {

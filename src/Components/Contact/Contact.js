@@ -48,9 +48,9 @@ export default function Video() {
         {bg?<button onClick={()=>{toggleBg(false)}} title="close"  className={style.buttonToggle}><img src="/cross.png" width="20px"/></button>:<></>}
         <div
           onClick={()=>{toggleBg(a=>!a)}}
-          style={{
-            backgroundImage:`url('${data[play].bg}')`
-          }}
+          // style={{
+          //   backgroundImage:`url('${data[play].bg}')`
+          // }}
           className={`${style.blurWallpaper} ${
             bg ? style.bgBlack : style.bgImg
           }`}
@@ -61,7 +61,7 @@ export default function Video() {
           style={{ minWidth: 300, zIndex: 2, display: bg ? "none" : "" }}
         >
           <div
-            className={`${style.caption} p-2`}
+            className={`${style.caption} p-4`}
             onClick={() => {
               setWish((i) => (i + 1) % wishes.length);
             }}
@@ -77,7 +77,7 @@ export default function Video() {
           style={{ zIndex: 2, height: "100%" }}
         >
           <div
-            className={`${style.portrait} p-0 ${bg?'mt-2':''}`}
+            className={`${style.portrait} p-2 ${bg?'mt-2':''}`}
             style={{ height: "auto" }}
           >
             <h1 className="title">Playing: {data[play].name}</h1>

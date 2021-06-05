@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import style from './Leaf.module.scss'
+import {useSelector} from 'react-redux'
 export default function Leaf() {
     const arr=[1,2,3,4,5,6,7,8,9,10,11,12]
     const [leaf, setLeaf] = useState(false);
