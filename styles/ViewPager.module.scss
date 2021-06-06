@@ -68,25 +68,36 @@
   }
   position: relative;
   
-  border-radius:2px;
-  border-bottom: 3vh solid white;
-  border-top: 1.5vh solid rgb(255, 255, 255);
-    
-  background-position: center top;
+  border-radius:10px;
+  // border-bottom: 3vh solid white;
+  // border-top: 1.5vh solid rgb(255, 255, 255);
+    position: relative;
+    backdrop-filter: blur(4px);
+    background-color: rgba(white,.2);
+  div{
+    background-position: center top;
   background-size: cover;
-  
+  opacity:.95;
+  --height:90%;
+  width:100%;
+  height:95%;
+  top:2.25%;
+  position: absolute;
+  }
 }
 .information {
   text-align: left;
-  border-radius: 0 4px 4px 0;
-  background-color: rgb(255, 255, 255);
+  border-radius: 0 10px 10px 0;
+  background-color: rgba(191, 185, 185, 0.479);
+  backdrop-filter: blur(12px);
   box-shadow: rgba(138, 131, 124, 0.23) 14.31px 15.31px 15px;
   
   &:before{
     content: "";
+    backdrop-filter: blur(12px);
     position: absolute;
     z-index: -1;
-    border-radius: 4px 0  0 4px;
+    border-radius: 10px 0  0 10px;
     box-shadow: rgba(138, 131, 124, 0.23) 14.31px 15.31px 15px;
     top:0;
     height:100%;
@@ -108,6 +119,7 @@
   h2 {
     
     width: 100%;
+    color:white;
     font-size: 2vw;
     font-family: $font3;
     span{
@@ -116,7 +128,7 @@
     strong{
       font-family: $introFont;
       font-weight: lighter;
-      color:rgb(230, 120, 171);
+      color:rgb(255, 225, 239);
     }
     animation: slideRight 0.3s forwards cubic-bezier(0,.7,.38,1.23);
   -webkit-animation: slideRight 0.3s forwards cubic-bezier(0,.7,.38,1.23);

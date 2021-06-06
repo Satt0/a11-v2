@@ -86,7 +86,8 @@ export default function Carousel({ length, view, img }) {
               style={{
                 position:'absolute',
                 width:'100%',
-                height:'100%',
+                height:'95%',
+                top:'2.25%',
                 backgroundPositionY:e.hasInfor?'center':'bottom',
                 backgroundImage: `url("${getImgPath(e.img[0].url)}")`}}>
             

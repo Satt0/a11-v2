@@ -21,15 +21,18 @@ export default function infor({ index }) {
   return (
     <div className={`${styles.infor}`}>
       <div
-        key={infor.id + "img"}
         className={` text-center ${styles.imgContainer}`}
-        style={{
-          backgroundImage: `url("${getImgPath(
-            infor.mainImage?.url ?? infor.img[0].url
-          )}")`
-        }}
       >
+       <div
+       key={infor.id + "img"}
        
+       style={{
+         backgroundImage: `url("${getImgPath(
+           infor.mainImage?.url ?? infor.img[0].url
+         )}")`
+       }}
+       
+       ></div>
       </div>
       <div  className={`${styles.information}`}>
         <h2 key={infor.id+'name'} className="h1" ><span>** {infor.name}**</span></h2>

@@ -10,30 +10,31 @@ const Video=dynamic(()=>import('./Components/Contact/Contact'))
 const Header=dynamic(()=>import('./Components/Header/Header'))
  
 export default function App() {
-  const bg=useSelector(state=>state.bg)
-  const [data,setData]=useState([])
-  const [bgIndex,setBgIndex]=useState(0)
-  useEffect(()=>{
-    const a=setInterval(()=>{
-      setBgIndex(i=>(i+1)%bg.length)
-    },8000)
-    return ()=>clearInterval(a)
-  },[bg])
-  useEffect(()=>{
-    console.log(bg);
-    setData(bg)
-  },[bg])
+  // const bg=useSelector(state=>state.bg)
+  // const [data,setData]=useState([])
+  // const [bgIndex,setBgIndex]=useState(0)
+  // useEffect(()=>{
+  //   const a=setInterval(()=>{
+  //     setBgIndex(i=>(i+1)%bg.length)
+  //   },8000)
+  //   return ()=>clearInterval(a)
+  // },[bg])
+  // useEffect(()=>{
+  //   console.log(bg);
+  //   setData(bg)
+  // },[bg])
   return (
     <div
       className="App"
       
     >
-      <div 
+      {/* <div 
         key={'app-bg-'+bgIndex}
       style={{
         backgroundImage:`url('${data[bgIndex]?.bg[0].url}')`
-      }} className="app-overlay"></div>
+      }} className="app-overlay"></div> */}
       <Header />
+      <h1 style={{backdropFilter:"blur(12px)"}} className="title-header pt-5 text-center pb-5">#Welcome to A11 Gallery!</h1>
       <Intro />
       
         

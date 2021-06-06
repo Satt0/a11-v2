@@ -1,6 +1,6 @@
 import React, { useState, useEffect ,useCallback} from "react";
 import ScrollIntoView from "react-scroll-into-view";
-import {Drawer,makeStyles} from  '@material-ui/core'
+import {Drawer,makeStyles,Backdrop} from  '@material-ui/core'
 import style from './Header.module.scss'
 const useStyles=makeStyles((theme)=>({
   root:{
@@ -88,6 +88,7 @@ export default function Header() {
         <Drawer variant="persistent" classes={{paper:styles.root}}  anchor="right" open={toggle} onClose={()=>{setToggle(false)}}>
        <div className={styles.drawer}>
        <div>
+         <Backdrop open={toggle} onClick={()=>{setToggle(false)}}/>
        <ScrollIntoView selector="#story" onClick={hideAfterClick}>
               <li className="hover-link" >  Intro</li>
             </ScrollIntoView>

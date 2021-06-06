@@ -56,7 +56,7 @@ export default function App() {
       if (typeof window !== undefined) {
         const width = window.innerWidth;
 
-        setWidth(Math.max(width, 450));
+        setWidth(Math.max(width, 850));
       }
     };
     window.addEventListener("resize", onResize);

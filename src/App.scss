@@ -8,8 +8,8 @@
 
 
 .App {
-  
-
+  //padding-top: 15vw;
+  overflow: hidden;
   .app-overlay {
     position: fixed;
     top: 0;
@@ -45,6 +45,7 @@
   font-size: 1.3rem;
   transition: all 0.2s;
   cursor: pointer;
+  color:white;
   border: 2px dashed transparent;
   &:hover {
     color: white;
