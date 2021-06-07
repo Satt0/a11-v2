@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styles from "styles/ViewPager.module.scss";
 import { getImgPath } from "lib/ulti";
 import {useEffect} from 'react'
-export default function infor({ index }) {
+export default function infor({ index,closeIndex,handleIndex }) {
   const data = useSelector((state) => state.img);
   const infor = data.find((e) => e.id === index);
   const arr = data.filter((e) => e.view === infor.view);
@@ -44,7 +44,8 @@ export default function infor({ index }) {
         <div className={styles.navContainer}>
         <div
           onClick={() => {
-            dispatch({ type: "updateIndex", payload: prev.id });
+            //dispatch({ type: "updateIndex", payload: prev.id });
+            handleIndex(prev.id)
           }}
           className={styles.nav + " hover hover-yellow"}
         >
@@ -52,7 +53,7 @@ export default function infor({ index }) {
         </div>
         <div
           onClick={() => {
-            dispatch({ type: "toggleIndex" });
+            closeIndex(false)
           }}
           className={styles.nav + " hover hover-red"}
         >
@@ -60,7 +61,8 @@ export default function infor({ index }) {
         </div>
         <div
           onClick={() => {
-            dispatch({ type: "updateIndex", payload: next.id });
+            //dispatch({ type: "updateIndex", payload: next.id });
+            handleIndex(next.id)
           }}
           className={styles.nav + " hover hover-yellow"}
         >

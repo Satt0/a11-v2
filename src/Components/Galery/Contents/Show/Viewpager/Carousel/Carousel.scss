@@ -2,7 +2,7 @@
 .Carousel-Container {
   z-index: 12;
   --height: 100%;
-  --width: calc(var(--height) * 0.87);
+  --width: calc(var(--height) * 0.99);
   height: 100%;
   width: var(--width);
   @media screen and(max-width:900px) {
@@ -58,7 +58,7 @@
     justify-content: center;
     align-items: flex-end;
 
-    margin: 0.5vw;
+    //margin: 0.5vw;
     will-change: transform;
     @for $var from 1 through 10 {
       &:nth-child(#{$var}) .content-carousel {
@@ -123,7 +123,7 @@
       height: 80%;
       margin: 0;
       min-width: 70px;
-      margin: 1px;
+      //margin: 1px;
     }
   }
 }

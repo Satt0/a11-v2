@@ -3,23 +3,23 @@ import { useSelector } from "react-redux";
 import styles from "styles/FlipCard.module.scss";
 import { getImgPath } from "lib/ulti";
 
-export default function App() {
-  const img = useSelector((state) => {
-    const data = state.bg;
-    if (data.length) {
-      for (let i = data.length - 1; i >= 0; i--) {
-        const index = Math.floor(Math.random() * i);
-        const temp = data[i];
-        data[i] = data[index];
-        data[index] = temp;
-      }
-    }
-
-    return data;
-  });
+export default function App({ img, elRef ,speed=30}) {
   const [data, setData] = useState([]);
   const [preload, setPreload] = useState([]);
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(700);
+ useEffect(() => {
+    const handler = (ref) => {
+      return () => {
+        if (ref?.current?.offsetWidth) {
+          setWidth(Math.max(ref.current.offsetWidth, 650) || 650);
+        }
+      };
+    };
+    handler(elRef)();
+
+    window.addEventListener("resize", handler(elRef));
+  }, [elRef]);
+
   // preload 2 bg
   useEffect(() => {
     if (img.length) {
@@ -51,43 +51,39 @@ export default function App() {
     };
   }, [preload]);
   // change width on resize window
-  useEffect(() => {
-    const onResize = () => {
-      if (typeof window !== undefined) {
-        const width = window.innerWidth;
 
-        setWidth(Math.max(width, 850));
-      }
-    };
-    window.addEventListener("resize", onResize);
-    onResize();
-    return () => {
-      window.removeEventListener("resize", onResize);
-    };
-  }, [preload]);
-
-  return (
-    <div
-      className={styles.bg}
-      style={{
-        width: width * img.length,
-        animationDuration: `${img.length * 30}s`,
-      }}
-    >
-      {[...data, data[0]].map((e, i) => {
-        return (
-          <div
-            key={"bg-carousel-" + i}
-            className={styles.itemBg}
-            style={{
-              left: i * width,
-              width: width,
-              overflow: "hidden",
-              backgroundImage: `url("${getImgPath(e?.bg[0].url || "")}")`,
-            }}
-          ></div>
-        );
-      })}
-    </div>
-  );
+  if (img?.length) {
+    return (
+      <div
+        className={styles.bg}
+        style={{
+          width: width * img.length,
+          animationDuration: `${img.length * speed}s`,
+        }}
+      >
+        {[...data, data[0]].map((e, i) => {
+          return (
+            <div
+              key={"bg-carousel-" + i}
+              className={styles.itemBg}
+              style={{
+                left: i * width,
+                width: width,
+                overflow: "hidden",
+                filter: !e?.name ? "blur(2px)" : "",
+                backgroundImage: `url("${
+                  !e?.name
+                    ? getImgPath(e?.bg[0]?.url)
+                    : getImgPath(e?.img[0]?.url)
+                }")`,
+              }}
+            >
+              {e?.name ? <p className={styles.textTitle}>{e.name}</p> : null}
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+  return <p>loading</p>;
 }

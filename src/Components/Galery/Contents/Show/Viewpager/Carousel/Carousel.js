@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getImgPath } from "lib/ulti";
-import {useScroll} from 'lib/hook'
-export default function Carousel({ length, view, img }) {
-  const dispatch = useDispatch();
-  const scroll=useScroll()
+export default function Carousel({ length, view, img ,handleIndex}) {
+  const scroll=true
   const [on, switchOff] = useState(true);
   const [data, setData] = useState([]);
   const [preload, setPreload] = useState([]);
@@ -59,7 +57,8 @@ export default function Carousel({ length, view, img }) {
           <div
             onClick={() => {
               if (e.hasInfor) {
-                dispatch({ type: "updateIndex", payload: e.id });
+               // dispatch({ type: "updateIndex", payload: e.id });
+                handleIndex(e.id)
               } else {
                 setCount((a) => (a + 1) % img.length);
               }

@@ -1,10 +1,18 @@
 @import '../../Galery.scss';
 
 .Show{
-    overflow: visible;
+    overflow: hidden;
+    position: relative;
     transition: inherit;
+    display:flex;
+    flex-direction: column;
     &-Content{
         
         margin-top: 90px;
+    }
+    .flip-card-ctn{
+        position: relative;
+        width: 90%;
+        height:100%;
     }
 }
