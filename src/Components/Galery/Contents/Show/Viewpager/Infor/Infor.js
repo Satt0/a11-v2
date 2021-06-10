@@ -12,7 +12,8 @@ export default function infor({ index,closeIndex,handleIndex }) {
   const dispatch = useDispatch();
   useEffect(() => {
     const a=setTimeout(()=>{
-      dispatch({ type: "updateIndex", payload: next.id });
+     // dispatch({ type: "updateIndex", payload: next.id });
+      handleIndex(next.id)
     },10000)
    return ()=>{
      clearTimeout(a)

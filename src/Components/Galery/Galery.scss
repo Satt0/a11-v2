@@ -4,7 +4,7 @@ $count:2;
   z-index: 300;
 
   border: none;
-  
+  backdrop-filter:blur(14px);
   min-height: 500px;
   @media screen and (max-width: $galery-res) {
     min-height: 900px;

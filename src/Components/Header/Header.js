@@ -4,35 +4,43 @@ import {Drawer,makeStyles,Backdrop} from  '@material-ui/core'
 import style from './Header.module.scss'
 const useStyles=makeStyles((theme)=>({
   root:{
-    backgroundColor:'unset'
+    backgroundColor: 'rgba(0, 0, 0, 0.562)',
+    overflowX:'hidden',
    
   },
   drawer:{
+   
     '& > div > div  > li':{
       listStyleType:'none',
       textAlign:'center',
-      padding:theme.spacing(1)
+      maxWidth:400,
+      padding:theme.spacing(1),
+      margin:'0 auto'
     },
-    backdropFilter:'blur(5px)',
+    //backdropFilter:'blur(5px)',
+   
       padding:theme.spacing(2),
       display:'grid',
-      gridTemplateRows:'max-content 1fr',
+      gridTemplateColumns:'40% 1fr',
+      gridTemplateRows:'1fr',
       paddingTop:'13vh',
       opacity:.9,
-      backgroundColor: 'rgba(255, 255, 255, 0.11)',
+      
       overflow:'auto',
       width:'100vw',
      height:'100vh',
-      maxWidth:500,
+      //maxWidth:500,
       zIndex:500,
       [theme.breakpoints.down('sm')]:{
         padding:'0',
         paddingTop:'10vh',
+        gridTemplateColumns:'1fr',
+      gridTemplateRows:'max-content 1fr',
       }
   },
   soundClound:{
     zIndex:234234,
-    
+    maxWidth:500,
     paddingTop:theme.spacing(2),
     margin:'0 auto',
     width:'90%'
@@ -85,10 +93,12 @@ export default function Header() {
      
        
        
-        <Drawer variant="persistent" classes={{paper:styles.root}}  anchor="right" open={toggle} onClose={()=>{setToggle(false)}}>
+        <Drawer variant="persistent" classes={{paper:styles.root}}  anchor="top" open={toggle} onClose={()=>{setToggle(false)}}>
        <div className={styles.drawer}>
-       <div>
-         <Backdrop open={toggle} onClick={()=>{setToggle(false)}}/>
+       <div style={{ display:'flex',
+        flexDirection:'column',
+        justifyContent:'center'}}>
+         
        <ScrollIntoView selector="#story" onClick={hideAfterClick}>
               <li className="hover-link" >  Intro</li>
             </ScrollIntoView>
