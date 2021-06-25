@@ -27,7 +27,7 @@
     &:nth-child(1){
         left:5%;
         top:23%;
-        animation-delay: 100ms;
+        animation-delay: 1100ms;
         background-color: #B6E5D8;
 
     }
@@ -35,6 +35,8 @@
         top:20%;
         left:10%;
         background-color: #FBE5C8;
+        animation-delay: 500ms;
+
     }
     &:nth-child(3){
         left:15%;
@@ -42,14 +44,14 @@
         background-color: #FAE8E0;
     }
     &:nth-child(4){
-        animation-delay: 100ms;
+        animation-delay: 1200ms;
 
        left:7%;
        top:43%;
        background-color: #D8A7B1;
     }
     &:nth-child(5){
-        animation-delay: 100ms;
+        animation-delay: 200ms;
         background-color: #FAE8E0;
        left:9%;
        top:89%;
@@ -59,27 +61,31 @@
         right:5%;
         top:25%;
         background-color: #D8A7B1;
+        animation-delay: 700ms;
     }
     &:nth-child(7){
         right:10%;
         top:22%;
-        animation-delay: 200ms;
+        animation-delay: 600ms;
         background-color: #B6E2D3;
 
     }
     &:nth-child(8){
         right:15%;
         top:90%;
+        animation-delay: 200ms;
         background-color: #D8A7B1;
     }
     &:nth-child(9){
         right:7%;
         top:65%;
+        animation-delay: 1700ms;
         background-color: #D8A7B1;
     }
     &:nth-child(10){
         right:11%;
         animation-delay: 100ms;
+        animation-delay: 1100ms;
         background-color: #B6E2D3;
         top:55%;
     }
