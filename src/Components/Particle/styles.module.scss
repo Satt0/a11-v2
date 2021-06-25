@@ -1,7 +1,7 @@
 
 
 .container{
-    background-color: rgba(255, 255, 255, 0.425);
+    background-color: rgb(255, 255, 255);
     width: 100vw;
     height:100vh;
     position: fixed;
@@ -89,7 +89,7 @@
     50% {
    
       opacity: 0.01;
-      transform: scale(0.5) ;
+      transform: scale(0.5) translateY(-25px);
     }
   }
 
@@ -97,6 +97,6 @@
     20% {
       
       opacity: 0.03;
-      transform:   scale(0.5) ;
+      transform:   scale(0.5) translateY(25px);
     }
   }

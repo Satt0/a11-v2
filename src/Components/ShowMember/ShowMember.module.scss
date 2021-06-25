@@ -90,20 +90,22 @@
     bottom:5vh;
       min-width: 40%;
     margin-top: 150px;
-    
-    transition: background .3s;
-    backdrop-filter: blur(12px);
-    background-color: rgba(129, 129, 129, 0.589);
-    &:hover{
-     // background-color: rgba(0, 0, 0, 0.76);
+    box-shadow: rgba(100, 100, 111, 0.411) 0px 7px 29px 0px;
 
-    }
+    transition: background .3s;
+    background-color: rgb(255, 255, 255);
+    color:black;
     padding:14px 20px;
     border-radius: 3px;
-    font-family: $introFont;
+    font-family: $font4;
+    font-weight: lighter;
     // font-size: 2.5rem;
+    @media screen and (max-width:1200px){
+      font-size: .8rem;
+    
+  }
     @media screen and (max-width:800px){
-        font-size: 1rem;
+        font-size: .6rem;
         padding:10px 20px;
         
         margin:0;
