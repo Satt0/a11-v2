@@ -33,7 +33,7 @@ export default function Intro() {
       {/* <Leaf />  */}
 
       <div className={`${styles.overlay}`} ref={ref}>
-        {img?<FlipCard elRef={ref} img={img}/>:<p>loading</p>}
+        {/* {img?<FlipCard elRef={ref} img={img}/>:<p>loading</p>} */}
       </div>
     </div>
   );

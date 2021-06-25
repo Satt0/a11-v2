@@ -39,7 +39,7 @@ export default function Video() {
   }, [bg]);
   return (
     <>
-      <h1 className="title-header">#Video</h1>
+      <h1 className="title-header text-center">#Video</h1>
       <div
         id="video"
         

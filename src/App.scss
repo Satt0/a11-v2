@@ -9,6 +9,7 @@
 
 .App {
   //padding-top: 15vw;
+  background-color: white;
   overflow: hidden;
   .app-overlay {
     position: fixed;
@@ -63,12 +64,12 @@
   margin:0;
   z-index: 1;
   padding:0;
-  border-top: 4px dashed $color1;
+  // border-top: 4px dashed $color1;
   font-size: 2.5rem;
   padding: 1rem 10%;
   width: 100%;
   overflow: hidden;
-  color:white;
+  color:black;
   position: relative;
   &::after{
     content: "";

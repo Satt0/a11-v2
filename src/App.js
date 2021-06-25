@@ -1,14 +1,10 @@
 import dynamic from 'next/dynamic'
-import {useState,useEffect} from 'react'
-import { Parallax } from "react-parallax";
-import {useSelector} from 'react-redux'
-import Intro from "./Components/Intro/Intro";
+import Particle from './Components/Particle';
 import Display from "./Components/Display/Display";
-const Galery = dynamic(()=>import('./Components/Galery/Galery'))
 const Ending1=dynamic(()=>import('./Components/Ending1/Ending1'))
 const Video=dynamic(()=>import('./Components/Contact/Contact'))
 const Header=dynamic(()=>import('./Components/Header/Header'))
- 
+ const DisplayImage=dynamic(()=>import ('./Components/ShowMember'))
 export default function App() {
   // const bg=useSelector(state=>state.bg)
   // const [data,setData]=useState([])
@@ -28,20 +24,18 @@ export default function App() {
       className="App"
       
     >
-      {/* <div 
-        key={'app-bg-'+bgIndex}
-      style={{
-        backgroundImage:`url('${data[bgIndex]?.bg[0].url}')`
-      }} className="app-overlay"></div> */}
+      <Particle/>
+      
       <Header />
-      <h1 style={{backdropFilter:"blur(12px)"}} className="title-header pt-5 text-center pb-5">#Welcome to A11 Gallery!</h1>
-      <Intro />
+      <h1  className="title-header pt-5 text-center pb-5">#Welcome to A11 Gallery!</h1>
+      {/* <Intro /> */}
       
         
           <Display />
-       
-     
-          <Galery />
+          <h1  className="title-header pt-5 text-center pb-5">#MEMBER</h1>
+
+      <DisplayImage/>
+          {/* <Galery /> */}
       
       <Video/>
         <Ending1 />

@@ -1,0 +1,102 @@
+
+
+.container{
+    background-color: rgba(255, 255, 255, 0.425);
+    width: 100vw;
+    height:100vh;
+    position: fixed;
+}
+.ptc{
+    position: absolute;
+    background-color: rgba(223, 122, 122, 0.404);
+    width:20px;
+    height:20px;
+    border-radius: 100%;
+    
+    animation-delay: 100ms;
+    &:nth-child(odd){
+        width:20px;
+    height:20px;
+        animation: twinkle-1 infinite 16s linear;
+    }
+    &:nth-child(even){
+        width:24px;
+    height:24px;
+        animation: twinkle-2 infinite 16s linear;
+    }
+    &:nth-child(1){
+        left:5%;
+        top:23%;
+        animation-delay: 100ms;
+        background-color: #B6E5D8;
+
+    }
+    &:nth-child(2){
+        top:20%;
+        left:10%;
+        background-color: #FBE5C8;
+    }
+    &:nth-child(3){
+        left:15%;
+        top:67%;
+        background-color: #FAE8E0;
+    }
+    &:nth-child(4){
+        animation-delay: 100ms;
+
+       left:7%;
+       top:43%;
+       background-color: #D8A7B1;
+    }
+    &:nth-child(5){
+        animation-delay: 100ms;
+        background-color: #FAE8E0;
+       left:9%;
+       top:89%;
+
+    }
+    &:nth-child(6){
+        right:5%;
+        top:25%;
+        background-color: #D8A7B1;
+    }
+    &:nth-child(7){
+        right:10%;
+        top:22%;
+        animation-delay: 200ms;
+        background-color: #B6E2D3;
+
+    }
+    &:nth-child(8){
+        right:15%;
+        top:90%;
+        background-color: #D8A7B1;
+    }
+    &:nth-child(9){
+        right:7%;
+        top:65%;
+        background-color: #D8A7B1;
+    }
+    &:nth-child(10){
+        right:11%;
+        animation-delay: 100ms;
+        background-color: #B6E2D3;
+        top:55%;
+    }
+}
+@keyframes twinkle-1 {
+   
+    50% {
+   
+      opacity: 0.01;
+      transform: scale(0.5) ;
+    }
+  }
+
+  @keyframes twinkle-2 {
+    20% {
+      
+      opacity: 0.03;
+      transform:   scale(0.5) ;
+    }
+  }

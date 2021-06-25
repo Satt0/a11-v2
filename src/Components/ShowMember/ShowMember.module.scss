@@ -1,0 +1,112 @@
+@import "../../App.scss";
+
+.container {
+  background-color: rgb(255, 255, 255);
+  z-index: 23123123;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.itemContainer {
+  display: grid;
+  padding: 10% 15%;
+  grid-template-columns: repeat(5, 200px);
+  grid-template-rows: repeat(9, 400px);
+  grid-gap: 100px;
+  position: relative;
+  @media screen and (max-width: 1600px) {
+    padding: 10% 10%;
+    grid-gap: 70px;
+    grid-template-columns: repeat(5, 170px);
+    grid-template-rows: repeat(9, 340px);
+  }
+  @media screen and (max-width: 1270px) {
+    padding: 10% 10%;
+    grid-gap: 50px;
+    grid-template-columns: repeat(4, 150px);
+
+    grid-template-rows: repeat(13, 300px);
+  }
+  @media screen and (max-width: 900px) {
+    padding: 5% 5%;
+    grid-template-columns: repeat(2, 300px);
+
+    grid-template-rows: repeat(23, 600px);
+  }
+  @media screen and (max-width: 700px) {
+    padding: 15px;
+    grid-gap: 10px;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 150px);
+
+    grid-template-rows: repeat(23, 300px);
+  }
+}
+.item {
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  border-radius: 5px;
+  &:nth-child(even){
+      transform: scale(.9);
+      div{
+        bottom:0;
+        right:0;
+      }
+
+  
+  }
+&:nth-child(odd){
+     
+      div{
+        top:0;
+        left:0;
+       }
+  }
+  
+ 
+}
+
+.bg{
+    width:95%;
+    height:90%;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+
+    
+}
+.ScrollText{
+    position: absolute;
+    z-index: 23234;
+    color:white;
+    white-space: nowrap;
+    opacity:0;
+    transition: transform 1.5s ease;
+    will-change: transform;
+    left:15%;
+    bottom:5vh;
+      min-width: 40%;
+    margin-top: 150px;
+    
+    transition: background .3s;
+    backdrop-filter: blur(12px);
+    background-color: rgba(129, 129, 129, 0.589);
+    &:hover{
+     // background-color: rgba(0, 0, 0, 0.76);
+
+    }
+    padding:14px 20px;
+    border-radius: 3px;
+    font-family: $introFont;
+    // font-size: 2.5rem;
+    @media screen and (max-width:800px){
+        font-size: 1rem;
+        padding:10px 20px;
+        
+        margin:0;
+    }
+    margin-top: 50px;
+}

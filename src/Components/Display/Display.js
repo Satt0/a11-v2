@@ -76,7 +76,7 @@ const Display = () => {
   }, []);
   return (
     <>
-      <h1 className="title-header">#Intro</h1>
+      <h1 className="title-header text-center">#Intro</h1>
     
   
     <div id="story" className={styles.container}>
