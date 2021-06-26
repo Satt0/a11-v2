@@ -2,10 +2,18 @@
 
 .container {
   background-color: rgb(255, 255, 255);
-  z-index: 23123123;
+  z-index: 999;
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
+}
+.overlay{
+  width:100vw;
+  height:100vh;
+  position: fixed;
+  top:15vh;
+  left:0;
 }
 .itemContainer {
   display: grid;

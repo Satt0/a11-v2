@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSprings, animated, interpolate } from "react-spring";
 import { useGesture } from "react-use-gesture";
 import styles from "./style.module.scss";
-
+import Particle from "../Particle";
 
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
@@ -65,6 +65,7 @@ export default function Deck({src}) {
   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
   return (
     <div className={styles.container}>
+      
       {props.map(({ x, y, rot, scale }, i) => (
         <animated.div
           key={"card-deck-"+i}
@@ -78,6 +79,7 @@ export default function Deck({src}) {
           {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
           <animated.div
             {...bind(i)}
+            data-title="Kéo ảnh sang bên phải hoặc trái!"
             style={{
               transform: interpolate([rot, scale], trans),
               backgroundImage: `url(${src[i].url})`,
@@ -86,6 +88,7 @@ export default function Deck({src}) {
           <p className={styles.text}>{src[i].name}</p>
         </animated.div>
       ))}
+     
     </div>
   );
 }

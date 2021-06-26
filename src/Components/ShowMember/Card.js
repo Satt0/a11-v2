@@ -6,7 +6,7 @@ const calc = (x, y) => [-(y - window.innerHeight / 2) / 40, (x - window.innerWid
 const trans = (x, y, s) => `translateY(0) perspective(3200px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 export default function Card({image,moveMore=false,hoverImage}) {
-  const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 2, tension: 120, friction: 4 } }))
+  const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }))
     const [bg,setBg]=React.useState(image)
   const ref=React.useRef(null)
   React.useEffect(()=>{

@@ -7,6 +7,7 @@
     height: calc(var(--width)*0.6);
     position: relative;
     user-select: none;
+    z-index: 2000;
     overscroll-behavior-y: contain;
    div{
     position: absolute;
@@ -17,21 +18,21 @@
     align-items: center;
     justify-content: center;
     div {
-      --width:65vw;
+      --width:60vw;
       @media screen and (max-width:1000px){
-        --width:80vw;
+        --width:70vw;
       }
         background-color: white;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
         width: var(--width);
-        height: calc(var(--width) * 0.5625);
+        height: calc(var(--width) * 0.7);
         will-change: transform;
         border-radius: 10px;
         border:1.5vw solid white;
         
-        box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+        box-shadow: 0 13.5px 20px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
       }
    }
 }
@@ -49,9 +50,3 @@
   left:20%;
 }
 
-.title[title]:hover::after {
-  content: attr(title);
-  position: absolute;
-  top: -100%;
-  left: 0;
-}

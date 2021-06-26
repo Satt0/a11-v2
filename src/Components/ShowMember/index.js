@@ -3,6 +3,7 @@ import styles from './ShowMember.module.scss'
 import { useSelector } from 'react-redux'
 import Card from './Card'
 import ScrollText from './ScrollText'
+import Particle from '../Particle'
 export default function ShowMember() {
     const image=useSelector(state=>state.img)
     const [displayImages,setDisplayImage]=React.useState(null)
@@ -25,10 +26,14 @@ export default function ShowMember() {
     if(displayImages){
         return (
             <div className={styles.container}>
+                            
+                               <Particle/>
+
                 <div className={styles.itemContainer}>
                 {displayImages.map((e,i)=><div className={styles.item}>
                     <div  className={styles.bg}>
                         <ScrollText isLeft={i%2===1} text={e.name}/>
+                       
                         <Card hoverImage={e.hoverImage} moveMore={i%2===1} image={e.image}/>
                     </div>
                 </div>)}

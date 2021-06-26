@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import _ from "lodash";
 import style from './style.module.scss'
 import Moment from "./index";
+import Particle from "../Particle";
 export default function Wrapper() {
     const [atView,setView]=React.useState(false)
     const ref=React.useRef(null)
@@ -40,8 +41,9 @@ export default function Wrapper() {
   },[atView,ref.current])
   if (moment?.length && atView) {
     return (
-      <div className={style.title} title="Kéo ảnh sang bên phải hoặc trái!" style={{cursor:"grabbing"}}>
+      <div className={style.title}  style={{cursor:"grabbing",width:'100vw',height:'100vh',position:"relative"}}>
         <Moment src={moment} />
+        <Particle/>
       </div>
     );
   }

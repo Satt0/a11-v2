@@ -53,10 +53,11 @@
   opacity: 0;
   animation: slide-Right forwards 2s ease;
   animation-delay: 400ms;
-  transition: all .3s;
   
 }
 .h1,.h2{
+  transition: all .3s;
+
   @media screen and(hover:hover){
     &:hover{
       color: rgb(250, 58, 164);

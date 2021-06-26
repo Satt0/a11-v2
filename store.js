@@ -9,7 +9,8 @@ const initialState = {
   index: false,
   currentIndex: 0,
   date:new Date().toUTCString().substring(0, 16),
-  view:'home'
+  view:'home',
+  cursorZoom:false
 }
 
 const reducer = (state = initialState, action) => {
@@ -26,11 +27,14 @@ const reducer = (state = initialState, action) => {
   }
   else if(action.type==='changeView'){
     return {...state,view:action.payload}
-  }else if(action.type==='changeTheme'){
-    // const arr=Object.entries(state.theme)
-    // const found=arr.findIndex(e=>e[0]===action.payload)
+  }else if(action.type==='cursorZoom'){
+   
 
-    return {...state}
+    return {...state,cursorZoom:true}
+  }else if(action.type==='cursorUnZoom')
+  {
+    return {...state,cursorZoom:false}
+
   }
 return state
 }

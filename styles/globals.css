@@ -41,8 +41,45 @@ html {
   border-radius: 10px;
 }
 *::-webkit-scrollbar-track {
-  background-color: rgba(245, 222, 179, 0.199);
+  background-color: rgba(255, 255, 255, 0.199);
 }
 :root{
-  --color1:#727272;
+  --color1:#b4b4b4;
+}
+[data-title] {
+  font-size: 30px; /*optional styling*/
+  
+  position: relative;
+  cursor: grab;
+}
+
+@media screen and (hover : hover ){
+  [data-title]:hover::before {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -26px;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 2px;
+    background: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-family: sans-serif;
+    white-space: nowrap;
+  }
+  
+}
+
+  *{
+    cursor: none !important;
+  }
+
+.custom-cursor{
+  width:20px;
+  height:20px;
+  z-index: 123123123123;
+  border-radius: 100%;
+  transition: transform .1s;
+  background-color: #D8A7B1;
+  border:none;
 }
