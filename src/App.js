@@ -4,7 +4,6 @@ import Display from "./Components/Display/Display";
 const Ending1=dynamic(()=>import('./Components/Ending1/Ending1'))
 import Intro from './Components/Intro/Intro'
 import DisplayImage from './Components/ShowMember/index'
-import Mouse from '../lib/useMouse';
 
 
 //  const DisplayImage=dynamic(()=>import ('./Components/ShowMember'))
@@ -16,9 +15,8 @@ export default function App() {
       className="App"
       
     >
-      <Mouse/>
       
-    {isLock&& <Intro unLock={()=>{setLock(false)}} />}
+    {isLock&& <Intro unLock={()=>{setLock(false);console.log('click');}} />}
 
         
         {!isLock &&  <>

@@ -70,9 +70,7 @@ html {
   
 }
 
-  *{
-    cursor: none !important;
-  }
+ 
 
 .custom-cursor{
   width:20px;
@@ -83,3 +81,8 @@ html {
   background-color: #D8A7B1;
   border:none;
 }
+@media screen and (hover:none){
+  .custom-cursor{
+    display: none;
+  }
+} 

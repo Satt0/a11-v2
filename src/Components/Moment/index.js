@@ -76,6 +76,7 @@ export default function Deck({src}) {
             ),
           }}
         >
+          
           {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
           <animated.div
             {...bind(i)}
@@ -88,7 +89,6 @@ export default function Deck({src}) {
           <p className={styles.text}>{src[i].name}</p>
         </animated.div>
       ))}
-     
     </div>
   );
 }

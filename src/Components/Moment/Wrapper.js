@@ -41,9 +41,8 @@ export default function Wrapper() {
   },[atView,ref.current])
   if (moment?.length && atView) {
     return (
-      <div className={style.title}  style={{cursor:"grabbing",width:'100vw',height:'100vh',position:"relative"}}>
+      <div className={style.title}  style={{cursor:"grabbing"}}>
         <Moment src={moment} />
-        <Particle/>
       </div>
     );
   }
