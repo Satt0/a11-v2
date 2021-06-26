@@ -1,40 +1,49 @@
 import React, { useEffect, useState } from "react";
-import FlipCard from "./FlipCard";
-import dynamic from "next/dynamic";
-import {useSelector } from 'react-redux'
 import styles from "./Intro.module.scss";
-const Leaf = dynamic(() => import("./Leaf"));
+import ScrollIntoView from "react-scroll-into-view";
 export default function Intro() {
-  const [width, setWidth] = useState(0);
-  const ref=React.useRef(null)
-  const [img,setImg]=useState([])
-  const data = useSelector((state)=>state.bg);
-
-  useEffect(()=>{
-    setImg(data)
-  },[data])
-  React.useEffect(()=>{
-    const handler=(ref)=>{
-      return ()=>{
-        if(ref?.current?.offsetWidth){
-          setWidth(Math.max(ref.current.offsetWidth,650)||650)
-
-        }
+    const [lock,setLock]=useState(true)
+    const Ref=React.useRef(null)
+    React.useEffect(()=>{
+      if(Ref.current){
+        Ref.current.scrollIntoView({behavior:"auto"})
       }
+    },[Ref])
+  React.useEffect(()=>{
+    if(lock){
+      
+      document.body.style.overflow="hidden"
+    }
+    // else{
+    //   document.body.style.overflow=""
+
+    // }
+  },[lock])
+  React.useEffect(()=>{
+    if(!lock){
+      document.body.style.overflow=""
 
     }
-    handler(ref)()
-      
-      window.addEventListener('resize',handler(ref))
-  },[ref])
-
+  })
+useEffect(()=>{
+  let a= setTimeout(()=>{
+  },[4000])
+  return ()=>{
+    clearTimeout(a)
+  }
+})
   return (
-    <div className={styles.IntroContainer} id="intro">
-      {/* <Leaf />  */}
+    <div ref={Ref} className={styles.IntroContainer} >
+           <div className={styles.content}>
+           <h1  className={styles.h1}>#Welcome to A11 Gallery!</h1>
+           <h2  className={styles.h2}>A Website of Memories</h2>
+           <ScrollIntoView smooth selector="#intro">
 
-      <div className={`${styles.overlay}`} ref={ref}>
-        {/* {img?<FlipCard elRef={ref} img={img}/>:<p>loading</p>} */}
-      </div>
+            <button onClick={()=>{    setLock(false)
+}} className={styles.buttonOn}>Let's GO</button>
+           </ScrollIntoView>
+           </div>
+
     </div>
   );
 }

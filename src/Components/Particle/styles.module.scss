@@ -95,7 +95,7 @@
     50% {
    
       opacity: 0.01;
-      transform: scale(0.5) translateY(-25px);
+      transform: scale(0.5) translateY(-55px) translateX(-20px);
     }
   }
 
@@ -103,6 +103,6 @@
     20% {
       
       opacity: 0.03;
-      transform:   scale(0.5) translateY(25px);
+      transform:   scale(0.5) translateY(55px) translateX(20px);
     }
   }

@@ -46,7 +46,8 @@
   font-size: 1.7rem;
   figcaption {
     font-size: 1rem;
-    font-family: $introFont;
+    font-family: $font4;
+    font-weight: lighter;
    
     background-color: rgba(white,.2);
   }
@@ -55,17 +56,15 @@
 .figure{
   img{
     transition:transform  .3s $time-func;
-     filter:grayscale(.3)
   }
   @media screen and (hover:hover) and (min-width:1000px){
     &:hover{
 
      img{
-        transform: scale(1.5) translateY(-6%);
-        filter:grayscale(.05);
+        transform: scale(1.6) translateY(-6%);
         border-radius: 4px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      cursor: none;
+        cursor: none;
      }
     }
   }

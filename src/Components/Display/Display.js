@@ -50,33 +50,11 @@ const posts = {
 };
 const Display = () => {
   const [lang, setLang] = useState(true);
-  const [sticky, setSticky] = useState(false);
   
-  useEffect(() => {
-    const handler = () => {
-      if (typeof window !== undefined) {
-        const story = document.getElementById("story");
-        const el = story.getBoundingClientRect();
 
-        if (
-          el.y < 0 &&
-          story.offsetHeight + el.y > story.offsetHeight * 0.25 &&
-          window.innerWidth > 1400
-        ) {
-          setSticky(true);
-        } else {
-          setSticky(false);
-        }
-      }
-    };
-    window.addEventListener("scroll", handler);
-    return () => {
-      window.removeEventListener("scroll", handler);
-    };
-  }, []);
   return (
     <>
-      <h1 className="title-header text-center">#Intro</h1>
+      <h1 className="title-header text-center" id="intro">#Intro</h1>
     
   
     <div id="story" className={styles.container}>
@@ -90,10 +68,7 @@ const Display = () => {
           title="click to change language"
         >
           <button
-            style={{
-              position: sticky ? "fixed" : "relative",
-              top: sticky ? "8vh" : 0,
-            }}
+            
           >
             {lang ? "VI" : "EN"}/
             <span style={{ fontSize: "1rem" }}>{!lang ? "VI" : "EN"}</span>

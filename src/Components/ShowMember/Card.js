@@ -34,7 +34,7 @@ export default function Card({image,moveMore=false,hoverImage}) {
 },[ref,moveMore])
   return (
     <animated.div
-      class={styles.card}
+      className={styles.card}
       ref={ref}
       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
       onMouseEnter={()=>{setBg(hoverImage)}}

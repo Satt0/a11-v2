@@ -2,9 +2,9 @@ import dynamic from 'next/dynamic'
 import Particle from './Components/Particle';
 import Display from "./Components/Display/Display";
 const Ending1=dynamic(()=>import('./Components/Ending1/Ending1'))
-const Video=dynamic(()=>import('./Components/Contact/Contact'))
-const Header=dynamic(()=>import('./Components/Header/Header'))
+import Intro from './Components/Intro/Intro'
  const DisplayImage=dynamic(()=>import ('./Components/ShowMember'))
+ const Wrapper=dynamic(()=>import('./Components/Moment/Wrapper'))
 export default function App() {
   // const bg=useSelector(state=>state.bg)
   // const [data,setData]=useState([])
@@ -24,20 +24,21 @@ export default function App() {
       className="App"
       
     >
+      
+      {/* <Header /> */}
       <Particle/>
-      
-      <Header />
-      <h1  className="title-header pt-5 text-center pb-5">#Welcome to A11 Gallery!</h1>
-      {/* <Intro /> */}
-      
+      <Intro />
+
         
           <Display />
           <h1  className="title-header pt-5 text-center pb-5">#MEMBER</h1>
 
       <DisplayImage/>
           {/* <Galery /> */}
-      
-      <Video/>
+          <h1  className="title-header pt-5 text-center pb-5">#MOMENT</h1>
+
+      <Wrapper/>
+      {/* <Video/> */}
         <Ending1 />
 
       
