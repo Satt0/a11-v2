@@ -22,16 +22,25 @@ background-size: cover;
   background-size: cover;
   background-position: left;
 }
+@keyframes zoom {
+  from {
+    opacity:0;
+    transform: scale(1.5) translateX(-50px) translateY(50px);
+  }
+  to{
+    opacity:1;
+    transform: scale(1) translateX(0) translateY(0);
+  }
+}
 .paragraph {
-
   font-family: $introFont;
   max-width: 850px;
   padding: 3rem 5vw;
   color:black;
-  //margin: 0 auto;
+  
   @media screen  and (max-width:1000px){
     margin:0;
-    
+    margin: 0 auto !important;
   }
   text-align: center;
   position: relative;
@@ -52,20 +61,19 @@ background-size: cover;
 }
 .group {
   text-align: left;
-  //overflow: hidden;
+  animation: zoom 2s forwards ease;
+
+  position: relative;
   z-index: 3;
   p{
     opacity: .8;
     
   }
   font-size: 1.7rem;
-  figcaption {
-    font-size: 1rem;
-    font-family: $font4;
-    font-weight: lighter;
-   
-    background-color: rgba(white,.2);
+  @media screen and (max-width:1000px){
+    font-size: 1.4rem;
   }
+  
 }
 
 .mr{
@@ -74,9 +82,15 @@ background-size: cover;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 123123;
   height: 100%;
   height: 100vh;
   font-size: 1.7rem;
+
+  @media screen and (max-width:1000px){
+    font-size: 1.4rem;
+  }
   p{
     text-align: left;
     width: 100%;

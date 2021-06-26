@@ -1,8 +1,7 @@
 import styles from "./Display.module.scss";
 // import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import ScrollAnimation from "react-animate-on-scroll";
-
+import Particle from "../Particle";
 import React from "react";
 const posts = {
   vn: (
@@ -67,6 +66,8 @@ const Display = () => {
        
             
         </div>
+        <Particle/>
+
       </div>
     </div>  
 
@@ -82,8 +83,9 @@ const Display = () => {
 </p>         
          <p className="text-right">from Tan</p>
        
-            
         </div>
+        <Particle/>
+
       </div>
     </div>  
     </>
