@@ -48,3 +48,10 @@
   top:23%;
   left:20%;
 }
+
+.title[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: -100%;
+  left: 0;
+}

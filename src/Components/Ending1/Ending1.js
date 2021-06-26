@@ -10,10 +10,9 @@ export default function Ending1() {
           className={`${style.Ending} end1`}
          
         >
-          <h2 className="h4">-The End-</h2>
+          <h2 className="h4">-To be continued-</h2>
         
           <h5>last updated: {date}</h5>
-          <h6>contact: <a target="_blank" rel="noopener" href="https://www.facebook.com/hoangminhtan6601/">facebook</a></h6>
         </div>
     
     </>

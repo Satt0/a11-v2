@@ -54,42 +54,39 @@ const Display = () => {
 
   return (
     <>
-      <h1 className="title-header text-center" id="intro">#Intro</h1>
     
   
-    <div id="story" className={styles.container}>
-      <div className={styles.paragraph}>
-      <div className={styles.overlay}></div>
-        <div
-          onClick={() => {
-            setLang((state) => !state);
-          }}
-          className={styles.langBtn}
-          title="click to change language"
-        >
-          <button
-            
-          >
-            {lang ? "VI" : "EN"}/
-            <span style={{ fontSize: "1rem" }}>{!lang ? "VI" : "EN"}</span>
-          </button>
-        </div>
-          
-        <div className={styles.group}>
+    <div id="intro" className={`${styles.container} ${styles.bg1}`}>
+      <div className={styles.paragraph} style={{marginLeft:"10vw"}}>
+  
+        <div className={styles.group} >
          
-          {lang ? posts.vn : posts.en}
+          {posts.vn }
           <p className="text-right">**a11-k52-lg1**</p>
-          <ScrollAnimation animateOnce={true} animateIn="classFadeIn">
-          <figure className={styles.figure}>
-            <img src="uploads/IMG_0540_8d6a42f7a8.JPG" width="100%" />
-            <figcaption className="text-center">-March 2019-</figcaption>
-          </figure>
-       </ScrollAnimation>
+         
        
             
         </div>
       </div>
-    </div>  </>
+    </div>  
+
+    <div className={`${styles.container} ${styles.bg2}`}>
+      <div className={styles.paragraph} style={{margin:'0 auto'}}>
+  
+        <div className={` ${styles.mr}`}>
+         
+        <p>
+        A11 Family thân mến!
+          </p> 
+<p>            Vậy là chúng ta đã xa nhau được {(new Date()).getFullYear()-2019} năm rồi. Các bạn vẫn khỏe chứ 🤔 Đây là một website mà mình tạo ra với những kỉ niệm học sinh của chúng ta ngày đó. Hãy cùng xem và tận hưởng nhé!
+</p>         
+         <p className="text-right">from Tan</p>
+       
+            
+        </div>
+      </div>
+    </div>  
+    </>
   );
 };
 

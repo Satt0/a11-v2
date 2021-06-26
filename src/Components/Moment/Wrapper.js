@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import _ from "lodash";
+import style from './style.module.scss'
 import Moment from "./index";
 export default function Wrapper() {
     const [atView,setView]=React.useState(false)
@@ -39,7 +40,7 @@ export default function Wrapper() {
   },[atView,ref.current])
   if (moment?.length && atView) {
     return (
-      <div >
+      <div className={style.title} title="Kéo ảnh sang bên phải hoặc trái!" style={{cursor:"grabbing"}}>
         <Moment src={moment} />
       </div>
     );
