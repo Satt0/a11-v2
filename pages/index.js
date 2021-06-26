@@ -1,9 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import 'aos/dist/aos.css';
-import App from "src/App";
+import App from "../src/App";
 import Head from "next/head";
 
-export default function Home({ items }) {
+export default function Home() {
   return (
     <>
       <Head>

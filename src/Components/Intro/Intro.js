@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Intro.module.scss";
-import ScrollIntoView from "react-scroll-into-view";
 import Particle from "../Particle";
 export default function Intro({unLock}) {
   
@@ -13,7 +12,7 @@ export default function Intro({unLock}) {
            <h2  className={styles.h2}>A Website of Memories</h2>
            
 
-            <button onClick={()=>{  unLock()}} className={styles.buttonOn}>Let's GO</button>
+            <button onClick={()=>{unLock();console.log("ok");}} className={styles.buttonOn}>Let's GO</button>
           
            </div>
 <Particle/>
