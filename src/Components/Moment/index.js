@@ -2,18 +2,17 @@ import React, { useState } from "react";
 import { useSprings, animated, interpolate } from "react-spring";
 import { useGesture } from "react-use-gesture";
 import styles from "./style.module.scss";
-import Particle from "../Particle";
 
-
+import _ from 'lodash'
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = (i) => ({
   x: 0,
   y: i * -4,
   scale: 1,
   rot: -10 + Math.random() * 20,
-  delay: i * 100,
+  delay:  i*60,
 });
-const from = (i) => ({ x: 0, rot: 0, scale: 1.5, y: 1000 });
+const from = (i) => ({ x: 0, rot: 0, scale: 1.5, y: 0 });
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r, s) =>
   `perspective(1500px) rotateX(0deg) rotateY(${
@@ -25,11 +24,23 @@ export default function Deck({src}) {
  
 
   const [gone] = useState(() => new Set()); // The set flags all the cards that are flicked out
+  const [thisBg,setBg]=useState(src.map((e,i)=>i>src.length-4?e:{...e,url:null}))
   const [props, set] = useSprings(src.length, (i) => ({
     ...to(i),
     from: from(i),
   })); // Create a bunch of springs using the helpers above
   // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
+const onMouseDownHandler=(index)=>{
+ return ()=>{
+  if(index>=3){
+    setBg(s=>{
+      const newState=[...s]
+      newState[index-3]={...src[index-3]}
+      return newState
+    })
+  }
+ }
+}
   const bind = useGesture(
     ({
       args: [index],
@@ -41,9 +52,10 @@ export default function Deck({src}) {
     }) => {
       const trigger = velocity > 0.2; // If you flick hard enough it should trigger the card to fly out
       const dir = xDir < 0 ? -1 : 1; // Direction should either point left or right
-      if (!down && trigger) gone.add(index); // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
+      if (!down && trigger){ 
+        gone.add(index);} // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
       set((i) => {
-          
+         
         if (index !== i) return; // We're only interested in changing spring-data for the current spring
         const isGone = gone.has(index);
         const x = isGone ? (200 + window.innerWidth) * dir : down ? xDelta : 0; // When a card is gone it flys out left or right, otherwise goes back to zero
@@ -69,6 +81,7 @@ export default function Deck({src}) {
       {props.map(({ x, y, rot, scale }, i) => (
         <animated.div
           key={"card-deck-"+i}
+          onMouseDown={onMouseDownHandler(i)}
           style={{
             transform: interpolate(
               [x, y],
@@ -81,12 +94,18 @@ export default function Deck({src}) {
           <animated.div
             {...bind(i)}
             data-title="Kéo ảnh sang bên phải hoặc trái!"
+            
             style={{
+              height:`calc(var(--width) * ${1/src[i].ratio})`,
               transform: interpolate([rot, scale], trans),
-              backgroundImage: `url(${src[i].url})`,
+              backgroundImage: `url(${thisBg[i].url})`,
             }}
           />
-          <p className={styles.text}>{src[i].name}</p>
+          <p  style={{
+              
+              transform: interpolate([rot, scale], trans),
+              
+            }} className={styles.text}>{src[i].name}</p>
         </animated.div>
       ))}
     </div>

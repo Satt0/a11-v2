@@ -3,19 +3,23 @@ import { useSelector } from "react-redux";
 import _ from "lodash";
 import style from './style.module.scss'
 import Moment from "./index";
-import Particle from "../Particle";
 export default function Wrapper() {
     const [atView,setView]=React.useState(false)
     const ref=React.useRef(null)
-  const moment = useSelector((state) => {
-    const thisMoment = [...state.img.filter((e) => e.view === "moment")].map(
-      (e) => ({ url: e.img[0].url, name: e.name })
-    );
-    _.shuffle(thisMoment);
-    
-    return thisMoment;
-  });
- 
+    const [moment,setMoment]=React.useState([])
+  const src = useSelector((state) => state.img);
+ React.useEffect(()=>{
+   if(src.length>0){
+        setMoment(s=>{
+          const thisMoment = [...src.filter((e) => e.view === "moment")].map(
+            (e) => ({ url: e.img[0].url, name: e.name ,ratio:e.img[0].width/e.img[0].height})
+          );
+          _.shuffle(thisMoment);
+          console.log(thisMoment);
+          return thisMoment;
+        })
+   }
+ },[src])
   React.useEffect(()=>{
       const isAtView=()=>{
         

@@ -56,7 +56,7 @@ const Display = () => {
     
   
     <div id="intro" className={`${styles.container} ${styles.bg1}`}>
-      <div className={styles.paragraph} style={{marginLeft:"10vw"}}>
+      <div className={`${styles.paragraph} ${styles.leftParagraph}`}>
   
         <div className={styles.group} >
          

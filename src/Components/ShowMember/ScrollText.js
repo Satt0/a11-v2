@@ -10,8 +10,8 @@ export default function ScrollText({text,isLeft}) {
             return (e)=>{
                 const thisEl=el.getBoundingClientRect()
             const windowsHeight=window.innerHeight;
-           const offset=((thisEl.top/20));    
-            if((windowsHeight +100 > thisEl.top) && (thisEl.bottom > -100)){
+           const offset=((thisEl.top/10));    
+            if((windowsHeight > thisEl.top) && (thisEl.bottom > -100)){
                 let amount=offset 
                 
                 if(!isLeft) amount=amount* -1
@@ -19,7 +19,7 @@ export default function ScrollText({text,isLeft}) {
                 amount=amount>bound?bound:amount
                 amount=amount<-bound?-bound:amount
                 el.style.opacity='1'
-                el.style.transform=`translateY(${Math.abs(amount)}px) translateX( ${amount}px)`
+                el.style.transform=`translateY(${Math.abs(amount)}px) translateX( ${amount/4}px)`
             }else{
                 el.style.opacity=''
             }

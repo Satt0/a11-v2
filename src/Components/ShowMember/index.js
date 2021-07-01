@@ -30,7 +30,7 @@ export default function ShowMember() {
                                <Particle/>
 
                 <div className={styles.itemContainer}>
-                {displayImages.map((e,i)=><div className={styles.item}>
+                {displayImages.map((e,i)=><div key={"member"+i} className={styles.item}>
                     <div  className={styles.bg}>
                         <ScrollText isLeft={i%2===1} text={e.name}/>
                        

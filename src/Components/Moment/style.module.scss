@@ -27,12 +27,12 @@
         background-repeat: no-repeat;
         background-position: center center;
         width: var(--width);
-        height: calc(var(--width) * 0.7);
+        
         will-change: transform;
         border-radius: 10px;
         border:1.5vw solid white;
         
-        box-shadow: 0 13.5px 20px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+        box-shadow: 0 7.5px 21px 10px rgba(50, 50, 73, 0.137), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
       }
    }
 }
