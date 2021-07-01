@@ -7,7 +7,7 @@ import Particle from '../Particle'
 export default function ShowMember() {
     const image=useSelector(state=>state.img)
     const [displayImages,setDisplayImage]=React.useState(null)
-  
+    
     React.useEffect(()=>{
             if(image.length){
                 setDisplayImage(()=>{

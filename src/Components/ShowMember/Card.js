@@ -2,12 +2,10 @@ import React from 'react'
 import { useSpring, animated } from 'react-spring'
 import styles from './Card.module.scss'
 
-const calc = (x, y) => [-(y - window.innerHeight / 2) / 40, (x - window.innerWidth / 2) / 40, 1.1]
-const trans = (x, y, s) => `translateY(0) perspective(3200px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 export default function Card({image,moveMore=false,hoverImage}) {
-  const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }))
     const [bg,setBg]=React.useState(image)
+    const [focus,setFocus]=React.useState(false)
   const ref=React.useRef(null)
   React.useEffect(()=>{
     const getElementOffset=(el)=>{
@@ -15,7 +13,7 @@ export default function Card({image,moveMore=false,hoverImage}) {
             const thisEl=el.getBoundingClientRect()
         const windowsHeight=window.innerHeight;
        const offset=((thisEl.top/10));    
-        if((windowsHeight +100 > thisEl.top) && (thisEl.bottom > -100)){
+        if((windowsHeight +100 > thisEl.top) && (thisEl.bottom > -100 && focus)){
             let amount=moveMore?offset:offset/2
                 el.style.transform=`translateY(${Math.abs(amount)}px)`
         }
@@ -31,15 +29,28 @@ export default function Card({image,moveMore=false,hoverImage}) {
             window.removeEventListener('scroll',getElementOffset)
         }
     }
-},[ref,moveMore])
+},[ref,moveMore,focus])
   return (
+    <>
+    
     <animated.div
-      className={styles.card}
+      className={`${styles.card} ${focus?styles.onFocus:""}`}
       ref={ref}
-      onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+      onClick={()=>{setFocus(true)}}
       onMouseEnter={()=>{setBg(hoverImage)}}
-      onMouseLeave={() => {set({ xys: [0, 0, 1] });setBg(image)}}
-      style={{ transform: props.xys.interpolate(trans),backgroundImage:`url(${bg})` }}
-    />
+      onMouseLeave={() => {setBg(image)}}
+      style={{backgroundImage:`url(${bg})`}}
+    >
+     
+    </animated.div>
+    {/* {focus?(<div  className={styles.wrapper}>
+
+<div className={styles.bg} style={{backgroundImage:`url(${bg})`}}>
+
+</div>
+<div onClick={(e)=>{e.stopPropagation();setFocus(false);console.log('clicked');}} className={styles.overlay}></div>:<></>
+</div>):<></>} */}
+    </>
+    
   )
 }
