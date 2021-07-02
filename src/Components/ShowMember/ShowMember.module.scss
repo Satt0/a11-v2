@@ -57,22 +57,7 @@
   position: relative;
 
   border-radius: 5px;
-  &:nth-child(even){
-      transform: scale(.9);
-      div{
-        bottom:0;
-        right:0;
-      }
 
-  
-  }
-&:nth-child(odd){
-     
-      div{
-        top:0;
-        left:0;
-       }
-  }
   
  
 }
@@ -88,7 +73,7 @@
 }
 .ScrollText{
     position: absolute;
-    z-index: 23234;
+    z-index: 500;
     color:white;
     white-space: nowrap;
     opacity:0;

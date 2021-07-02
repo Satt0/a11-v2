@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import styles from "styles/ViewPager.module.scss";
-import { getImgPath } from "lib/ulti";
+import styles from "../../../styles/ViewPager.module.scss";
+import { getImgPath } from "../../../lib/ulti";
 import {useEffect} from 'react'
 export default function infor({ index,closeIndex,handleIndex }) {
   const data = useSelector((state) => state.img);

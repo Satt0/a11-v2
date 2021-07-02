@@ -7,7 +7,7 @@
     height: calc(var(--width)*0.6);
     position: relative;
     user-select: none;
-    z-index: 2000;
+    z-index: 600;
     overscroll-behavior-y: contain;
    div{
     position: absolute;
@@ -46,7 +46,7 @@
   border-radius: 4px;
   padding:1.5%;
   font-size: 1.5vw;
-  z-index: 32323;
+  z-index: 3000;
   position: absolute;
   top:23%;
   left:20%;

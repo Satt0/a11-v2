@@ -3,6 +3,19 @@ import styles from "./Display.module.scss";
 import { useState, useEffect } from "react";
 import Particle from "../Particle";
 import React from "react";
+
+
+
+function parseDate(str) {
+  var mdy = str.split('/');
+  return new Date(mdy[2], mdy[0]-1, mdy[1]);
+}
+
+function datediff(first, second) {
+  // Take the difference between the dates and divide by milliseconds per day.
+  // Round to nearest whole number to deal with DST.
+  return Math.abs(Math.round((second-first)/(1000*60*60*24)));
+}
 const posts = {
   vn: (
     <>
@@ -79,7 +92,7 @@ const Display = () => {
         <p>
         A11 Family thân mến!
           </p> 
-<p>            Vậy là chúng ta đã xa nhau được {(new Date()).getFullYear()-2019} năm rồi. Các bạn vẫn khỏe chứ 🤔 Đây là một website mà mình tạo ra với những kỉ niệm học sinh của chúng ta ngày đó. Hãy cùng xem và tận hưởng nhé!
+<p>            Vậy là chúng ta đã xa nhau được {datediff(Date.now(),1561600246000)} ngày rồi. Các bạn vẫn khỏe chứ 🤔 Đây là một website mà mình tạo ra với những kỉ niệm học sinh của chúng ta ngày đó. Hãy cùng xem và tận hưởng nhé!
 </p>         
          <p className="text-right">from Tan</p>
        
