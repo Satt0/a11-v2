@@ -6,7 +6,6 @@ import Intro from './Components/Intro/Intro'
 import DisplayImage from './Components/ShowMember/index'
 
 
-//  const DisplayImage=dynamic(()=>import ('./Components/ShowMember'))
  const Wrapper=dynamic(()=>import('./Components/Moment/Wrapper'))
 export default function App() {
   const [isLock,setLock]=React.useState(true)
@@ -25,11 +24,9 @@ export default function App() {
         <h1  className="title-header pt-5 text-center pb-5">#MEMBERS</h1>
 
     <DisplayImage/>
-        {/* <Galery /> */}
         <h1  className="title-header pt-5 text-center pb-5">#MOMENTS</h1>
 
     <Wrapper/>
-    {/* <Video/> */}
       <Ending1 />
 
         </>}

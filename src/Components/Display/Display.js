@@ -87,7 +87,7 @@ const Display = () => {
     <div className={`${styles.container} ${styles.bg2}`}>
       <div className={styles.paragraph} style={{margin:'0 auto'}}>
   
-        <div className={` ${styles.mr}`}>
+        <div className={`${styles.mr}`}>
          
         <p>
         A11 Family thân mến!
