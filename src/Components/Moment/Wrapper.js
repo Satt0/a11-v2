@@ -14,9 +14,8 @@ export default function Wrapper() {
           const thisMoment = [...src.filter((e) => e.view === "moment")].map(
             (e) => ({ url: e.img[0].url, name: e.name ,ratio:e.img[0].width/e.img[0].height})
           );
-          _.shuffle(thisMoment);
-          console.log(thisMoment);
-          return thisMoment;
+          
+          return _.shuffle(thisMoment);;
         })
    }
  },[src])

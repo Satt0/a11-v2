@@ -2,10 +2,12 @@ import React from "react";
 import { animated } from "react-spring";
 import styles from "./Card.module.scss";
 import Particle from "../Particle";
-export default function Card({ image, moveMore = false, hoverImage }) {
-  const [bg, setBg] = React.useState("");
+import ParentStyles from "./ShowMember.module.scss";
+import ScrollText from "./ScrollText";
+export default function Card({text, image, moveMore = false, hoverImage }) {
+  const [thisState, setThisState] = React.useState({ bg: "", offset: 90 });
   const [focus, setFocus] = React.useState(false);
-  
+
   const ref = React.useRef(null);
   React.useEffect(() => {
     const getElementOffset = (el) => {
@@ -16,9 +18,10 @@ export default function Card({ image, moveMore = false, hoverImage }) {
         if (windowsHeight + 100 > thisEl.top && thisEl.bottom > -100) {
           let amount = moveMore ? offset : offset / 2;
           el.style.transform = `translateY(${Math.abs(amount)}px)`;
-          if (bg === "") {
-            setBg(image);
-          }
+          
+        }
+        if (thisState.bg === "" && windowsHeight + 700 > thisEl.top) {
+          setThisState((s) => ({ ...s, bg: image, offset: 0 }));
         }
       };
     };
@@ -31,7 +34,7 @@ export default function Card({ image, moveMore = false, hoverImage }) {
         window.removeEventListener("scroll", getElementOffset);
       }
     };
-  }, [ref, moveMore, focus, bg]);
+  }, [ref, moveMore, focus, thisState]);
 
   React.useEffect(() => {
     if (focus) {
@@ -44,14 +47,14 @@ export default function Card({ image, moveMore = false, hoverImage }) {
     };
   }, [focus]);
   return (
-    <>
+    <div className={ParentStyles.bg}>
       <animated.div
         className={`${styles.card}`}
         ref={ref}
         onClick={() => {
           setFocus(true);
         }}
-        style={{ backgroundImage: `url(${bg})` }}
+        style={{ backgroundImage: `url(${thisState.bg})` }}
       ></animated.div>
       {focus ? (
         <div
@@ -73,6 +76,7 @@ export default function Card({ image, moveMore = false, hoverImage }) {
       ) : (
         <></>
       )}
-    </>
+      <ScrollText isLeft={moveMore} text={text} />
+    </div>
   );
 }

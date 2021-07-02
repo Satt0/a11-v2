@@ -31,11 +31,10 @@ export default function ShowMember() {
 
                 <div className={styles.itemContainer}>
                 {displayImages.map((e,i)=><div key={"member"+i} className={styles.item}>
-                    <div  className={styles.bg}>
-                        <ScrollText isLeft={i%2===1} text={e.name}/>
+                    <>
                        
-                        <Card hoverImage={e.hoverImage} moveMore={i%2===1} image={e.image}/>
-                    </div>
+                        <Card hoverImage={e.hoverImage} text={e.name} moveMore={i%2===1} image={e.image}/>
+                    </>
                 </div>)}
 
                 </div>
