@@ -32,8 +32,9 @@ padding:0 15vw;
   border-radius: 4px;
   animation:moveUp .4s;
   width: auto;
+  object-fit: cover;
   height: 90vh;
-  @media screen and (orientation:portrait) {
+  @media screen and (max-width:500px) {
     width:90%;
     height:auto;
   }
